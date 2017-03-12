@@ -1,8 +1,8 @@
 # Wego
 
-[Heroku link][heroku] **Note:** This should be a link to your production site
+[Wego][heroku] **Note:** Check out the live Wego site
 
-[Meetup link][meetup]
+[Meetup][meetup]
 
 [heroku]: http://www.wego.herokuapp.com
 [meetup]: https://www.meetup.com/
@@ -14,7 +14,7 @@ and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Production README [sample](docs/production_readme.md)
+- [ ] Production README
 - [ ] Groups and joining groups
 - [ ] Events and RSVPs
 - [ ] Calendar (on group page)
@@ -42,7 +42,6 @@ and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
 ### Phase 2: Groups, joining, and topics (3 days)
 
 **Objective:**
-User has a photo,
 User can create groups,
 Groups have topics
 Users can join groups,
