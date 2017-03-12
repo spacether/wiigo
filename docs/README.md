@@ -14,7 +14,7 @@ and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Production README
+- [ ] Production [README](docs/production_readme.md)
 - [ ] Groups and joining groups
 - [ ] Events and RSVPs
 - [ ] Calendar (on group page)
@@ -52,7 +52,6 @@ Group owner can edit group
 
 **Objective:** Search for group by location, group info(name, desc etc), works whether or not logged in
 
-
 ### Phase 4: Events and RSVPs (2 days)
 
 **Objective:**
@@ -70,3 +69,4 @@ Users in that group can rsvp to the event
 - [ ] Groups can have photos
 - [ ] Users can comment on events
 - [ ] Group search bar stays on page when one scrolls down
+- [ ] When searching for a tag name and not logged in, a blurb and image are shown above the search results
