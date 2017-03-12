@@ -1,6 +1,6 @@
 # Wego
 
-[Wego][heroku] **Note:** Check out the live Wego site
+[Wego][heroku] Check out the live Wego site
 
 [Meetup][meetup]
 
