@@ -31,7 +31,6 @@
 ### Grouptopics
 
 - `POST /api/grouptopics`
-- `GET /api/group/:id/grouptopics`
 - `DELETE /api/grouptopics/:id`
 
 ### Events
@@ -55,8 +54,8 @@
 - `POST /api/memberships`
 - `DELETE /api/memberships/:id`
 
-### Photos, group's photos
+### Photos, group's photo, user's photo
 
-- `GET /api/group/:id/photos`
-- `POST /api/group/:id/photos`
+# tbd about where this connects, either use Cloudinary or upload to rails
+- `POST /api/photos`
 - `DELETE /api/photos/:id`
