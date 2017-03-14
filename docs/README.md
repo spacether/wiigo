@@ -14,7 +14,7 @@ and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Production [README](docs/production_readme.md)
+- [ ] Production [README](../readme.md)
 - [ ] Groups and joining groups
 - [ ] Events and RSVPs
 - [ ] Calendar (on group page)
@@ -27,11 +27,11 @@ and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+[wireframes]: ./wireframes
+[components]: ./component-hierarchy.md
+[sample-state]: ./sample-state.md
+[api-endpoints]: ./api-endpoints.md
+[schema]: ./schema.md
 
 ## Implementation Timeline
 
