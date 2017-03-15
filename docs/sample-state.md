@@ -1,6 +1,6 @@
 ```
 {
-  currentUser: {
+  user: {
     id: 1,
     username: "app-academy"
     image_url: '5.svg'
