@@ -1,0 +1,40 @@
+
+$buttonrad: 3px;
+
+.button {
+  // box-sizing:border-box;
+  margin-left: 10px;
+  padding: 9px 16px;
+  font-weight: 500;
+  box-shadow: 0 1px 2px $dark-gray;
+  text-decoration: none;
+  border-radius: $buttonrad;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+// signup button color is defined in the header
+
+
+button {
+	background-color: $light-blue;
+	border-color: $dark-blue;
+	color: white;
+	font-weight: bold;
+	padding: 7px 9px;
+	border-radius: $buttonrad;
+	transition: background-color 0.3s;
+	font-family: $sans-serif;
+	text-transform: uppercase;
+	font-size: 11px;
+	text-align: center;
+}
+
+button:hover {
+	background-color: $blue;
+  border-color: $darkest-blue;
+}

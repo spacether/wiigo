@@ -20,5 +20,13 @@
 @import "base/colors_fonts.scss";
 @import "base/layout.scss";
 
+
+// specifics
+@import "components/buttons.scss";
+@import "components/header.scss";
+@import "components/forms.scss";
+@import "components/banner.scss";
+
+
  // applied styles
-@import "base/application.scss";
+// @import "base/application.scss";

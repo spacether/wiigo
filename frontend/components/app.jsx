@@ -1,11 +1,12 @@
 import React from 'react';
-import GreetingContainer from './greeting/greeting_container';
+import HeaderContainer from './header/header_container';
+import BannerContainer from './banner/banner_container';
 
 export default ({ children }) => {
   return (
     <div>
-      <h1>Wego</h1>
-      <GreetingContainer />
+      <HeaderContainer />
+      <BannerContainer />
       { children }
     </div>
   );

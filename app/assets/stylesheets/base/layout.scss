@@ -5,9 +5,9 @@
 
 body {
 	margin: 0 auto;
-	font-family: $serif;
+	font-family: $sans-serif;
 	font-size: 14px;
-  background-color: lightblue;
+  color: black;
 }
 
 // banner title
@@ -26,4 +26,8 @@ h3 {
 
 h4 {
   font-size: 16px;
+}
+
+.error {
+  color: red;
 }

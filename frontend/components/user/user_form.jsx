@@ -30,8 +30,7 @@ class UserForm extends React.Component {
     let otherPlace = (formType === 'signUp')
       ? ["/login", "Log In"] : ["/signup", "Sign Up"];
     let { errors } = this.props;
-    if (errors.length > 0) {
-      console.log(errors);
+    if (errors) {
       errors = errors.map( (error, i) => <li key={i}>{error}</li>);
       errors = (<ul className='error'>{errors}</ul>);
     }

@@ -1,0 +1,39 @@
+header {
+  margin: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  height: 40px;
+}
+
+header .logo {
+  color: red;
+  font-weight: 700;
+  font-size: 30px;
+  text-shadow: 3px 1px 2px $light-gray;
+}
+
+$padnav: 5px;
+
+header .right {
+  position: absolute;
+  display:inline-block;
+  right: 0;
+  bottom: 0;
+}
+
+header .login {
+  background-color: white;
+}
+
+a.button.signup {
+  background-color: red;
+  color: white;
+}
+
+a.button.logout {
+  background-color: red;
+  color: white;
+}

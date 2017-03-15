@@ -1,0 +1,32 @@
+section.banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid $light-gray;
+  border-bottom: 2px solid $light-gray;
+}
+
+section.banner > div {
+  color: white;
+  text-align: center;
+}
+
+section.banner a.button.signup {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+section.banner[class*="tall"] {
+  height: 406px;
+  background-color: black;
+}
+
+section.banner[class*="short"] {
+  height: 170px;
+  background-color: red;
+}
+
+section.banner h1, h2, h3, h4 {
+  margin-bottom: 10px;
+}

@@ -1,4 +1,4 @@
-import Greeting from './greeting';
+import Header from './header';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/user_actions';
 
@@ -13,4 +13,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Greeting);
+)(Header);

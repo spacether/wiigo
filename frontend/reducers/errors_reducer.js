@@ -1,16 +1,17 @@
-const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+import { RECEIVE_ERRORS, CLEAR_ERRORS } from '../actions/error_actions';
+
 import { merge } from 'lodash';
 
 const defaultState =  {
-  signUp: [],
-  logIn: [],
-  createGroup: [],
-  createEvent: [],
-  editGroup: [],
-  editGroupMembers: [],
-  editGroupPhotos: [],
-  editGroupTopics: [],
-  editEvent: []
+  signUp: null,
+  logIn: null,
+  // createGroup: null,
+  // createEvent: null,
+  // editGroup: null,
+  // editGroupMembers: null,
+  // editGroupPhotos: null,
+  // editGroupTopics: null,
+  // editEvent: null
 };
 
 export default (state = defaultState, action) => {
@@ -19,6 +20,8 @@ export default (state = defaultState, action) => {
     case RECEIVE_ERRORS:
       newState[action.formName] = action.errors;
       return newState;
+    case CLEAR_ERRORS:
+      return merge({}, defaultState);
     default:
       return state;
   }
