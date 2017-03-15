@@ -1,0 +1,29 @@
+ html {
+	position: relative;
+	height: 100%;
+}
+
+body {
+	margin: 0 auto;
+	font-family: $serif;
+	font-size: 14px;
+  background-color: lightblue;
+}
+
+// banner title
+h1 {
+  font-size: 42px;
+}
+
+// banner desc
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}

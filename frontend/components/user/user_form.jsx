@@ -36,19 +36,19 @@ class UserForm extends React.Component {
       errors = (<ul className='error'>{errors}</ul>);
     }
     return (
-      <form>
+      <form className='userform'>
         <h2>{buttonTxt}</h2>
         {errors}
-        <label>Username
+        <label htmlFor='username'>Username
           <input type='text' name='username'
             value={username}
             onChange={this.update('username')} ></input>
-        </label><br/>
-        <label>Password
-          <input type='password' name='password'
+          </label>
+          <label>Password
+          <input type='password' name='password' id='password'
             value={password}
             onChange={this.update('password')} ></input>
-        </label><br/>
+          </label>
         <button onClick={this.handleSubmit()}>{buttonTxt}</button>
         <br/><br/>
         <Link to={otherPlace[0]}>{otherPlace[1]}</Link>

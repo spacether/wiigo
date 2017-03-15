@@ -3,6 +3,11 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import UserFormContainer from './user/user_form_container';
 
+ ADD ONLEAVE THAT CLEARS ERRORS
+ ADD ONLEAVE THAT CLEARS ERRORS
+ ADD ONLEAVE THAT CLEARS ERRORS
+
+
 // custom
 import App from './app';
 
