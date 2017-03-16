@@ -15,6 +15,10 @@ header .logo {
   text-shadow: 3px 1px 2px $light-gray;
 }
 
+header .logo:hover {
+  cursor: pointer;
+}
+
 $padnav: 5px;
 
 header .right {

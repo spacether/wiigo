@@ -4,7 +4,7 @@
 
 [Meetup][meetup]
 
-[heroku]: http://www.wego.herokuapp.com
+[heroku]: https://wego-.herokuapp.com/
 [meetup]: https://www.meetup.com/
 
 ## Minimum Viable Product
@@ -14,7 +14,7 @@ and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Production [README](../readme.md)
+- [ ] Production [README](../README.md)
 - [ ] Groups and joining groups
 - [ ] Events and RSVPs
 - [ ] Calendar (on group page)
