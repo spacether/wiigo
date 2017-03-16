@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 export default (props) => {
   if (props.user) {
     return (
-      <section className='banner short'>
+      <section className='banner short fullwidectr'>
         <div>
         <h2>Come find a club</h2>
         <p>There are so many exciting options to choose from</p>
@@ -13,10 +13,10 @@ export default (props) => {
     );
   } else {
     return (
-      <section className='banner tall'>
+      <section className='banner tall fullwidectr'>
         <div>
           <h1>Where will we go today?</h1>
-          <h3>Do more of what you love</h3>
+          <h2>Do more of what you love</h2>
           <Link to="/signup" className='button signup'>Sign Up</Link>
         </div>
       </section>

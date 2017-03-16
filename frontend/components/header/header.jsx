@@ -21,7 +21,7 @@ const Header = (props) => {
       <header>
         <span onClick={() => hashHistory.push("/")} className='logo'>Wego</span>
         <nav className='right'>
-          <Link to="/login/Guesty" className='button login'>Guest</Link>
+          <Link to="/login/Guesty" className='button guestlogin'>Guest</Link>
           <Link to="/login" className='button login'>Log In</Link>
           <Link to="/signup" className='button signup'>Sign Up</Link>
         </nav>

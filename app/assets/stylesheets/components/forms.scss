@@ -1,6 +1,5 @@
 form {
   background-color: white;
-  display: inline-block;
   padding: 15px;
   border: 1px solid $gray;
 }
@@ -22,7 +21,31 @@ form ul {
   margin: $formpad 0;
 }
 
+.userform h2{
+  color: $color1;
+}
 
-.userform label, .userform input {
+// want it 340 down from the top and centered
+
+.userholder {
+  position: absolute;
+  top: 340px;
+}
+
+.userform {
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.userform label, input {
   display: block;
+  // align-self: flex-start;
+  // width: auto;
+}
+
+.userform button, a {
+  display: inline-block;
+  margin-top: 10px;
+  // margin-right: auto;
 }

@@ -1,8 +1,4 @@
 section.banner {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-top: 2px solid $light-gray;
   border-bottom: 2px solid $light-gray;
 }
@@ -18,7 +14,7 @@ section.banner a.button.signup {
 }
 
 section.banner[class*="tall"] {
-  height: 406px;
+  height: 462px;
   background-color: black;
 }
 

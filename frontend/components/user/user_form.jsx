@@ -53,8 +53,9 @@ class UserForm extends React.Component {
       }
     };
     let arr = name.split('');
-    let milisecTime = 100;
-    setTimeout(callback.bind(this), milisecTime, arr, milisecTime);
+    let startDelay = 500;
+    let keyTime = 100;
+    setTimeout(callback.bind(this), startDelay, arr, keyTime);
   }
   render(){
     let { username, password } = this.state;
@@ -66,7 +67,7 @@ class UserForm extends React.Component {
     } else {
       buttonTxt = "Log In";
       otherPlace = ["/signup", "Sign Up"];
-      guestLink = (<Link onClick={() => this.guestLogin.call(this, "Guesty")} className='button login'>Guest Login</Link>);
+      guestLink = (<Link onClick={() => this.guestLogin.call(this, "Guesty")} className='button guestlogin'>Guest Login</Link>);
     }
 
     let { errors } = this.props;
@@ -75,24 +76,25 @@ class UserForm extends React.Component {
       errors = (<ul className='error'>{errors}</ul>);
     }
     return (
-      <form className='userform'>
-        <h2>{buttonTxt}</h2>
-        {errors}
-        <label htmlFor='username'>Username
-          <input type='text' name='username'
-            value={username}
-            onChange={this.update('username')} ></input>
-          </label>
-          <label>Password
-          <input type='password' name='password'
-            value={password}
-            onChange={this.update('password')} ></input>
-          </label>
-        {guestLink}
-        <button name='submit' onClick={this.handleSubmit()}>{buttonTxt}</button>
-        <br/><br/>
-        <Link to={otherPlace[0]}>{otherPlace[1]}</Link>
-      </form>
+      <div className='userholder fullwidectr'>
+        <form className='userform'>
+          <h2>{buttonTxt}</h2>
+          {errors}
+          <label htmlFor='username'>Username
+            <input type='text' name='username'
+              value={username}
+              onChange={this.update('username')} ></input>
+            </label>
+            <label>Password
+            <input type='password' name='password'
+              value={password}
+              onChange={this.update('password')} ></input>
+            </label>
+          <button name='submit' onClick={this.handleSubmit()}>{buttonTxt}</button>
+          {guestLink}
+          <Link to={otherPlace[0]}>{otherPlace[1]}</Link>
+        </form>
+      </div>
     );
   }
 }

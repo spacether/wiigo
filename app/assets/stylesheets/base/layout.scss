@@ -10,9 +10,16 @@ body {
   color: black;
 }
 
+.fullwidectr {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // banner title
 h1 {
-  font-size: 42px;
+  font-size: 56px;
 }
 
 // banner desc

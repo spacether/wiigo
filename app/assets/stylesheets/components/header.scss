@@ -9,7 +9,7 @@ header {
 }
 
 header .logo {
-  color: red;
+  color: $color1;
   font-weight: 700;
   font-size: 30px;
   text-shadow: 3px 1px 2px $light-gray;
@@ -32,12 +32,29 @@ header .login {
   background-color: white;
 }
 
+header a.button {
+  margin-left: 10px;
+}
+
 a.button.signup {
-  background-color: red;
+  background-color: $color1;
   color: white;
+  &:hover {
+    background-color: $color1-low;
+  }
+}
+
+a.button.guestlogin {
+  background-color: $color3;
+  color: white;
+  &:hover {
+    background-color: $color3-low;
+  }
 }
 
 a.button.logout {
-  background-color: red;
-  color: white;
+  @extend a.button.signup;
+  &:hover {
+    @extend a.button.signup:hover;
+  }
 }

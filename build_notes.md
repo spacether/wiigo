@@ -1,4 +1,6 @@
+-------------------------
 Tuesday, 2017-03-15
+-------------------------
 Got the clearErrors firing onLeave route event
 Working on auth modal, making header, and footer
 
@@ -15,3 +17,18 @@ created user could not be signed out
 first saw the bug on heroku then recreated it locally
   Cause: user was not being logged in in the users controller
   Solution: add login to the users controller when the user account is created
+
+Added the ability to pass Guesty to the login route
+Bug: was not able to login guesty when switching from sign up to login
+  Fix: test all the booleans, need to check nextstate.params.name and call typeuser with it
+
+
+-------------------------
+Wednesday, 2017-03-16
+-------------------------
+fixing the styling of the sign in and login form
+separating the colors in to a palette
+
+It was very hard to convert my display inline-block form into a flex form
+the way to do it was to use inline-flex. Later I learned that I can do display: flex
+as long as align-items is flex-start, center, flex-end. Stretch is default which is why it was taking up all of the space.
