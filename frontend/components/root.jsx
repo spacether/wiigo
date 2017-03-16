@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import UserFormContainer from './user/user_form_container';
+import GroupFormContainer from './group/group_create_container';
 import { clearErrors } from '../actions/error_actions';
 
 import App from './app';
@@ -23,7 +24,10 @@ const Root = ({store}) => {
           <Route path="/login(/:name)" component={ UserFormContainer }
             onEnter={ _redirectIfLoggedIn }
             onLeave={ _clearErrors }  />
-           <Route path="/signup" component={ UserFormContainer }
+          <Route path="/signup" component={ UserFormContainer }
+            onEnter={ _redirectIfLoggedIn }
+            onLeave={ _clearErrors } />
+          <Route path="/create" component={ GroupFormContainer }
             onEnter={ _redirectIfLoggedIn }
             onLeave={ _clearErrors } />
         </Route>

@@ -38,13 +38,13 @@ form ul {
   align-items: flex-start;
 }
 
-.userform label, input {
+.userform label, .userform input {
   display: block;
   // align-self: flex-start;
   // width: auto;
 }
 
-.userform button, a {
+.userform button, .userform a {
   display: inline-block;
   margin-top: 10px;
   // margin-right: auto;

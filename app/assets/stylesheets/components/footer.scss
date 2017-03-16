@@ -1,0 +1,35 @@
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: $color4;
+}
+
+footer section {
+  width: 928px;
+  // background-color: black;
+  color: white;
+  padding-top: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+footer section nav {
+  width: 100%;
+}
+
+footer a {
+  margin-right: 10px;
+}
+
+footer .userfooter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}

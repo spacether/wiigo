@@ -35,6 +35,18 @@ h4 {
   font-size: 16px;
 }
 
+.right {
+  position: absolute;
+  display:inline-block;
+  right: 0;
+}
+
+.left {
+  position: absolute;
+  display:inline-block;
+  left: 0;
+}
+
 .error {
   color: red;
 }

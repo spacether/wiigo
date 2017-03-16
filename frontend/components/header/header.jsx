@@ -8,6 +8,9 @@ const Header = (props) => {
   if (props.user) {
     return (
       <header>
+        <nav className='left'>
+          <Link to="/create" className='button newgroup'>Create  Group</Link>
+        </nav>
         <span className='logo'>Wego</span>
         <nav className='right'>
           <Link>Welcome {props.user.username}</Link>
