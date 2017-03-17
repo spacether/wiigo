@@ -16,6 +16,7 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 title           | string    | not null, unique
+search_path     | string    | not null, unique
 description     | string    | not null
 image_url       | string    | not null
 

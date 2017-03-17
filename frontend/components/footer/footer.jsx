@@ -6,24 +6,21 @@ import { withRouter } from 'react-router';
 const Header = (props) => {
   let userNav;
   if (props.user) {
-    console.log("have a user");
     userNav = (
       <nav className='userfooter'>
         <Link to="/create" className='button'>Create  Group</Link>
         <Link onClick={props.logout} className='button'>Log Out</Link>
       </nav>
     );
-  } else {
-    console.log("no user");
   }
   return (
     <footer>
       <section>
         {userNav}
         <nav>
-          <Link to='https://github.com/spacether/wego'>Github</Link>
-          <Link to='http://www.linkedin.com/pub/justin-black/52/433/813/'>LinkedIn</Link>
-          <Link to='http://justinablack.com/'>Homepage</Link>
+          <a href='https://github.com/spacether/wego'>Github</a>
+          <a href='http://www.linkedin.com/pub/justin-black/52/433/813/'>LinkedIn</a>
+          <a href='http://justinablack.com/'>Homepage</a>
         </nav>
       </section>
     </footer>

@@ -10,10 +10,9 @@ $buttonrad: 3px;
   border-radius: $buttonrad;
   display: inline-block;
   font-size: 16px;
-}
-
-.button:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 // signup button color is defined in the header
@@ -23,10 +22,4 @@ button {
   @extend .button;
 	// text-transform: uppercase;
 	// text-align: center;
-}
-
-button:hover {
-  @extend .button:hover;
-	// background-color: $blue;
-  // border-color: $dark-gray;
 }

@@ -35,6 +35,10 @@
       }
     ]
   }
+  topics: [
+    {id: 1, title: 'Science'}
+    {id: 2, title: 'Music'}
+  ],
   group: {
     id: 1,
     name: 'SF Surfers',

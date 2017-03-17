@@ -39,8 +39,6 @@ FLEX OR JS PROJECT IDEAS:
 2) TV Episode Relabeling
 ------
 
-Next up todo:
-do simple footer
-just empty links for now, github, my site, about(won't work)
-server-side: make topics
-then make group creation form
+Topics made
+Group creation form made
+Use this for the checkboxes: https://github.com/appacademy/curriculum/blob/master/rails/readings/checkboxes.md

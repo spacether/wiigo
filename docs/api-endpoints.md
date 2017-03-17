@@ -18,6 +18,11 @@
 - `POST /api/session`
 - `DELETE /api/session`
 
+### Topics
+
+- `GET /api/topics`
+  - used when creating a group
+
 ### Groups
 
 - `GET /api/groups`

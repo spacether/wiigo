@@ -1,7 +1,6 @@
 # Wego
 
 [Wego][heroku] Check out the live Wego site
-
 [Meetup][meetup]
 
 [heroku]: https://wego-.herokuapp.com/

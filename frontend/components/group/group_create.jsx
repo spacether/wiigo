@@ -6,24 +6,16 @@ class GroupCreate extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      username: '',
-      password: ''
+      name: '',
+      description: '',
+      hometown: 'San Francisco, Ca',
+      topic_ids: []
     };
   }
-  componentDidMount(){
-    let {name} = this.props.params;
-    if (name) {
-      this.guestLogin(name);
-    }
-  }
   componentWillReceiveProps(nextProps){
-    // debugger;
-    let {name} = nextProps.params;
-    let path = this.props.location.pathname;
-    let newPath = nextProps.location.pathname;
-    let toLogin = (nextProps.formType === 'logIn');
-    if (Boolean(name) && (path !== newPath) && toLogin ) {
-      this.guestLogin(name);
+    let {user} = nextProps;
+    if (!user) {
+      this.redirect();
     }
   }
   update(property) {
@@ -32,69 +24,57 @@ class GroupCreate extends React.Component {
   handleSubmit() {
     return (e) => {
       e.preventDefault();
-      let user = this.state;
-      this.props.processForm(user).then(() => this.redirect() );
+      let group = this.state;
+      this.props.createGroup(group).then(() => this.redirect() );
     };
   }
   redirect() {
     this.props.router.push("/");
   }
-  guestLogin(name){
-    const callback = (arr, time) => {
-      if (arr.length > 0) {
-        let newState = Object.assign({}, this.state);
-        let letter = arr.shift();
-        newState.password += letter;
-        newState.username += letter;
-        this.setState(newState);
-        setTimeout(callback.bind(this), time, arr, time);
-      } else {
-        setTimeout(() => (document.getElementsByName("submit")[0].click()), 500);
-      }
-    };
-    let arr = name.split('');
-    let startDelay = 500;
-    let keyTime = 100;
-    setTimeout(callback.bind(this), startDelay, arr, keyTime);
-  }
   render(){
-    let { username, password } = this.state;
-    let { formType } = this.props;
-    let buttonTxt, otherPlace, guestLink;
-    if (formType === 'signUp') {
-      buttonTxt = 'Sign Up';
-      otherPlace = ["/login", "Log In"];
-    } else {
-      buttonTxt = "Log In";
-      otherPlace = ["/signup", "Sign Up"];
-      guestLink = (<Link onClick={() => this.guestLogin.call(this, "Guesty")} className='button guestlogin'>Guest Login</Link>);
-    }
-
-    let { errors } = this.props;
+    let { name, description, hometown } = this.state;
+    let { errors, topics } = this.props;
+    // debugger;
     if (errors) {
       errors = errors.map( (error, i) => <li key={i}>{error}</li>);
       errors = (<ul className='error'>{errors}</ul>);
     }
+    topics = topics.map((topic, ind) => (
+      <label key={ind} className="topics">{topic.title}
+        <input type='checkbox'
+              value={topic.id}
+              name="[topic_ids][]" />
+      </label>
+    ));
     return (
-      <div className='userholder fullwidectr'>
-        <form className='userform'>
-          <h2>{buttonTxt}</h2>
+      <section>
+        <form className='creategroup' >
+          <h2>Create a Group</h2>
           {errors}
-          <label htmlFor='username'>Username
-            <input type='text' name='username'
-              value={username}
-              onChange={this.update('username')} ></input>
-            </label>
-            <label>Password
-            <input type='password' name='password'
-              value={password}
-              onChange={this.update('password')} ></input>
-            </label>
-          <button name='submit' onClick={this.handleSubmit()}>{buttonTxt}</button>
-          {guestLink}
-          <Link to={otherPlace[0]}>{otherPlace[1]}</Link>
+          <label>Name
+            <input type='text' name='name'
+              value={name}
+              onChange={this.update('name')} ></input>
+          </label>
+          <label>Description
+            <textarea name="description"
+              rows="8" cols="80" value={description}
+              onChange={this.update('description')}>
+            </textarea>
+          </label>
+          <label>Hometown
+            <input type='text' name='hometown'
+              value={hometown}
+              onChange={this.update('hometown')} ></input>
+          </label>
+          <div>
+          {topics}
+          </div>
+          <button name='submit' onClick={this.handleSubmit()}>
+            Create Group
+          </button>
         </form>
-      </div>
+      </section>
     );
   }
 }

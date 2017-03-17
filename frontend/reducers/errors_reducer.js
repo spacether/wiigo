@@ -5,7 +5,8 @@ import { merge } from 'lodash';
 const defaultState =  {
   signUp: null,
   logIn: null,
-  // createGroup: null,
+  topics: null,
+  createGroup: null,
   // createEvent: null,
   // editGroup: null,
   // editGroupMembers: null,

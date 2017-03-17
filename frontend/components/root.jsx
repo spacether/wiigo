@@ -13,6 +13,10 @@ const Root = ({store}) => {
     if (store.getState().user) replace("/");
   };
 
+  const _redirectIfLoggedOut = (nextState, replace) => {
+    if (!store.getState().user) replace("/");
+  };
+
   const _clearErrors = () => {
     store.dispatch(clearErrors());
   };
@@ -28,7 +32,7 @@ const Root = ({store}) => {
             onEnter={ _redirectIfLoggedIn }
             onLeave={ _clearErrors } />
           <Route path="/create" component={ GroupFormContainer }
-            onEnter={ _redirectIfLoggedIn }
+            onEnter={ _redirectIfLoggedOut }
             onLeave={ _clearErrors } />
         </Route>
       </Router>

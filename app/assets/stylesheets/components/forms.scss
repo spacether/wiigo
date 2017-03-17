@@ -10,7 +10,7 @@ label {
   margin-top: $formpad;
 }
 
-input {
+input, textarea {
   padding: $formpad;
   margin-bottom: $formpad;
   border: 1px solid $gray;
@@ -36,16 +36,42 @@ form ul {
   display:flex;
   flex-direction: column;
   align-items: flex-start;
+  label, input {
+    display: block;
+  }
+  button, a {
+    margin-top: 10px;
+  }
 }
 
-.userform label, .userform input {
-  display: block;
-  // align-self: flex-start;
-  // width: auto;
-}
-
-.userform button, .userform a {
-  display: inline-block;
-  margin-top: 10px;
-  // margin-right: auto;
+.creategroup {
+  @extend .userform;
+  border: 1px solid $light-gray;
+  border-top: 0;
+  width: 808px;
+  padding: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  textarea {
+    display: block;
+  }
+  div {
+    width: 592px;
+    label {
+      display: inline-flex;
+      padding: 5px;
+      margin-top: 10px;
+      margin-right: 10px;
+      border: 1px solid $lightest-gray;
+      background-color: $lightest-gray;
+      &:hover {
+        cursor: pointer;
+      }
+      input {
+        margin-left: 5px;
+        margin-bottom: auto;
+        margin-top: auto;
+      }
+    }
+  }
 }
