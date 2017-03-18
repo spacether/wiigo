@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317005442) do
+ActiveRecord::Schema.define(version: 20170317222648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name",         null: false
+    t.text     "description",  null: false
+    t.string   "hometown",     null: false
+    t.string   "image_url",    null: false
+    t.integer  "organizer_id", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["name"], name: "index_groups_on_name", unique: true, using: :btree
+  end
+
+  create_table "grouptopics", force: :cascade do |t|
+    t.integer  "group_id",   null: false
+    t.integer  "topic_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id", "topic_id"], name: "index_grouptopics_on_group_id_and_topic_id", unique: true, using: :btree
+    t.index ["group_id"], name: "index_grouptopics_on_group_id", using: :btree
+    t.index ["topic_id"], name: "index_grouptopics_on_topic_id", using: :btree
+  end
 
   create_table "topics", force: :cascade do |t|
     t.string   "title",       null: false

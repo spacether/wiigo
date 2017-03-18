@@ -18,6 +18,20 @@ class GroupCreate extends React.Component {
       this.redirect();
     }
   }
+  updateIds() {
+    return (e) => {
+      let checked = e.target.checked;
+      let id = e.target.value;
+      let newArr = this.state.topic_ids;
+      if (checked) {
+        newArr = newArr.concat(id);
+      } else {
+        newArr = newArr.filter(item => (item!==id));
+      }
+      this.setState({ topic_ids: newArr });
+      e.target.parentElement.classList.toggle('checkedlabel');
+    };
+  }
   update(property) {
     return (e) => ( this.setState({ [property]: e.target.value }));
   }
@@ -25,11 +39,12 @@ class GroupCreate extends React.Component {
     return (e) => {
       e.preventDefault();
       let group = this.state;
-      this.props.createGroup(group).then(() => this.redirect() );
+      console.log(group);
+      this.props.createGroup(group).then((data) => this.redirect(data) );
     };
   }
-  redirect() {
-    this.props.router.push("/");
+  redirect(group) {
+    this.props.router.push(`/group/${group.id}`);
   }
   render(){
     let { name, description, hometown } = this.state;
@@ -40,10 +55,11 @@ class GroupCreate extends React.Component {
       errors = (<ul className='error'>{errors}</ul>);
     }
     topics = topics.map((topic, ind) => (
-      <label key={ind} className="topics">{topic.title}
+      <label key={ind} >{topic.title}
         <input type='checkbox'
               value={topic.id}
-              name="[topic_ids][]" />
+              name="[topic_ids][]"
+              onChange={this.updateIds()} />
       </label>
     ));
     return (

@@ -39,6 +39,23 @@ FLEX OR JS PROJECT IDEAS:
 2) TV Episode Relabeling
 ------
 
+-------------------------
+Thursday, 2017-03-17
+-------------------------
+
 Topics made
 Group creation form made
+Footer made
+Topics reducer, api, and actions made
+
+-------------------------
+Friday, 2017-03-18
+-------------------------
+Made the checkboxes have a hand when hovering over them
+Bug: Was difficult to set css styles on label
+  Source: was using two .class level selectors for the same thing
+  Fix: make one selector tag level, and the other class level
+
+Added onchange toggling of the label's class when the checkbox is selected
 Use this for the checkboxes: https://github.com/appacademy/curriculum/blob/master/rails/readings/checkboxes.md
+Need to add items to form state when they are selected

@@ -18,9 +18,11 @@ const Header = (props) => {
       <section>
         {userNav}
         <nav>
-          <a href='https://github.com/spacether/wego'>Github</a>
-          <a href='http://www.linkedin.com/pub/justin-black/52/433/813/'>LinkedIn</a>
+          <a href='https://github.com/spacether/wiigo'>Github</a>
           <a href='http://justinablack.com/'>Homepage</a>
+          <a href='http://www.linkedin.com/pub/justin-black/52/433/813/'>
+            LinkedIn
+          </a>
         </nav>
       </section>
     </footer>

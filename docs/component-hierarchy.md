@@ -49,13 +49,13 @@
 | "/" | "RootContainer"
 | "/sign-up" | "AuthFormContainer" |
 | "/sign-in" | "AuthFormContainer" |
-| "/search" | "SearchContainer" |
-| "/group/:id" | "GroupContainer" |
+| "/search"  | "SearchContainer" |
+| "/group_name/" | "GroupContainer" |
 |    "" | IndexRoute "GroupDetailContainer" |
 |    "members" | "GroupMembers" |
 |    "edit" | "EditGroupContainer" |
 |    "new-event" | "NewEventContainer" |
-| "/event/:id" | "EventContainer" |
-|    "" | IndexRoute "EventDetail" |
-|    "edit" | "EditEventForm" |
-| "/new-group" | "NewGroupContainer" |
+|    "/events/" | "IndexRoute" |
+|        ":id" | IndexRoute "EventDetail" |
+|        "edit" | "EditEventForm" |
+| "/create" | "NewGroupContainer" |

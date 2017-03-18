@@ -28,7 +28,9 @@ name            | string    | not null, unique
 description     | text      | not null
 hometown        | string    | not null
 image_url       | string    | not null
+organizer_id    | integer   | not null
 timestamps      | timestamp | not null
+
 
 ## grouptopics
 column name     | data type | details

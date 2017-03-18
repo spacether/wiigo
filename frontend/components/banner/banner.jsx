@@ -15,7 +15,7 @@ export default (props) => {
     return (
       <section className='banner tall fullwidectr'>
         <div>
-          <h1>Where will we go today?</h1>
+          <h1>Where will Wiigo today?</h1>
           <h2>Do more of what you love</h2>
           <Link to="/signup" className='button signup'>Sign Up</Link>
         </div>

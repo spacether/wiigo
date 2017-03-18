@@ -44,6 +44,25 @@ form ul {
   }
 }
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+form div label {
+  background-color: $lightest-gray;
+}
+
+// blue too dark: AED5FD
+// blue too light: EAF4FF
+.checkedlabel {
+  background-color: #CCE5FE;
+}
+
 .creategroup {
   @extend .userform;
   border: 1px solid $light-gray;
@@ -58,12 +77,12 @@ form ul {
   div {
     width: 592px;
     label {
+      @extend .noselect;
       display: inline-flex;
       padding: 5px;
       margin-top: 10px;
       margin-right: 10px;
       border: 1px solid $lightest-gray;
-      background-color: $lightest-gray;
       &:hover {
         cursor: pointer;
       }
@@ -71,6 +90,9 @@ form ul {
         margin-left: 5px;
         margin-bottom: auto;
         margin-top: auto;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }

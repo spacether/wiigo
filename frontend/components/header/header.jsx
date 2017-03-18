@@ -29,7 +29,7 @@ const Header = (props) => {
   return (
     <header>
       {left}
-      <span onClick={() => hashHistory.push("/")} className='logo'>Wego</span>
+      <span onClick={() => hashHistory.push("/")} className='logo'>Wiigo</span>
       {right}
     </header>
   );

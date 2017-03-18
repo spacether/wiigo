@@ -10,10 +10,15 @@ class ApplicationController < ActionController::Base
     session[:session_token] = nil
   end
 
+  def realname(dashname)
+    dashname.gsub("-", " ")
+  end
+
   helper_method :current_user
 
   def current_user
     return nil if session[:session_token].nil?
     @current_user ||= User.find_by_session_token(session[:session_token])
   end
+
 end
