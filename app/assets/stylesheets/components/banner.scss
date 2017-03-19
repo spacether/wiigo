@@ -1,28 +1,50 @@
-section.banner {
+.border-tb {
   border-top: 2px solid $light-gray;
   border-bottom: 2px solid $light-gray;
 }
 
-section.banner > div {
-  color: white;
-  text-align: center;
+.hbotmargins {
+  margin-bottom: 10px;
 }
 
-section.banner a.button.signup {
-  padding-left: 50px;
-  padding-right: 50px;
+.groupbanner {
+  width: 958px;
+  height: 128px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $color2;
+  border-radius: 3px;
+  div {
+    color: white;
+  }
+  border-bottom: 8px solid $color2-hi;
 }
 
-section.banner[class*="tall"] {
+.loginbanner {
+  height: 170px;
+  background-color: $color1;
+  @extend .border-tb;
+  h1, h2, h3, h4 {
+    @extend .hbotmargins;
+  }
+  div {
+    color: white;
+  }
+}
+
+.bigbanner {
   height: 462px;
   background-color: black;
-}
-
-section.banner[class*="short"] {
-  height: 170px;
-  background-color: red;
-}
-
-section.banner h1, h2, h3, h4 {
-  margin-bottom: 10px;
+  @extend .border-tb;
+  h1, h2, h3, h4 {
+    @extend .hbotmargins;
+  }
+  div {
+    color: white;
+    text-align: center;
+    a.button.signup {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
 }

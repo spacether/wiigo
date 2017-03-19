@@ -1,8 +1,7 @@
 import React from 'react';
-import { withRouter, Redirect } from 'react-router';
-import { Link } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 
-class GroupCreate extends React.Component {
+class GroupForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -15,7 +14,7 @@ class GroupCreate extends React.Component {
   componentWillReceiveProps(nextProps){
     let {user} = nextProps;
     if (!user) {
-      this.redirect();
+      hashHistory.push(`/`);
     }
   }
   updateIds() {
@@ -39,12 +38,14 @@ class GroupCreate extends React.Component {
     return (e) => {
       e.preventDefault();
       let group = this.state;
+      let dashname = this.props.dashName(group.name);
+      debugger;
       console.log(group);
-      this.props.createGroup(group).then((data) => this.redirect(data) );
+      this.props.createGroup(group)
+        .then(() => {
+          hashHistory.push(`/${dashname}`);
+        });
     };
-  }
-  redirect(group) {
-    this.props.router.push(`/group/${group.id}`);
   }
   render(){
     let { name, description, hometown } = this.state;
@@ -95,4 +96,4 @@ class GroupCreate extends React.Component {
   }
 }
 
-export default withRouter(GroupCreate);
+export default GroupForm;

@@ -15,9 +15,16 @@
 class Group < ApplicationRecord
   validates :name, :description, :hometown, :image_url, :organizer,
             presence: true
+  validates :name, uniqueness: true
 
   belongs_to :organizer, class_name: :User
   has_many :grouptopics, dependent: :destroy
   has_many :topics, through: :grouptopics
+
+  after_initialize :ensure_image_url
+
+  def ensure_image_url
+    self.image_url ||= '1.svg'
+  end
 
 end

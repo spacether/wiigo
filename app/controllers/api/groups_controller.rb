@@ -8,8 +8,7 @@ class Api::GroupsController < ApplicationController
     name = realname(params[:dashname])
     @group = Group.find_by_name(name)
     if @group
-      render json: @group
-      # render :show
+      render :show
     else
       render json: ["Group not found"], status: 404
     end
@@ -17,6 +16,7 @@ class Api::GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
+    @group.organizer_id = current_user.id
     if @group.save
       render :show
     else

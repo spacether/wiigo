@@ -5,3 +5,10 @@ export const createGroup = (group) => (
     data: {group}
   })
 );
+
+export const fetchGroup = (dashname) => (
+  $.ajax({
+    method: "GET",
+    url: `api/groups/${dashname}`
+  })
+);

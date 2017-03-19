@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { hashHistory } from 'react-router';
-import { withRouter } from 'react-router';
 
 const Header = (props) => {
   let left, right;
@@ -35,4 +34,4 @@ const Header = (props) => {
   );
 };
 
-export default withRouter(Header);
+export default Header;

@@ -10,6 +10,6 @@ const receiveTopics = (topics) => ({
 export const fetchTopics = () => dispatch => (
   API.fetchTopics()
   .then(topics => dispatch(receiveTopics(topics)))
-  .then(() => dispatch(clearErrors()))
+  .then(() => dispatch(clearErrors('topics')))
   .fail(data => dispatch(receiveErrors('topics', data.responseJSON)))
 );

@@ -5,9 +5,10 @@ import { merge } from 'lodash';
 const defaultState =  {
   signUp: null,
   logIn: null,
+  logOut: null,
   topics: null,
   createGroup: null,
-  // createEvent: null,
+  fetchGroup: null,
   // editGroup: null,
   // editGroupMembers: null,
   // editGroupPhotos: null,
@@ -22,7 +23,8 @@ export default (state = defaultState, action) => {
       newState[action.formName] = action.errors;
       return newState;
     case CLEAR_ERRORS:
-      return merge({}, defaultState);
+      newState[action.formName] = null;
+      return newState;
     default:
       return state;
   }

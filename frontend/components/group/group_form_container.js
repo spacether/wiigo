@@ -1,7 +1,6 @@
-import GroupCreate from './group_create';
+import GroupForm from './group_form';
 import { connect } from 'react-redux';
-import { createGroup } from '../../actions/group_actions';
-import { fetchTopics } from '../../util/topic_api';
+import { createGroup, dashName } from '../../actions/group_actions';
 
 const mapStateToProps = ({user, errors, topics}, ownProps) => {
   return {
@@ -13,11 +12,12 @@ const mapStateToProps = ({user, errors, topics}, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createGroup: (group) => dispatch(createGroup(group))
+    createGroup: (group) => dispatch(createGroup(group)),
+    dashName
   };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(GroupCreate);
+)(GroupForm);

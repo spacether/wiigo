@@ -1,5 +1,5 @@
 -------------------------
-Tuesday, 2017-03-15
+Tuesday, 2017-03-14
 -------------------------
 Got the clearErrors firing onLeave route event
 Working on auth modal, making header, and footer
@@ -19,12 +19,12 @@ first saw the bug on heroku then recreated it locally
   Solution: add login to the users controller when the user account is created
 
 Added the ability to pass Guesty to the login route
-Bug: was not able to login guesty when switching from sign up to login
+Bug: was not able to login Guesty when switching from sign up to login
   Fix: test all the booleans, need to check nextstate.params.name and call typeuser with it
 
 
 -------------------------
-Wednesday, 2017-03-16
+Wednesday, 2017-03-15
 -------------------------
 fixing the styling of the sign in and login form
 separating the colors in to a palette
@@ -40,7 +40,7 @@ FLEX OR JS PROJECT IDEAS:
 ------
 
 -------------------------
-Thursday, 2017-03-17
+Thursday, 2017-03-16
 -------------------------
 
 Topics made
@@ -49,7 +49,7 @@ Footer made
 Topics reducer, api, and actions made
 
 -------------------------
-Friday, 2017-03-18
+Friday, 2017-03-17
 -------------------------
 Made the checkboxes have a hand when hovering over them
 Bug: Was difficult to set css styles on label
@@ -58,4 +58,27 @@ Bug: Was difficult to set css styles on label
 
 Added onchange toggling of the label's class when the checkbox is selected
 Use this for the checkboxes: https://github.com/appacademy/curriculum/blob/master/rails/readings/checkboxes.md
-Need to add items to form state when they are selected
+
+-------------------------
+Saturday, 2017-03-18
+-------------------------
+
+Fixed the guest login to wipe the existing form content before writing
+Bug1: when try and put in bad form input twice the errors get wiped out
+  Source: I had another synchronous call, fetchTopics happening which also cleared errors
+    fatchTopics was ordered before the form submission, it should have happened after
+    Fix: put it after
+
+Bug2: when creating a group, the form persists after logout
+  Source: I had this bug before... it was that the props change needs a check
+  to see if the user is logged in. If not, then kick them back to the root
+  Fix: add a hashHistory.push to kick us back to root
+
+Notes:
+Bug1 cost me an hour or two
+Bug2, redirection error cost me an hour
+
+Can now create a group, and display it
+-Get the group show page properly styled
+-Make a group edit form
+  -Allow image editing per cloudinary

@@ -10,8 +10,11 @@ body {
   color: black;
 }
 
-.fullwidectr {
+.fullwide {
   width: 100%;
+}
+
+.ctr {
   display: flex;
   justify-content: center;
   align-items: center;

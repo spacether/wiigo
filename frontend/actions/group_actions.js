@@ -2,14 +2,26 @@ export const RECEIVE_GROUP = "RECEIVE_GROUP";
 import { clearErrors, receiveErrors } from './error_actions';
 import * as API from '../util/group_api';
 
-const receiveGroup = (user) => ({
+const receiveGroup = (group) => ({
   type: RECEIVE_GROUP,
-  user
+  group
 });
 
 export const createGroup = (group) => dispatch => (
   API.createGroup(group)
   .then(realGroup => dispatch(receiveGroup(realGroup)))
-  .then(() => dispatch(clearErrors()))
-  .fail(data => dispatch(receiveErrors('logIn', data.responseJSON)))
+  .then(() => dispatch(clearErrors('createGroup')))
+  .fail(data => dispatch(receiveErrors('createGroup', data.responseJSON)))
+);
+
+export const fetchGroup = (group) => dispatch => (
+  API.fetchGroup(group)
+  .then(realGroup => dispatch(receiveGroup(realGroup)))
+  .then(() => dispatch(clearErrors('fetchGroup')))
+  .fail(data => dispatch(receiveErrors('fetchGroup', data.responseJSON)))
+);
+
+
+export const dashName = (name) => (
+  name.replace(' ', '-')
 );

@@ -1,14 +1,10 @@
 import React from 'react';
-import { withRouter, Redirect } from 'react-router';
-import { Link } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 
 class UserForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      username: '',
-      password: ''
-    };
+    this.state = {username: '', password: ''};
   }
   componentDidMount(){
     let {name} = this.props.params;
@@ -33,12 +29,14 @@ class UserForm extends React.Component {
     return (e) => {
       e.preventDefault();
       let user = this.state;
-      this.props.fetchTopics();
-      this.props.processForm(user).then(() => this.redirect() );
+      this.props.processForm(user).then(() => {
+        this.props.fetchTopics();
+        this.redirect();
+      });
     };
   }
   redirect() {
-    this.props.router.push("/");
+    hashHistory.push("/");
   }
   guestLogin(name){
     const callback = (arr, time) => {
@@ -50,9 +48,11 @@ class UserForm extends React.Component {
         this.setState(newState);
         setTimeout(callback.bind(this), time, arr, time);
       } else {
-        setTimeout(() => (document.getElementsByName("submit")[0].click()), 500);
+        setTimeout(
+          () => (document.getElementsByName("submit")[0].click()), 500);
       }
     };
+    this.setState({username: '', password: ''});
     let arr = name.split('');
     let startDelay = 500;
     let keyTime = 100;
@@ -68,7 +68,12 @@ class UserForm extends React.Component {
     } else {
       buttonTxt = "Log In";
       otherPlace = ["/signup", "Sign Up"];
-      guestLink = (<Link onClick={() => this.guestLogin.call(this, "Guesty")} className='button guestlogin'>Guest Login</Link>);
+      guestLink = (
+        <Link onClick={() => this.guestLogin("Guesty")}
+          className='button guestlogin'>
+          Guest Login
+        </Link>
+      );
     }
 
     let { errors } = this.props;
@@ -77,7 +82,7 @@ class UserForm extends React.Component {
       errors = (<ul className='error'>{errors}</ul>);
     }
     return (
-      <div className='userholder fullwidectr'>
+      <div className='userholder fullwide ctr'>
         <form className='userform'>
           <h2>{buttonTxt}</h2>
           {errors}
@@ -91,7 +96,10 @@ class UserForm extends React.Component {
               value={password}
               onChange={this.update('password')} ></input>
             </label>
-          <button name='submit' onClick={this.handleSubmit()}>{buttonTxt}</button>
+          <button name='submit'
+            onClick={this.handleSubmit()}>
+            {buttonTxt}
+          </button>
           {guestLink}
           <Link to={otherPlace[0]}>{otherPlace[1]}</Link>
         </form>
@@ -100,4 +108,4 @@ class UserForm extends React.Component {
   }
 }
 
-export default withRouter(UserForm);
+export default UserForm;
