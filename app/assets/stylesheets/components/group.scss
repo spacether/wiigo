@@ -1,14 +1,22 @@
 
+
+$grouprad: 4px;
+// USE FIRST OF AND LAST OF HERE
+
 .groupleft-holder {
   // margin: 16px;
   // display: inline-block;
   margin-right: 12px;
+  border-bottom: 1px solid $gray;
+  margin-bottom: auto;
 }
 
-.groupmiddle-holder {
-  // margin: 16px;
-  width:100%;
+.group-botmarg {
+  margin-bottom: 16px;
+  border-bottom: 1px solid $gray;
 }
+
+$bordercolor: $light-gray;
 
 .groupshow {
   // padding: 16px;
@@ -26,23 +34,29 @@
   justify-content: space-between;
 }
 
-.flexrow {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
 .groupleft {
   // margin: 16px;
   width: 166px;
   padding:16px;
   background-color: white;
-  border: 1px solid $light-gray;
+  border: 1px solid $bordercolor;
 }
 
 .groupmiddle {
   // margin: 16px;
+  width: 544px;
   padding:16px;
   background-color: white;
-  border: 1px solid $light-gray;
+  border: 1px solid $bordercolor;
+  nav a{
+    margin-right: 10px;
+  }
+}
+
+
+.groupright {
+  // margin: 16px;
+  padding:16px;
+  background-color: white;
+  border: 1px solid $bordercolor;
 }

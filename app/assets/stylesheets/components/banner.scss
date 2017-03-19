@@ -24,6 +24,9 @@ $pagewidth: 950px;
   div {
     color: white;
   }
+  h1 {
+    font-size: 33px;
+  }
   border-bottom: 8px solid $color2-hi;
 }
 
@@ -32,6 +35,7 @@ $pagewidth: 950px;
   padding: 6px;
   background-color: white;
   border: 1px solid $light-gray;
+  border-bottom: 1px solid $gray;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

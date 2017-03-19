@@ -10,6 +10,8 @@ $buttonrad: 3px;
   border-radius: $buttonrad;
   display: inline-block;
   font-size: 16px;
+  text-decoration: none;
+  color: inherit;
   &:hover {
     cursor: pointer;
   }

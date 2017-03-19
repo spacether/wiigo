@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const GroupMiddle = (props) => {
+const GroupDetail = (props) => {
   let {group} = props;
-  let date = new Date(group.start_date).toDateString();
   return (
-    <div className='groupmiddle-holder'>
-      <section className='groupmiddle'>
+    <div className='fullwide group-botmarg'>
+      <section className='groupright'>
         <p>
           {group.description}
         </p>
       </section>
-      <section className='groupmiddle'>
+      <section className='groupright'>
         <h3>Members</h3>
         <p>
           M M M M M
@@ -21,4 +20,4 @@ const GroupMiddle = (props) => {
   );
 };
 
-export default GroupMiddle;
+export default GroupDetail;

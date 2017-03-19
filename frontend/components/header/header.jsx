@@ -12,7 +12,7 @@ const Header = (props) => {
     );
     right = (
       <nav className='right'>
-        <Link>Welcome {props.user.username}</Link>
+        <span>Welcome {props.user.username}</span>
         <Link onClick={props.logout} className='button logout'>Log Out</Link>
       </nav>
     );

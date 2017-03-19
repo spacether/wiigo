@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 import { hashHistory } from 'react-router';
 import GroupLeft from './group_left';
-import GroupMiddle from './group_middle';
+import GroupDetail from './group_detail';
+import GroupBot from './group_bot';
 
 class GroupShow extends React.Component {
   componentDidMount(){
@@ -19,7 +20,10 @@ class GroupShow extends React.Component {
       content = (
         <section className='groupshow'>
           <GroupLeft group={group} />
-          <GroupMiddle group={group} />
+          <div className='fullwide'>
+            <GroupDetail group={group} />
+            <GroupBot group={group} />
+          </div>
         </section>
       );
     }

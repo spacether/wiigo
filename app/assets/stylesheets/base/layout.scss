@@ -10,9 +10,32 @@ body {
   color: black;
 }
 
+a {
+  text-decoration: underline;
+  color: #1f24cc;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
 .fullwide {
   width: 100%;
 }
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.flexcol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 
 .ctr {
   display: flex;
