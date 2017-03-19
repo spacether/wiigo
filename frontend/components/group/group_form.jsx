@@ -39,7 +39,6 @@ class GroupForm extends React.Component {
       e.preventDefault();
       let group = this.state;
       let dashname = this.props.dashName(group.name);
-      debugger;
       console.log(group);
       this.props.createGroup(group)
         .then(() => {

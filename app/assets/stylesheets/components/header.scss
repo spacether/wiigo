@@ -1,5 +1,6 @@
 header {
-  margin: 16px;
+  // margin: 16px;
+  padding: 16px;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -7,6 +8,7 @@ header {
   align-items: flex-end;
   height: 40px;
   background-color: white;
+  box-sizing: content-box;
 }
 
 header .logo {
@@ -22,6 +24,7 @@ header .logo:hover {
 
 header .right, header .left {
   bottom: 0;
+  padding: inherit; //needed to position them correctly
 }
 
 

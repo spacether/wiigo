@@ -7,17 +7,32 @@
   margin-bottom: 10px;
 }
 
-.groupbanner {
-  width: 958px;
-  height: 128px;
+$pagewidth: 950px;
+
+.hcenter {
+  // padding: 16px;
   margin-left: auto;
   margin-right: auto;
+  padding: 16px;
+  width: $pagewidth;
+}
+
+.groupbanner {
+  height: 128px;
   background-color: $color2;
-  border-radius: 3px;
+  border-radius: 4px 4px 0 0;
   div {
     color: white;
   }
   border-bottom: 8px solid $color2-hi;
+}
+
+.groupnavholder {
+  background-color: white;
+  border: 1px solid $light-gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .loginbanner {

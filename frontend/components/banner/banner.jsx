@@ -7,21 +7,37 @@ export default (props) => {
   // logged in red banner
   // landing (big banner)
   // seach with a topic (big banner, not logged in, uses topic)
-  if (props.event || props.group) {
+  // let isGroup = false
+  // let pathPieces = props.path.split("/");
+  // if pathPieces.length
+  // console.log(props.params);
+  let dashName = props.params.dashname;
+  if (dashName) {
     let groupName;
     if (props.event) {
       groupName = props.event.group.name;
-    } else {
+    } else if (props.group) {
       groupName = props.group.name;
     }
     return (
-      <section className='groupbanner ctr'>
-        <div>
-        <h1>{groupName}</h1>
+      <section className='hcenter'>
+        <div className='groupbanner ctr'>
+          <div>
+          <h1>{groupName}</h1>
+          </div>
+        </div>
+        <div className='groupnavholder ctr'>
+          <nav>
+            <Link to={`/${dashName}`} className="button grpbut">Home</Link>
+            <Link to={`/${dashName}/members`} className="button grpbut">
+              Members
+            </Link>
+          </nav>
+          <nav></nav>
         </div>
       </section>
     );
-  } else if (props.user) {
+  } else if (props.user && !props.params.dashname) {
     return (
       <section className='loginbanner fullwide ctr'>
         <div>
