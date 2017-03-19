@@ -1,0 +1,48 @@
+
+.groupleft-holder {
+  // margin: 16px;
+  // display: inline-block;
+  margin-right: 12px;
+}
+
+.groupmiddle-holder {
+  // margin: 16px;
+  width:100%;
+}
+
+.groupshow {
+  // padding: 16px;
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+  padding-top: 0px;
+  width: $pagewidth;
+}
+
+.spacebet {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.groupleft {
+  // margin: 16px;
+  width: 166px;
+  padding:16px;
+  background-color: white;
+  border: 1px solid $light-gray;
+}
+
+.groupmiddle {
+  // margin: 16px;
+  padding:16px;
+  background-color: white;
+  border: 1px solid $light-gray;
+}

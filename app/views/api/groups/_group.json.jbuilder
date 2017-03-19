@@ -1,5 +1,5 @@
 json.extract! group, :id, :name, :description, :hometown, :image_url,
-              :topics
+              :topics, :created_at
 
 json.organizer do
   json.partial! 'api/users/user', user: group.organizer

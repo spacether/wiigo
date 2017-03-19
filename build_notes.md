@@ -80,6 +80,25 @@ Bug2, redirection error cost me an hour
 
 Can now create a group, and display it
 Fixed the background on the group page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------
+Sunday, 2017-03-19
+-------------------------
 -Get the group show page properly styled
 -Make a group edit form
   -Allow image editing per cloudinary

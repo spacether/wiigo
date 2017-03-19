@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { hashHistory } from 'react-router';
+import GroupLeft from './group_left';
+import GroupMiddle from './group_middle';
 
 class GroupShow extends React.Component {
   componentDidMount(){
@@ -15,18 +17,9 @@ class GroupShow extends React.Component {
     let {group} = this.props;
     if (group) {
       content = (
-        <section>
-          <h2>Name</h2>
-          <p>{group.name}</p>
-          <h2>Description</h2>
-          <p>{group.description}</p>
-          <h2>Hometown</h2>
-          <p>{group.hometown}</p>
-          <h2>Picture</h2>
-          <p>{group.image_url}</p>
-          <h2>Organizer</h2>
-          <p>{group.organizer.username}</p>
-          <p>{group.organizer.image_url}</p>
+        <section className='groupshow'>
+          <GroupLeft group={group} />
+          <GroupMiddle group={group} />
         </section>
       );
     }
