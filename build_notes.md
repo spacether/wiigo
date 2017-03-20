@@ -111,16 +111,25 @@ Monday, 2017-03-20
 Get rid of the allmembers method on group
 add memberCount to state
 Wrote the memberships controller, allow create and destroy
-Future work:
-  Make the membership create and destroy return $ajax
-  Chain on thens to reload the user, or the group on the view
+Done: make the membership create and destroy return $ajax
+Done: chain on thens to reload the user, or the group on the view
 
 Bug: refresh on the group page when logged in throws a server partial error
-  Fix: don't do it? Restart browser
+  Fix: pull the partial in to the failing file. Now works
+
+General note:
+  Simpler is better:
+  Gen1: use group.member_ids to add a user and remove a user, could get out of sync on server
+  Gen2: use membership controller, have it conditionally return a user or group, con complicated
+  Gen3: use API call to membership controller then chain on a then to get a user or group
+    Gen3 pros:
+      -much easier to read
+      -separates ownership
+      -minimizes the number of item actions
+
 
 Make the group members show page
-What about admin edits of a group
-   patch updates to change the members?
-   check that the current_user is admin
+
+Future:
 -Make a group edit form
   -Allow image editing per cloudinary

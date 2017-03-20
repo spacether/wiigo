@@ -3,7 +3,6 @@ export const RECEIVE_SHOWN_USER = "RECEIVE_CURRENT_USER";
 
 import { clearErrors, receiveErrors } from './error_actions';
 import * as API from '../util/session_api';
-import * as MEMBERSHIP_API from '../util/membership_api';
 
 const receiveUser = (user) => ({
   type: RECEIVE_USER,
@@ -17,13 +16,6 @@ const receiveShownUser = (user) => ({
 
 export const fetchUser = (userId) => dispatch => (
   API.fetchUser(userId)
-  .then(realUser => dispatch(receiveShownUser(realUser)))
-  .then(() => dispatch(clearErrors('shownUser')))
-  .fail(data => dispatch(receiveErrors('shownUser', data.responseJSON)))
-);
-
-export const leaveGroup = (item) => dispatch => (
-  MEMBERSHIP_API.leaveGroupFromUser(item)
   .then(realUser => dispatch(receiveShownUser(realUser)))
   .then(() => dispatch(clearErrors('shownUser')))
   .fail(data => dispatch(receiveErrors('shownUser', data.responseJSON)))

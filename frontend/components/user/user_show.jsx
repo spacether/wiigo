@@ -28,18 +28,21 @@ class UserShow extends React.Component {
       if (user && user.id === shownUser.id) {
         if (group.membership_id) {
           return (
-            <Link className='button signup'
-              onClick={()=>leaveGroup(group)}>
+            <Link className='button signup lmargin'
+              onClick={
+                ()=> { leaveGroup(group)
+                .then(()=>fetchUser(memberId));
+              }}>
               Leave this Group
             </Link>
           );
         } else {
           return (
-            <Link className='button signup'
+            <Link className='button signup lmargin'
               onClick={
                 () => { deleteGroup(urlDashname)
-                .then(()=>fetchUser(memberId)); }
-              }>
+                .then(()=>fetchUser(memberId));
+              }}>
               DELETE this Group
             </Link>
           );

@@ -6,16 +6,9 @@ export const joinGroup = (group, user) => (
   })
 );
 
-export const leaveGroupFromGroup = (item) => {
-  return $.ajax({
-    method: "DELETE",
-    url: `api/memberships/${item.membership_id}?type=Group`
-  });
-};
-
-export const leaveGroupFromUser = (item) => (
+export const leaveGroup = (item) => (
   $.ajax({
     method: "DELETE",
-    url: `api/memberships/${item.membership_id}?type=User`
+    url: `api/memberships/${item.membership_id}`
   })
 );
