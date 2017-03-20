@@ -4,6 +4,10 @@
     id: 1,
     username: "app-academy"
     image_url: '5.svg'
+    groups: [
+      {id: 1, name: 'Skiing Group'},
+      {id: 2, name: 'Skiing Group'},
+    ]
   },
   errors: {
     signUp: [],
@@ -70,9 +74,9 @@
       }    
     ],
     members: [
-      { name: "John", image_url: '12.svg' },
-      { name: "Sam", image_url: '11.svg' },
-      { name: "Alice", image_url: '10.svg' },
+      { id:1, name: "John", image_url: '12.svg' },
+      { id:2, name: "Sam", image_url: '11.svg' },
+      { id:3, name: "Alice", image_url: '10.svg' },
     ],
     photos: [
       { image_url: '13.svg' },

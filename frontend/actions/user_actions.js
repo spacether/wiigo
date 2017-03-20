@@ -1,4 +1,6 @@
-export const RECEIVE_USER = "RECEIVE_CURRENT_USER";
+export const RECEIVE_USER = "RECEIVE_USER";
+export const RECEIVE_SHOWN_USER = "RECEIVE_CURRENT_USER";
+
 import { clearErrors, receiveErrors } from './error_actions';
 import * as API from '../util/session_api';
 
@@ -7,7 +9,17 @@ const receiveUser = (user) => ({
   user
 });
 
+const receiveShownUser = (user) => ({
+  type: RECEIVE_SHOWN_USER,
+  user
+});
 
+export const fetchUser = (userId) => dispatch => (
+  API.fetchUser(userId)
+  .then(realUser => dispatch(receiveShownUser(realUser)))
+  .then(() => dispatch(clearErrors('shownUser')))
+  .fail(data => dispatch(receiveErrors('shownUser', data.responseJSON)))
+);
 
 export const login = (user) => dispatch => (
   API.login(user)

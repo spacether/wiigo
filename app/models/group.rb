@@ -21,10 +21,20 @@ class Group < ApplicationRecord
   has_many :grouptopics, dependent: :destroy
   has_many :topics, through: :grouptopics
 
-  after_initialize :ensure_image_url
+  has_many :memberships, dependent: :destroy
+  has_many :members, through: :memberships, source: :user
 
-  def ensure_image_url
+  after_initialize :ensure_image_elim_organizer
+
+  def allmembers
+    self.members + [self.organizer]
+  end
+
+  def ensure_image_elim_organizer
     self.image_url ||= '1.svg'
+    if self.member_ids
+      self.member_ids = self.member_ids.reject { |item| item == self.organizer_id }
+    end
   end
 
 end

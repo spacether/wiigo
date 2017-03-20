@@ -25,14 +25,26 @@ class Api::GroupsController < ApplicationController
   end
 
   def update
-    pass
+    name = realname(params[:dashname])
+    @group = Group.find_by_name(name)
+    fail
+    if @group
+      if @group.update_attributes(group_params)
+        render :show
+      else
+        render json: @group.errors.full_messages, status: 400
+      end
+    else
+      render json: ["Group not found"], status: 404
+    end
   end
 
   private
 
   def group_params
     params.require(:group)
-      .permit(:name, :description, :hometown, :image_url, topic_ids: [])
+      .permit(:name, :description, :hometown, :image_url,
+              topic_ids: [], member_ids: [])
   end
 
 end

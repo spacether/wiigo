@@ -1,22 +1,33 @@
 
 
 $grouprad: 4px;
+$groupmarg: 12px;
+$bordercolor: $light-gray;
+$grouppad: 16px;
+
 // USE FIRST OF AND LAST OF HERE
 
 .groupleft-holder {
   // margin: 16px;
   // display: inline-block;
-  margin-right: 12px;
+  margin-right: $groupmarg;
+  border-bottom: 1px solid $gray;
+  margin-bottom: auto;
+}
+
+.groupright-holder {
+  // margin: 16px;
+  // display: inline-block;
+  margin-left: $groupmarg;
   border-bottom: 1px solid $gray;
   margin-bottom: auto;
 }
 
 .group-botmarg {
-  margin-bottom: 16px;
+  margin-bottom: $groupmarg;
   border-bottom: 1px solid $gray;
 }
 
-$bordercolor: $light-gray;
 
 .groupshow {
   // padding: 16px;
@@ -24,7 +35,7 @@ $bordercolor: $light-gray;
   flex-direction: row;
   margin-left: auto;
   margin-right: auto;
-  padding: 16px;
+  padding: $grouppad;
   padding-top: 0px;
   width: $pagewidth;
 }
@@ -34,29 +45,40 @@ $bordercolor: $light-gray;
   justify-content: space-between;
 }
 
-.groupleft {
-  // margin: 16px;
-  width: 166px;
-  padding:16px;
-  background-color: white;
+.padded {
+  padding: $grouppad;
   border: 1px solid $bordercolor;
 }
 
+.groupleft {
+  // margin: 16px;
+  width: 166px;
+  @extend .padded;
+}
+
+.grouplinklist {
+  a {
+    padding-right: 10px;
+    display: inline-block;
+  }
+}
+
+
 .groupmiddle {
   // margin: 16px;
-  width: 544px;
-  padding:16px;
-  background-color: white;
-  border: 1px solid $bordercolor;
+  @extend .padded;
+  width: 510px;
   nav a{
-    margin-right: 10px;
+    margin-right: $groupmarg;
   }
 }
 
 
 .groupright {
   // margin: 16px;
-  padding:16px;
-  background-color: white;
-  border: 1px solid $bordercolor;
+  @extend .padded;
+}
+
+.groupcreatebg {
+  background-color: $color5;
 }

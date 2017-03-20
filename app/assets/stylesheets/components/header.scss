@@ -8,7 +8,7 @@ header {
   align-items: flex-end;
   height: 40px;
   background-color: white;
-  box-sizing: content-box;
+  border-bottom: 1px solid $gray;
 }
 
 header .logo {

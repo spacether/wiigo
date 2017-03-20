@@ -12,7 +12,8 @@
 #
 
 class Topic < ApplicationRecord
-  validates :title, :search_path, :description, :image_url, presence: true
-  validates :title, :search_path, uniqueness: true
-  
+  validates :title, :description, :image_url, presence: true
+  validates :title, uniqueness: true
+  validates :search_path, presence: true, allow_blank: true, uniqueness: true
+
 end

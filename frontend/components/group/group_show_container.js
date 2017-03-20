@@ -1,6 +1,7 @@
 import GroupShow from './group_show';
 import { connect } from 'react-redux';
-import { fetchGroup, dashName, realName } from '../../actions/group_actions';
+import { fetchGroup, dashName, realName, updateMembers }
+  from '../../actions/group_actions';
 
 const mapStateToProps = ({user, group}, ownProps) => ({
   user,
@@ -8,10 +9,12 @@ const mapStateToProps = ({user, group}, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  let dashname = ownProps.location.pathname.slice(1);
+  let urldashName = ownProps.params.dashName;
   return {
     dashName,
-    fetchGroup: () => dispatch(fetchGroup(dashname))
+    fetchGroup: () => dispatch(fetchGroup(urldashName)),
+    updateMembers:
+      (gname, memberIds) => dispatch(updateMembers(dashName(gname),memberIds))
   };
 };
 

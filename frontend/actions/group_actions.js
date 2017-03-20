@@ -21,7 +21,14 @@ export const fetchGroup = (group) => dispatch => (
   .fail(data => dispatch(receiveErrors('fetchGroup', data.responseJSON)))
 );
 
+export const updateMembers = (dashname, memberIds) => dispatch => (
+  API.updateMembers(dashname, memberIds)
+  .then(realGroup => dispatch(receiveGroup(realGroup)))
+  .then(() => dispatch(clearErrors('fetchGroup')))
+  .fail(data => dispatch(receiveErrors('fetchGroup', data.responseJSON)))
+);
+
 
 export const dashName = (name) => (
-  name.replace(' ', '-')
+  name.replace(new RegExp(' ', 'g'), '-')
 );

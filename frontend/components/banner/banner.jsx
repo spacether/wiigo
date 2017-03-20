@@ -11,7 +11,7 @@ export default (props) => {
   // let pathPieces = props.path.split("/");
   // if pathPieces.length
   // console.log(props.params);
-  let dashName = props.params.dashname;
+  let dashName = props.params.dashName;
   if (dashName) {
     let groupName;
     if (props.event) {
@@ -46,6 +46,8 @@ export default (props) => {
         </div>
       </section>
     );
+  } else if (props.params.memberId) {
+    return null;
   } else {
     return (
       <section className='bigbanner fullwide ctr'>

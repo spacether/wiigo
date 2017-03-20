@@ -81,24 +81,36 @@ Bug2, redirection error cost me an hour
 Can now create a group, and display it
 Fixed the background on the group page
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -------------------------
 Sunday, 2017-03-19
 -------------------------
--Get the group show page properly styled
+Group show page
+-added better styling of the details and the lower middle divs
+-Added a right div in the groupshow
+
+Add memberships table to db, model
+
+Memberships:
+Creating/Destroying memberships for currentuser:
+handled by user.group_ids patch
+
+Removing members from a group when admin:
+handled by group.member_ids patch
+
+Added membership controller and model
+Bug: was not receiving shownuser or even sending out the request
+  Source: container was not dispatching the function call
+  Fix: add arrow function that makes the call
+Hooked in live info for the group and links to users
+Add a group patch
+
+-------------------------
+Monday, 2017-03-20
+-------------------------
+Make the members show page
+What about admin edits of a group
+   patch updates to change the members?
+   check that the current_user is admin
+
 -Make a group edit form
   -Allow image editing per cloudinary

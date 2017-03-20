@@ -1,10 +1,24 @@
 
 User.destroy_all
-u = User.create(username: "Guesty", password: "Guesty")
+ulist = [
+  'Justin',
+  'Samantha',
+  'Katherine',
+  'Michael',
+  'Alexis',
+  'Gilbert',
+  'Fariba',
+  'Andrew',
+  'Guesty'
+]
+users = []
+ulist.each do |name|
+  users << User.create!(username: name, password: name)
+end
 
 Topic.destroy_all
 topic_fields = ['title', 'search_path', 'description', 'image_url']
-topics = [
+tlist = [
   ['Wego clubs are', '', 'A great way to get find a new passion and make new friends!', '0.jpg'],
   ['Science & Tech', 'science-tech', 'Learn about and participate in the next big developments in scince and tech!', '1.jpg'],
   ['Arts', 'art', 'Paint a picture, see a show, attend a poetry slam, explore the local arts.', '2.jpg'],
@@ -20,23 +34,20 @@ topics = [
   ['Move It', 'movement', 'Get out there and move it! Be it voguing, ballroom, zumba, or hip-hop, we have adance for you', '11.jpg'],
 ]
 
-topics.each do |topic|
+topics = []
+tlist.each do |topic|
   hash_topic = Hash[topic_fields.zip(topic)]
-  Topic.create(hash_topic)
+  topics << Topic.create!(hash_topic)
 end
 
 
-#  name         :string           not null
-#  description  :text             not null
-#  hometown     :string           not null
-#  image_url    :string           not null
-#  organizer_id :integer          not null
-
-g = Group.create(
-  name: "test group",
-  description: "content",
+Group.destroy_all
+groups = []
+groups << Group.create!(
+  name: "SF Data Mining",
+  description: "The SF Data Mining meetup simply aims to bring together people with interests spanning data science, big data, and data visualization.  The group has no affiliations--it's just an extension of the community in San Francisco.  If you'd like to speak at or host one of our gatherings, let us know!",
   hometown: "San Francisco, CA",
   image_url: "1.svg",
-  organizer_id: u.id)
-
-Grouptopic.create(group_id: g.id, topic_id: Topic.first.id)
+  organizer_id: users[0].id,
+  topic_ids: (1..4).to_a.map { |ind| topics[ind].id },
+  member_ids: (0..3).to_a.map { |ind| users[ind].id })

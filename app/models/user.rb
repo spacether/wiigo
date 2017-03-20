@@ -19,10 +19,18 @@ class User < ApplicationRecord
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  has_many :memberships, dependent: :destroy
+  has_many :groups, through: :memberships
+  has_many :led_groups, foreign_key: :organizer_id, class_name: :Group
+
   after_initialize :ensure_session_token
 
   def self.random
     SecureRandom.urlsafe_base64
+  end
+
+  def allgroups
+    (self.groups + self.led_groups)
   end
 
   def self.find_by_credentials(username, password)

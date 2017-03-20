@@ -18,6 +18,9 @@ a {
   }
 }
 
+.white {
+  background-color: white;
+}
 
 .fullwide {
   width: 100%;
@@ -71,6 +74,14 @@ h4 {
   position: absolute;
   display:inline-block;
   left: 0;
+}
+
+.rfloat {
+  float:right;
+}
+
+.rmargin {
+  margin-right: 10px;
 }
 
 .error {

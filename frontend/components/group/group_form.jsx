@@ -63,7 +63,7 @@ class GroupForm extends React.Component {
       </label>
     ));
     return (
-      <section>
+      <section className='groupcreatebg'>
         <form className='creategroup' >
           <h2>Create a Group</h2>
           {errors}

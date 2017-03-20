@@ -4,9 +4,9 @@ import { hashHistory } from 'react-router';
 
 const Bg = (props) => {
   let {children} = props;
-  let dashName = props.params.dashname;
+  let {dashName, memberId} = props.params;
   let mystyle = '';
-  if (dashName) mystyle = 'bg-group-page';
+  if (dashName || memberId) mystyle = 'bg-group-page';
   return (
     <div className={mystyle}>
       {children}
