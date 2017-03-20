@@ -9,6 +9,19 @@
       {id: 2, name: 'Skiing Group'},
     ]
   },
+  shownUser: {
+    id: 1,
+    username: "app-academy"
+    image_url: '5.svg'
+    groups: [
+      {id: 1, name: 'Skiing Group', image_url: '1.png', membership_id: 2, memberCount: 11},
+      {id: 2, name: 'Skiing Group', image_url: '1.png', membership_id: 2, memberCount: 11},
+    ],
+    led_groups: [
+      {id: 1, name: 'Skiing Group', image_url: '1.png'},
+      {id: 2, name: 'Skiing Group', image_url: '1.png'},
+    ]
+  },
   errors: {
     signUp: [],
     logIn: [],
@@ -50,6 +63,7 @@
     hometown: 'San Francisco, CA',
     image_url: '5.svg',
     founding_date: '2017-01-05',
+    memberCount: 11,
     organizer: {
       name: "John",
       image_url: '12.svg'
@@ -74,9 +88,9 @@
       }    
     ],
     members: [
-      { id:1, name: "John", image_url: '12.svg' },
-      { id:2, name: "Sam", image_url: '11.svg' },
-      { id:3, name: "Alice", image_url: '10.svg' },
+      { id:1, name: "John", image_url: '12.svg', membership_id: 10},
+      { id:2, name: "Sam", image_url: '11.svg', membership_id: 11},
+      { id:3, name: "Alice", image_url: '10.svg', membership_id: 12},
     ],
     photos: [
       { image_url: '13.svg' },

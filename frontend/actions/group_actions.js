@@ -1,6 +1,7 @@
 export const RECEIVE_GROUP = "RECEIVE_GROUP";
 import { clearErrors, receiveErrors } from './error_actions';
-import * as API from '../util/group_api';
+import * as GROUP_API from '../util/group_api';
+import * as MEMBERSHIP_API from '../util/membership_api';
 
 const receiveGroup = (group) => ({
   type: RECEIVE_GROUP,
@@ -8,21 +9,28 @@ const receiveGroup = (group) => ({
 });
 
 export const createGroup = (group) => dispatch => (
-  API.createGroup(group)
+  GROUP_API.createGroup(group)
   .then(realGroup => dispatch(receiveGroup(realGroup)))
   .then(() => dispatch(clearErrors('createGroup')))
   .fail(data => dispatch(receiveErrors('createGroup', data.responseJSON)))
 );
 
 export const fetchGroup = (group) => dispatch => (
-  API.fetchGroup(group)
+  GROUP_API.fetchGroup(group)
   .then(realGroup => dispatch(receiveGroup(realGroup)))
   .then(() => dispatch(clearErrors('fetchGroup')))
   .fail(data => dispatch(receiveErrors('fetchGroup', data.responseJSON)))
 );
 
-export const updateMembers = (dashname, memberIds) => dispatch => (
-  API.updateMembers(dashname, memberIds)
+export const joinGroup = (group, user) => dispatch => (
+  MEMBERSHIP_API.joinGroup(group, user)
+  .then(realGroup => dispatch(receiveGroup(realGroup)))
+  .then(() => dispatch(clearErrors('fetchGroup')))
+  .fail(data => dispatch(receiveErrors('fetchGroup', data.responseJSON)))
+);
+
+export const leaveGroup = (item) => dispatch => (
+  MEMBERSHIP_API.leaveGroupFromGroup(item)
   .then(realGroup => dispatch(receiveGroup(realGroup)))
   .then(() => dispatch(clearErrors('fetchGroup')))
   .fail(data => dispatch(receiveErrors('fetchGroup', data.responseJSON)))

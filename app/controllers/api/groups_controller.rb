@@ -27,7 +27,6 @@ class Api::GroupsController < ApplicationController
   def update
     name = realname(params[:dashname])
     @group = Group.find_by_name(name)
-    fail
     if @group
       if @group.update_attributes(group_params)
         render :show
@@ -36,6 +35,22 @@ class Api::GroupsController < ApplicationController
       end
     else
       render json: ["Group not found"], status: 404
+    end
+  end
+
+  def destroy
+    name = realname(params[:dashname])
+    @group = Group.find_by_name(name)
+    if @group.nil?
+      render json: ["Group not found"], status: 404
+    elsif @group.organizer.id == current_user.id
+      if @group.destroy
+        head :no_content
+      else
+        render json: @group.errors.full_messages, status: 400
+      end
+    else
+      render json: ['Invalid credentials'], status: 401
     end
   end
 

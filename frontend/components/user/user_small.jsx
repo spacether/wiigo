@@ -8,7 +8,7 @@ export default (props) => {
   if (printName) name = user.username;
   return (
     <Link to={`/members/${user.id}`} className={props.className}>
-    <img src={user.image_url} width='36' height='36'>
+    <img src={user.image_url} width='36' height='36' alt={user.username}>
     </img>{name}</Link>
   );
 };

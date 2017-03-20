@@ -29,10 +29,6 @@ class User < ApplicationRecord
     SecureRandom.urlsafe_base64
   end
 
-  def allgroups
-    (self.groups + self.led_groups)
-  end
-
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     return nil if user.nil?

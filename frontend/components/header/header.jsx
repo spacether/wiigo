@@ -13,6 +13,7 @@ const Header = (props) => {
     right = (
       <nav className='right'>
         <span>Welcome {props.user.username}</span>
+        <Link to={`members/${props.user.id}`} className='button'>Profile</Link>
         <Link onClick={props.logout} className='button logout'>Log Out</Link>
       </nav>
     );

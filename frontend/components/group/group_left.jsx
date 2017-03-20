@@ -15,7 +15,7 @@ const GroupLeft = (props) => {
         <p>Founded {date}</p>
         <br></br>
         <div className='spacebet'>
-          <span>Members</span><span>{group.members.length}</span>
+          <span>Members</span><span>{group.memberCount}</span>
         </div>
         <div className='spacebet'>
           <span>Upcoming Meetups</span><span>11</span>

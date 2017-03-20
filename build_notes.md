@@ -102,15 +102,25 @@ Bug: was not receiving shownuser or even sending out the request
   Source: container was not dispatching the function call
   Fix: add arrow function that makes the call
 Hooked in live info for the group and links to users
-Add a group patch
+Add a group patch, but it is acting weird
 
 -------------------------
 Monday, 2017-03-20
 -------------------------
-Make the members show page
+
+Get rid of the allmembers method on group
+add memberCount to state
+Wrote the memberships controller, allow create and destroy
+Future work:
+  Make the membership create and destroy return $ajax
+  Chain on thens to reload the user, or the group on the view
+
+Bug: refresh on the group page when logged in throws a server partial error
+  Fix: don't do it? Restart browser
+
+Make the group members show page
 What about admin edits of a group
    patch updates to change the members?
    check that the current_user is admin
-
 -Make a group edit form
   -Allow image editing per cloudinary

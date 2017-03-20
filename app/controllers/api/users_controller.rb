@@ -18,10 +18,24 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find_by_id(params[:id])
+    if @user == current_user
+      if @user.update_attributes(user_params)
+        render :show
+      else
+        render json: @user.errors.full_messages, status: 400
+      end
+    elsif @user
+      render json: ["Invalid credentials"], status: 401
+    else
+      render json: ["User not found"], status: 404
+    end
+  end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, group_ids: [])
   end
 end

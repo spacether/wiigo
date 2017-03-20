@@ -24,16 +24,18 @@ class Group < ApplicationRecord
   has_many :memberships, dependent: :destroy
   has_many :members, through: :memberships, source: :user
 
-  after_initialize :ensure_image_elim_organizer
+  after_initialize :ensure_image
+  before_save :elim_organizer
 
-  def allmembers
-    self.members + [self.organizer]
+  def ensure_image
+    self.image_url ||= '1.svg'
   end
 
-  def ensure_image_elim_organizer
-    self.image_url ||= '1.svg'
+  # needed for activerecord seeding
+  def elim_organizer
     if self.member_ids
-      self.member_ids = self.member_ids.reject { |item| item == self.organizer_id }
+      self.member_ids =
+        self.member_ids.reject { |item| item == self.organizer_id }
     end
   end
 

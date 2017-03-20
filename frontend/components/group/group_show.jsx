@@ -8,10 +8,11 @@ import GroupBot from './group_bot';
 
 class GroupShow extends React.Component {
   componentDidMount(){
-    let {group} = this.props;
-    if (!group) {
-      this.props.fetchGroup();
-    }
+    this.props.fetchGroup();
+    // let {group} = this.props;
+    // if (!group) {
+    //   this.props.fetchGroup();
+    // }
   }
   render() {
     // return (<p>TEST</p>);
@@ -23,7 +24,8 @@ class GroupShow extends React.Component {
           <GroupLeft group={group} />
           <div className='fullwide'>
             <GroupDetail group={group} user={user}
-              updateMembers={this.props.updateMembers} />
+              joinGroup={this.props.joinGroup}
+              leaveGroup={this.props.leaveGroup} />
             <div className='fullwide flexrow'>
               <GroupBot group={group} />
               <GroupRight group={group} />
