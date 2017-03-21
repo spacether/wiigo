@@ -27,6 +27,26 @@ $buttonrad: 3px;
   margin-top: 8px;
 }
 
+.topicbutton {
+  background-color: #F3F3F3;
+  text-decoration: none;
+  color: black;
+  border-radius: 8px;
+  // font-weight: 500;
+  font-size: 16px;
+  flex-wrap: nowrap;
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  margin: 0 5px;
+  padding: 0 16px;
+  margin-bottom: 16px;
+  &:hover {
+    background-color: $color1;
+    color: white;
+  }
+}
+
 // signup button color is defined in the header
 
 

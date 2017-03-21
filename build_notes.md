@@ -128,7 +128,20 @@ General note:
       -minimizes the number of item actions
 
 
-Make the group members show page
+Made the group members show page
+
+Todo:
+add topic buttons on main page
+addd square component
+add them to the main page
+
+pick default images
+cloudinary upload a default user image
+cloudinary upload a default banner image
+cloudinary upload a default group image
+make the route for search
+
+---------------
 
 Future:
 -Make a group edit form

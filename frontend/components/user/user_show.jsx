@@ -74,7 +74,7 @@ class UserShow extends React.Component {
     if (shownUser) {
       let date = new Date(shownUser.created_at).toDateString();
       return(
-        <div className='usershow'>
+        <div className='usershow centeredpadded'>
           <div className='white'>
             <div className='padded'>
               <UserSmall user={shownUser}/>

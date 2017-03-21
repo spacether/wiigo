@@ -30,7 +30,6 @@ class UserForm extends React.Component {
       e.preventDefault();
       let user = this.state;
       this.props.processForm(user).then(() => {
-        this.props.fetchTopics();
         this.redirect();
       });
     };
