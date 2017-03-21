@@ -11,7 +11,7 @@ const GroupDetail = (props) => {
       let membership = group.members.find(member => (member.id === user.id));
       if (membership) {
         return (
-          <Link className='button signup'
+          <Link className='button signup bsmall'
             onClick={()=> {
               leaveGroup(membership)
               .then(()=>fetchGroup());
@@ -21,7 +21,7 @@ const GroupDetail = (props) => {
         );
       } else {
         return (
-          <Link className='button signup'
+          <Link className='button signup bsmall'
             onClick={()=>{
               joinGroup(group, user)
               .then(()=>fetchGroup());

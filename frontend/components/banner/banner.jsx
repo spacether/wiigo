@@ -28,8 +28,8 @@ export default (props) => {
         </div>
         <div className='groupnavholder ctr'>
           <nav>
-            <Link to={`/${dashName}`} className="button grpbut">Home</Link>
-            <Link to={`/${dashName}/members`} className="button grpbut">
+            <Link to={`/${dashName}`} className="button bsmall">Home</Link>
+            <Link to={`/${dashName}/members`} className="button bsmall">
               Members
             </Link>
           </nav>
@@ -37,7 +37,7 @@ export default (props) => {
         </div>
       </section>
     );
-  } else if (props.user && !props.params.dashname) {
+  } else if (props.user && !props.params.dashName) {
     return (
       <section className='loginbanner fullwide ctr'>
         <div>

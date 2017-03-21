@@ -3,11 +3,12 @@ import { hashHistory, Link } from 'react-router';
 
 class RootContent extends React.Component {
   render(){
-    let {dashName} = this.props;
-    let name = "SF Data Mining";
+    let dashNames = ['Group-One', 'Group-Two', 'Group-Three'];
     return (
       <section className='groupcreatebg'>
-        <Link to={'/'+dashName(name)}>{name}</Link>
+        {dashNames.map(
+          (dname, i) => <Link to={`/${dname}`} key={i}>{dname}<br/></Link>
+      )}
       </section>
     );
   }

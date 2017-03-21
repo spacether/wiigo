@@ -39,4 +39,8 @@ class Group < ApplicationRecord
     end
   end
 
+  def dashName
+    self.name.gsub(" ", "-")
+  end
+
 end

@@ -2,6 +2,7 @@ json.extract! group, :id, :name, :description, :hometown, :image_url,
               :topics, :created_at
 
 json.memberCount group.members.length + 1
+json.dashName group.dashName
 
 json.organizer do
   json.partial! 'api/users/usersimple', user: group.organizer

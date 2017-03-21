@@ -5,6 +5,11 @@ import { Link } from 'react-router';
 export default (props) => {
   let {group} = props;
   let members = group.members.concat(group.organizer);
+  members.sort((a,b) => {
+      let x = a.username.toLowerCase();
+      let y = b.username.toLowerCase();
+      return x < y ? -1 : x > y ? 1 : 0;
+  });
   return (
     <div className='fullwide group-botmarg white'>
       <div className='groupright'>

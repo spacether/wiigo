@@ -11,9 +11,9 @@ const mapStateToProps = ({user, group}, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  let urlDashname = ownProps.params.dashName;
+  let dashName = ownProps.params.dashName;
   return {
-    fetchGroup: () => dispatch(fetchGroup(urlDashname)),
+    fetchGroup: () => dispatch(fetchGroup(dashName)),
     joinGroup: (group, user) => MEMBERSHIP_API.joinGroup(group, user),
     leaveGroup: (item) => MEMBERSHIP_API.leaveGroup(item)
   };

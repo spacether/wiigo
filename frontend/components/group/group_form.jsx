@@ -38,11 +38,11 @@ class GroupForm extends React.Component {
     return (e) => {
       e.preventDefault();
       let group = this.state;
-      let dashname = this.props.dashName(group.name);
+      let dashName = this.props.dashName(group.name);
       console.log(group);
       this.props.createGroup(group)
         .then(() => {
-          hashHistory.push(`/${dashname}`);
+          hashHistory.push(`/${dashName}`);
         });
     };
   }

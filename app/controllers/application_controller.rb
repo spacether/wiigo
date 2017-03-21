@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
     session[:session_token] = nil
   end
 
-  def realname(dashname)
-    dashname.gsub("-", " ")
+  def realname(dashName)
+    dashName.gsub("-", " ")
   end
 
   helper_method :current_user

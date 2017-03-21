@@ -7,9 +7,9 @@ const mapStateToProps = ({group}) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  let urlDashname = ownProps.params.dashName;
+  let dashName = ownProps.params.dashName;
   return {
-    fetchGroup: () => dispatch(fetchGroup(urlDashname))
+    fetchGroup: () => dispatch(fetchGroup(dashName))
   };
 };
 

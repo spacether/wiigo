@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :groups,
               only: [:create, :show, :index, :update, :destroy],
-              param: :dashname
+              param: :dashName
     resources :memberships, only: [:create, :destroy]
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]

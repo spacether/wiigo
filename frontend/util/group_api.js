@@ -6,16 +6,16 @@ export const createGroup = (group) => (
   })
 );
 
-export const fetchGroup = (dashname) => (
+export const fetchGroup = (dashName) => (
   $.ajax({
     method: "GET",
-    url: `api/groups/${dashname}`
+    url: `api/groups/${dashName}`
   })
 );
 
-export const deleteGroup = (dashname) => (
+export const deleteGroup = (dashName) => (
   $.ajax({
     method: "DELETE",
-    url: `api/groups/${dashname}`
+    url: `api/groups/${dashName}`
   })
 );

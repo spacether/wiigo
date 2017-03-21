@@ -5,7 +5,7 @@ class Api::GroupsController < ApplicationController
   end
 
   def show
-    name = realname(params[:dashname])
+    name = realname(params[:dashName])
     @group = Group.find_by_name(name)
     if @group
       render :show
@@ -25,7 +25,7 @@ class Api::GroupsController < ApplicationController
   end
 
   def update
-    name = realname(params[:dashname])
+    name = realname(params[:dashName])
     @group = Group.find_by_name(name)
     if @group
       if @group.update_attributes(group_params)
@@ -39,7 +39,7 @@ class Api::GroupsController < ApplicationController
   end
 
   def destroy
-    name = realname(params[:dashname])
+    name = realname(params[:dashName])
     @group = Group.find_by_name(name)
     if @group.nil?
       render json: ["Group not found"], status: 404

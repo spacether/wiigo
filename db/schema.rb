@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20170319213117) do
     t.string   "password_digest", null: false
     t.string   "session_token",   null: false
     t.string   "image_url",       null: false
+    t.string   "location"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree

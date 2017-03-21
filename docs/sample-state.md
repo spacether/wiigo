@@ -5,8 +5,8 @@
     username: "app-academy"
     image_url: '5.svg'
     groups: [
-      {id: 1, name: 'Skiing Group'},
-      {id: 2, name: 'Skiing Group'},
+      {id: 1, name: 'Skiing Group', dashName: 'Skiing-Club'},
+      {id: 2, name: 'Skiing Group', dashName: 'Skiing-Club'},
     ]
   },
   shownUser: {
@@ -14,8 +14,8 @@
     username: "app-academy"
     image_url: '5.svg'
     groups: [
-      {id: 1, name: 'Skiing Group', image_url: '1.png', membership_id: 2, memberCount: 11},
-      {id: 2, name: 'Skiing Group', image_url: '1.png', membership_id: 2, memberCount: 11},
+      {id: 1, name: 'Skiing Group', dashName: 'Skiing-Group', image_url: '1.png', membership_id: 2, memberCount: 11},
+      {id: 2, name: 'Skiing Club', dashName: 'Skiing-Club', image_url: '1.png', membership_id: 2, memberCount: 11},
     ],
     led_groups: [
       {id: 1, name: 'Skiing Group', image_url: '1.png'},

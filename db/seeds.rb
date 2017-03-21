@@ -9,6 +9,8 @@ ulist = [
   'Gilbert',
   'Fariba',
   'Andrew',
+  'Claire',
+  'Jessie',
   'Guesty'
 ]
 users = []
@@ -44,19 +46,28 @@ end
 Group.destroy_all
 groups = []
 groups << Group.create!(
-  name: "SF Data Mining",
+  name: "Group One",
   description: "The SF Data Mining meetup simply aims to bring together people with interests spanning data science, big data, and data visualization.  The group has no affiliations--it's just an extension of the community in San Francisco.  If you'd like to speak at or host one of our gatherings, let us know!",
   hometown: "San Francisco, CA",
   image_url: "1.svg",
-  organizer_id: users[0].id,
-  topic_ids: (1..4).to_a.map { |ind| topics[ind].id },
-  member_ids: (0..3).to_a.map { |ind| users[ind].id })
+  organizer_id: users.sample.id,
+  topic_ids: topics.sample(4).map(&:id),
+  member_ids: users.sample(5).map(&:id))
 
-  groups << Group.create!(
-    name: "Group Two",
-    description: "The SF Data Mining meetup simply aims to bring together people with interests spanning data science, big data, and data visualization.  The group has no affiliations--it's just an extension of the community in San Francisco.  If you'd like to speak at or host one of our gatherings, let us know!",
-    hometown: "San Francisco, CA",
-    image_url: "1.svg",
-    organizer_id: users[3].id,
-    topic_ids: (1..4).to_a.map { |ind| topics[ind].id },
-    member_ids: (4..7).to_a.map { |ind| users[ind].id })
+groups << Group.create!(
+  name: "Group Two",
+  description: "The SF Data Mining meetup simply aims to bring together people with interests spanning data science, big data, and data visualization.  The group has no affiliations--it's just an extension of the community in San Francisco.  If you'd like to speak at or host one of our gatherings, let us know!",
+  hometown: "San Francisco, CA",
+  image_url: "1.svg",
+  organizer_id: users[3].id,
+  topic_ids: topics.sample(4).map(&:id),
+  member_ids: users.sample(7).map(&:id))
+
+groups << Group.create!(
+  name: "Group Three",
+  description: "The SF Data Mining meetup simply aims to bring together people with interests spanning data science, big data, and data visualization.  The group has no affiliations--it's just an extension of the community in San Francisco.  If you'd like to speak at or host one of our gatherings, let us know!",
+  hometown: "San Francisco, CA",
+  image_url: "1.svg",
+  organizer_id: users[3].id,
+  topic_ids: topics.sample(4).map(&:id),
+  member_ids: users.sample(9).map(&:id))

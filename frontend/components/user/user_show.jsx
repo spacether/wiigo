@@ -19,16 +19,15 @@ class UserShow extends React.Component {
     }
   }
   render(){
-    let {user, shownUser, dashName} = this.props;
+    let {user, shownUser} = this.props;
     let {leaveGroup, deleteGroup, fetchUser} = this.props;
     let {memberId} = this.props.params;
 
     let removeButton = (group) => {
-      let urlDashname = dashName(group.name);
       if (user && user.id === shownUser.id) {
         if (group.membership_id) {
           return (
-            <Link className='button signup lmargin'
+            <Link className='button signup lmargin bremove'
               onClick={
                 ()=> { leaveGroup(group)
                 .then(()=>fetchUser(memberId));
@@ -38,9 +37,9 @@ class UserShow extends React.Component {
           );
         } else {
           return (
-            <Link className='button signup lmargin'
+            <Link className='button signup lmargin bremove'
               onClick={
-                () => { deleteGroup(urlDashname)
+                () => { deleteGroup(group.dashName)
                 .then(()=>fetchUser(memberId));
               }}>
               DELETE this Group
@@ -61,7 +60,7 @@ class UserShow extends React.Component {
           <ul>
             { arr.map( (group, i) => (
               <li key={i}>
-                <Link to={`/${dashName(group.name)}`}>
+                <Link to={`/${group.dashName}`}>
                   {group.name}
                 </Link>
                 {removeButton(group)}
