@@ -1,5 +1,6 @@
 import React from 'react';
 import { hashHistory, Link } from 'react-router';
+import SquareImage from '../shared/square_image'
 
 class RootContent extends React.Component {
 
@@ -23,16 +24,27 @@ class RootContent extends React.Component {
     let myTopics = topics.slice(5);
     console.log(myTopics);
     return (
-      <div className='centeredpadded white'>
-        <div className='topicbuttonholder'>
-          {myTopics.map( (topic,i) =>
-            <Link to={`find/${topic.search_path}`}
-              key={i} className='topicbutton'>
-              {topic.title}
-            </Link>
-          )}
+      <div className='fullwide'>
+        <div className='centeredpadded white'>
+          <div className='topicbuttonholder'>
+            {myTopics.map( (topic,i) =>
+              <Link to={`find/${topic.search_path}`}
+                key={i} className='topicbutton'>
+                {topic.title}
+              </Link>
+            )}
+          </div>
+          {content}
         </div>
-        {content}
+        <div className='carouselholder'>
+          <div className='topicbuttonholder'>
+            {topics.map( (topic,i) =>
+              <SquareImage key={i}
+                item={topic}
+                path={`find/${topic.search_path}`} />
+            )}
+          </div>
+        </div>
       </div>
     );
   }

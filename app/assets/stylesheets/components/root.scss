@@ -4,3 +4,8 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.carouselholder {
+  @extend .topicbuttonholder;
+  background-color: $color7;
+}

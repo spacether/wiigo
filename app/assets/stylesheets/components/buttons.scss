@@ -27,8 +27,9 @@ $buttonrad: 3px;
   margin-top: 8px;
 }
 
+// color below is
 .topicbutton {
-  background-color: #F3F3F3;
+  background-color: $color6;
   text-decoration: none;
   color: black;
   border-radius: 8px;
