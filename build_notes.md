@@ -129,9 +129,12 @@ General note:
 
 
 Made the group members show page
-
-Todo:
 add topic buttons on main page
+
+-------------------------
+Tuesday, 2017-03-21
+-------------------------
+
 addd square component
 add them to the main page
 

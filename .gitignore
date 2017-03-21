@@ -23,4 +23,4 @@ bundle.js.map
 .DS_Store
 npm-debug.log
 
-build_notes.*
+build_notes.md
