@@ -1,7 +1,9 @@
 class Api::GroupsController < ApplicationController
   def index
-    @groups = Group.all
-    render json: @groups
+    query = "hometown = :loc AND (name LIKE '%:val%' OR description LIKE '%:val%')"
+    options_hash = { val: params[:query], loc: params[:location] }
+    @groups = Group.where(query, options_hash)
+    render :index
   end
 
   def show

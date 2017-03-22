@@ -33,28 +33,23 @@
     editGroupTopics: [],
     editEvent: []
   },
-  searchResults: {
-    topic_title: 'Sports',
-    topic_sentence: 'Check out all the sports clubs in SF!',
-    topic_image: '5.svg',
-    groups: [
-      {
-        id: 1,
-        title: "SF Soccer Players",
-        imageUrl: "1.png",
-        members: 15,
-      }
-      {
-        id: 2,
-        title: "SF Surfers",
-        imageUrl: "2.png",
-        members: 30,
-      }
-    ]
-  }
+  groupsFound: [
+    {
+      id: 1,
+      title: "SF Soccer Players",
+      imageUrl: "1.png",
+      members: 15,
+    }
+    {
+      id: 2,
+      title: "SF Surfers",
+      imageUrl: "2.png",
+      members: 30,
+    }
+  ],
   topics: [
-    {id: 1, title: 'Science', imageUrl: '1.jpg', searchPath: 'science', description: 'Some text here' }
-    {id: 2, title: 'Music', imageUrl: '2.jpg', searchPath: 'music',  description: 'Some text here'}
+    {id: 1, title: 'Science', imageUrl: '1.jpg', bannerUrl: '2.jpg', searchPath: 'science', description: 'Some text here' }
+    {id: 2, title: 'Music', imageUrl: '3.jpg', bannerUrl: '4.jpg', searchPath: 'music',  description: 'Some text here'}
   ],
   group: {
     id: 1,

@@ -9,6 +9,7 @@ const defaultState =  {
   topics: null,
   createGroup: null,
   fetchGroup: null,
+  groupsFound: null
   // editGroup: null,
   // editGroupMembers: null,
   // editGroupPhotos: null,

@@ -4,51 +4,32 @@ import SquareImage from '../shared/square_image';
 
 class RootContent extends React.Component {
 
-  render(){
-    let dashNames = ['Group-One', 'Group-Two', 'Group-Three'];
-    let content = (
-      <section className='centeredpadded white ctr'>
-        <ul>
-        {dashNames.map( (dname, i) =>
-          <Link to={`/${dname}`} key={i} className='lmargin'>
-            {dname}
-          </Link>
-      )}
-        </ul>
-      </section>
-    );
-    let {topics} = this.props;
-    if (!topics) return content;
-    let myTopics = topics.slice(0,6); //returns 6 items
+  splashPage(buttonTopics, topics){
     return (
       <div className='fullwide'>
-
         <div className='centeredpadded white'>
           <div className='topicbuttonholder'>
-            {myTopics.map( (topic,i) =>
+            {buttonTopics.map( (topic,i) =>
               <Link to={`find/${topic.dashTopic}`}
                 key={i} className='topicbutton'>
                 {topic.title}
               </Link>
             )}
           </div>
-          {content}
         </div>
 
         <div className='carouselholder'>
           <div className='flexcol'>
             <h2 className='block'>Upcoming Events Near You</h2>
-            <p>
-            {topics.map( (topic,i) =>
-              <span key={i}>BOX</span>
-              // <SquareImage key={i}
-              //   item={topic}
-              //   path={`find/${topic.searchPath}`} />
+            <div className='flexrow'>
+            {topics.slice(0,4).map( (topic,i) =>
+              <SquareImage key={i}
+                item={topic}
+                path={`find/${topic.dashTopic}`} />
             )}
-          </p>
+          </div>
           </div>
         </div>
-
 
         <ul className='centeredpadded white'>
           <li className='ctr'><h1>Explore</h1></li>
@@ -70,6 +51,41 @@ class RootContent extends React.Component {
 
       </div>
     );
+  }
+
+  landingPage(user){
+    let groups = user.led_groups.concat(user.groups);
+    return (
+      <div className='fullwide'>
+
+        <ul className='centeredpadded white'>
+          <li className='ctr'><h2>Your Meetups</h2></li>
+          <li className='topicbuttonholder'>
+          {groups.map( (group,i) =>
+            <SquareImage item={group} size={[228,180]} key={i}
+              className='margined' path={`${group.dashName}`} />
+          )}
+          </li>
+        </ul>
+
+      </div>
+    );
+  }
+
+  render(){
+    let {topics, user} = this.props;
+    let buttonTopics = [];
+    if (!topics) {
+      topics = [];
+    } else {
+      topics = topics.slice(1);
+      buttonTopics = topics.slice(0,6); //returns 6 items
+    }
+    if (user){
+      return this.landingPage(user);
+    } else {
+      return this.splashPage(buttonTopics, topics);
+    }
   }
 }
 

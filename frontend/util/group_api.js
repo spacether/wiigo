@@ -6,6 +6,14 @@ export const createGroup = (group) => (
   })
 );
 
+export const searchGroups = (options) => {
+  let {topic, query, location} = options;
+  return $.ajax({
+    method: "GET",
+    url: `api/groups?topic=${topic}&query=${query}&location=${location}`
+  });
+};
+
 export const fetchGroup = (dashName) => (
   $.ajax({
     method: "GET",

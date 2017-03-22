@@ -4,10 +4,10 @@ import UserSmall from './user_small';
 
 class UserShow extends React.Component {
   componentDidMount(){
-    let {fetchUser} = this.props;
+    let {fetchShownUser} = this.props;
     let {memberId} = this.props.params;
     if (memberId && !this.props.shown_user) {
-      fetchUser(memberId);
+      fetchShownUser(memberId);
     }
   }
   componentWillReceiveProps(nextProps){
@@ -15,12 +15,12 @@ class UserShow extends React.Component {
     let path = this.props.location.pathname;
     let newPath = nextProps.location.pathname;
     if (Boolean(name) && (path !== newPath)) {
-      this.props.fetchUser(id);
+      this.props.fetchShownUser(id);
     }
   }
   render(){
     let {user, shownUser} = this.props;
-    let {leaveGroup, deleteGroup, fetchUser} = this.props;
+    let {leaveGroup, deleteGroup, fetchShownUser, refreshUser} = this.props;
     let {memberId} = this.props.params;
 
     let removeButton = (group) => {
@@ -30,7 +30,8 @@ class UserShow extends React.Component {
             <Link className='button signup lmargin bremove'
               onClick={
                 ()=> { leaveGroup(group)
-                .then(()=>fetchUser(memberId));
+                .then(()=>fetchShownUser(memberId))
+                .then(()=>refreshUser(user));
               }}>
               Leave this Group
             </Link>
@@ -40,7 +41,8 @@ class UserShow extends React.Component {
             <Link className='button signup lmargin bremove'
               onClick={
                 () => { deleteGroup(group.dashName)
-                .then(()=>fetchUser(memberId));
+                .then(()=>fetchShownUser(memberId))
+                .then(()=>refreshUser(user));
               }}>
               DELETE this Group
             </Link>

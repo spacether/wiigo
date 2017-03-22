@@ -14,8 +14,15 @@ const receiveShownUser = (user) => ({
   user
 });
 
-export const fetchUser = (userId) => dispatch => (
-  API.fetchUser(userId)
+// we only ever call this if we are logged int
+export const refreshUser = (user) => dispatch => (
+  API.fetchShownUser(user.id)
+  .then(realUser => dispatch(receiveUser(realUser)))
+);
+
+
+export const fetchShownUser = (userId) => dispatch => (
+  API.fetchShownUser(userId)
   .then(realUser => dispatch(receiveShownUser(realUser)))
   .then(() => dispatch(clearErrors('shownUser')))
   .fail(data => dispatch(receiveErrors('shownUser', data.responseJSON)))

@@ -4,6 +4,7 @@ import { fetchGroup }
   from '../../actions/group_actions';
   import * as MEMBERSHIP_API from '../../util/membership_api';
 import { withRouter } from 'react-router';
+import { refreshUser } from '../../actions/user_actions';
 
 const mapStateToProps = ({user, group}, ownProps) => ({
   user,
@@ -15,7 +16,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchGroup: () => dispatch(fetchGroup(dashName)),
     joinGroup: (group, user) => MEMBERSHIP_API.joinGroup(group, user),
-    leaveGroup: (item) => MEMBERSHIP_API.leaveGroup(item)
+    leaveGroup: (item) => MEMBERSHIP_API.leaveGroup(item),
+    refreshUser: (user) => dispatch(refreshUser(user)),
   };
 };
 

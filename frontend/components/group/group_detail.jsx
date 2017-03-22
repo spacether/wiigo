@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import UserSmall from '../user/user_small';
 
 const GroupDetail = (props) => {
-  let {group, user, joinGroup, leaveGroup, fetchGroup} = props;
+  let {group, user, joinGroup, leaveGroup, fetchGroup, refreshUser} = props;
   let isOrganizer = false;
   if (user) isOrganizer = (user.id === group.organizer.id);
   let button = () => {
@@ -14,7 +14,8 @@ const GroupDetail = (props) => {
           <Link className='button signup bsmall'
             onClick={()=> {
               leaveGroup(membership)
-              .then(()=>fetchGroup());
+              .then(()=>fetchGroup())
+              .then(()=>refreshUser(user));
             }}>
             Leave this Group
           </Link>
@@ -24,7 +25,8 @@ const GroupDetail = (props) => {
           <Link className='button signup bsmall'
             onClick={()=>{
               joinGroup(group, user)
-              .then(()=>fetchGroup());
+              .then(()=>fetchGroup())
+              .then(()=>refreshUser(user));
             }}>
             Join this Group
           </Link>

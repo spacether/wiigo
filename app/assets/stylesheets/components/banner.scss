@@ -59,12 +59,24 @@ $pagewidth: 950px;
   h1, h2, h3, h4 {
     @extend .hbotmargins;
   }
-  div {
-    color: white;
-    text-align: center;
-    a.button.signup {
-      padding-left: 50px;
-      padding-right: 50px;
-    }
+}
+
+.ctrbannertxt {
+  color: white;
+  text-align: center;
+  a.button.signup {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+.topictxtholder {
+  color: white;
+  padding-top: 32px;
+  width: 958px;
+  margin-left: auto;
+  margin-right: auto;
+  h2 {
+    width: 50%;
   }
 }

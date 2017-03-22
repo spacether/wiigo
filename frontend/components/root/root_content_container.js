@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = ({user, topics}, ownProps) => ({
   user,
-  topics
+  topics: topics
 });
 
 export default connect(
