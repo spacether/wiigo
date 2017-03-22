@@ -3,7 +3,7 @@
   user: {
     id: 1,
     username: "app-academy"
-    image_url: '5.svg'
+    imageUrl: '5.svg'
     groups: [
       {id: 1, name: 'Skiing Group', dashName: 'Skiing-Club'},
       {id: 2, name: 'Skiing Group', dashName: 'Skiing-Club'},
@@ -12,14 +12,14 @@
   shownUser: {
     id: 1,
     username: "app-academy"
-    image_url: '5.svg'
+    imageUrl: '5.svg'
     groups: [
-      {id: 1, name: 'Skiing Group', dashName: 'Skiing-Group', image_url: '1.png', membership_id: 2, memberCount: 11},
-      {id: 2, name: 'Skiing Club', dashName: 'Skiing-Club', image_url: '1.png', membership_id: 2, memberCount: 11},
+      {id: 1, name: 'Skiing Group', dashName: 'Skiing-Group', imageUrl: '1.png', membership_id: 2, memberCount: 11},
+      {id: 2, name: 'Skiing Club', dashName: 'Skiing-Club', imageUrl: '1.png', membership_id: 2, memberCount: 11},
     ],
     led_groups: [
-      {id: 1, name: 'Skiing Group', image_url: '1.png'},
-      {id: 2, name: 'Skiing Group', image_url: '1.png'},
+      {id: 1, name: 'Skiing Group', imageUrl: '1.png'},
+      {id: 2, name: 'Skiing Group', imageUrl: '1.png'},
     ]
   },
   errors: {
@@ -41,32 +41,32 @@
       {
         id: 1,
         title: "SF Soccer Players",
-        image_url: "1.png",
+        imageUrl: "1.png",
         members: 15,
       }
       {
         id: 2,
         title: "SF Surfers",
-        image_url: "2.png",
+        imageUrl: "2.png",
         members: 30,
       }
     ]
   }
   topics: [
-    {id: 1, title: 'Science'}
-    {id: 2, title: 'Music'}
+    {id: 1, title: 'Science', imageUrl: '1.jpg', searchPath: 'science' }
+    {id: 2, title: 'Music', imageUrl: '1.jpg', searchPath: 'science'}
   ],
   group: {
     id: 1,
     name: 'SF Surfers',
     description: 'The best surfing club in SF!',
     hometown: 'San Francisco, CA',
-    image_url: '5.svg',
+    imageUrl: '5.svg',
     founding_date: '2017-01-05',
     memberCount: 11,
     organizer: {
       name: "John",
-      image_url: '12.svg'
+      imageUrl: '12.svg'
     },
     topics: [
       'sports',
@@ -77,24 +77,24 @@
       {
         id: 1,
         title: "SF Soccer Players",
-        image_url: "1.png",
+        imageUrl: "1.png",
         members: 15,
       }
       {
         id: 3,
         title: "SF Beach Volleyball",
-        image_url: "9.png",
+        imageUrl: "9.png",
         members: 20,
       }    
     ],
     members: [
-      { id:1, name: "John", image_url: '12.svg', membership_id: 10},
-      { id:2, name: "Sam", image_url: '11.svg', membership_id: 11},
-      { id:3, name: "Alice", image_url: '10.svg', membership_id: 12},
+      { id:1, name: "John", imageUrl: '12.svg', membership_id: 10},
+      { id:2, name: "Sam", imageUrl: '11.svg', membership_id: 11},
+      { id:3, name: "Alice", imageUrl: '10.svg', membership_id: 12},
     ],
     photos: [
-      { image_url: '13.svg' },
-      { image_url: '14.svg' },
+      { imageUrl: '13.svg' },
+      { imageUrl: '14.svg' },
     ],
     events: [
       {
@@ -104,8 +104,8 @@
         location: '10 Main St., SF, CA',
         start_time: '2017-03-14 10:47',
         rsvps: [
-          { name: "Kelly", image_url: '12.svg' },
-          { name: "Sam", image_url: '11.svg' },          
+          { name: "Kelly", imageUrl: '12.svg' },
+          { name: "Sam", imageUrl: '11.svg' },          
         ]
       },
       {
@@ -115,8 +115,8 @@
         location: '10 Main St., SF, CA',
         start_time: '2017-03-20 10:30',
         rsvps: [
-          { name: "Alice", image_url: '12.svg' },
-          { name: "Sam", image_url: '11.svg' },          
+          { name: "Alice", imageUrl: '12.svg' },
+          { name: "Sam", imageUrl: '11.svg' },          
         ]
       },
     ],
@@ -124,14 +124,14 @@
       {
         type: 'join',
         username: 'Sam',
-        image_url: '3.svg',
+        imageUrl: '3.svg',
         time: '2017-01-12 8:00'
       },
       {
         type: 'rsvp',
         going: true,
         username: 'Sam',
-        image_url: '3.svg',
+        imageUrl: '3.svg',
         time: '2017-01-12 8:00'
       },
     ]
@@ -144,19 +144,19 @@
       location: '10 Main St., SF, CA',
       start_time: '2017-03-14 10:47',
       rsvps: [
-        { name: "Kelly", image_url: '12.svg' },
-        { name: "Sam", image_url: '11.svg' },          
+        { name: "Kelly", imageUrl: '12.svg' },
+        { name: "Sam", imageUrl: '11.svg' },          
       ]
       group: {
         id: 1,
         name: 'SF Surfers',
         description: 'The best surfing club in SF!',
         hometown: 'San Francisco, CA',
-        image_url: '5.svg',
+        imageUrl: '5.svg',
         founding_date: '2017-01-05',
         organizer: {
           name: "John",
-          image_url: '12.svg'
+          imageUrl: '12.svg'
         },
         topics: [
           'sports',
@@ -167,13 +167,13 @@
           {
             id: 1,
             title: "SF Soccer Players",
-            image_url: "1.png",
+            imageUrl: "1.png",
             members: 15,
           }
           {
             id: 3,
             title: "SF Beach Volleyball",
-            image_url: "9.png",
+            imageUrl: "9.png",
             members: 20,
           }    
         ],

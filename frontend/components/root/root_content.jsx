@@ -21,14 +21,14 @@ class RootContent extends React.Component {
     );
     let {topics} = this.props;
     if (!topics) return content;
-    let myTopics = topics.slice(5);
-    console.log(myTopics);
+    let myTopics = topics.slice(0,6); //returns 6 items
     return (
       <div className='fullwide'>
+
         <div className='centeredpadded white'>
           <div className='topicbuttonholder'>
             {myTopics.map( (topic,i) =>
-              <Link to={`find/${topic.search_path}`}
+              <Link to={`find/${topic.searchPath}`}
                 key={i} className='topicbutton'>
                 {topic.title}
               </Link>
@@ -36,15 +36,40 @@ class RootContent extends React.Component {
           </div>
           {content}
         </div>
+
         <div className='carouselholder'>
-          <div className='topicbuttonholder'>
+          <div className='flexcol'>
+            <h2 className='block'>Upcoming Events Near You</h2>
+            <p>
             {topics.map( (topic,i) =>
-              <SquareImage key={i}
-                item={topic}
-                path={`find/${topic.search_path}`} />
+              <span key={i}>BOX</span>
+              // <SquareImage key={i}
+              //   item={topic}
+              //   path={`find/${topic.searchPath}`} />
             )}
+          </p>
           </div>
         </div>
+
+
+        <ul className='centeredpadded white'>
+          <li className='ctr'><h1>Explore</h1></li>
+          <li className='topicbuttonholder'>
+          {topics.map( (topic,i) =>
+            <div key={i} className='margined'>
+              <SquareImage item={topic}
+                path={`find/${topic.searchPath}`} />
+              <h2>
+                <Link to={`find/${topic.searchPath}`}
+                  className='noline fontblack'>
+                  {topic.title}
+                </Link>
+              </h2>
+            </div>
+          )}
+          </li>
+        </ul>
+
       </div>
     );
   }

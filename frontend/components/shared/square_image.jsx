@@ -6,7 +6,7 @@ export default ({item, className, path}) => {
   return (
   <div className={className}>
     <Link to={path}>
-      <img src={item.image_url} ></img>
+      <img src={imagePrefix + item.imageUrl} ></img>
     </Link>
   </div>
   );

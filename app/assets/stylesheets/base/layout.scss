@@ -1,9 +1,12 @@
  html {
 	position: relative;
 	height: 100%;
+  overflow: hidden;
 }
 
 body {
+  height: 100%;
+  overflow: auto;
 	margin: 0 auto;
 	font-family: $sans-serif;
 	font-size: 14px;
@@ -88,8 +91,25 @@ h4 {
   margin-right: 10px;
 }
 
+.margined {
+  margin: 10px;
+  margin-bottom: 35px;
+}
+
 .lmargin {
   margin-left: 10px;
+}
+
+.noline {
+  text-decoration: none;
+}
+
+.fontwhite {
+  color: white;
+}
+
+.fontblack {
+  color: black;
 }
 
 $groupmarg: 12px;
@@ -98,7 +118,6 @@ $groupmarg: 12px;
   margin-right: auto;
   padding: $groupmarg;
 }
-
 
 .error {
   color: red;

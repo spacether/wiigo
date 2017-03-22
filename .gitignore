@@ -24,6 +24,7 @@ bundle.js.map
 npm-debug.log
 
 build_notes.md
+pics_unused/
 
 # Ignore application configuration
 /config/application.yml

@@ -1,1 +1,3 @@
-json.extract! topic, :id, :title, :search_path, :image_url
+json.extract! topic, :id, :title
+json.searchPath topic.search_path
+json.imageUrl topic.image_url
