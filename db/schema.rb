@@ -48,12 +48,13 @@ ActiveRecord::Schema.define(version: 20170319213117) do
 
   create_table "topics", force: :cascade do |t|
     t.string   "title",       null: false
-    t.string   "search_path", null: false
+    t.string   "dash_topic",  null: false
     t.text     "description", null: false
     t.string   "image_url",   null: false
+    t.string   "banner_url",  null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["search_path"], name: "index_topics_on_search_path", unique: true, using: :btree
+    t.index ["dash_topic"], name: "index_topics_on_dash_topic", unique: true, using: :btree
     t.index ["title"], name: "index_topics_on_title", unique: true, using: :btree
   end
 

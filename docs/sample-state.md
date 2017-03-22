@@ -53,8 +53,8 @@
     ]
   }
   topics: [
-    {id: 1, title: 'Science', imageUrl: '1.jpg', searchPath: 'science' }
-    {id: 2, title: 'Music', imageUrl: '1.jpg', searchPath: 'science'}
+    {id: 1, title: 'Science', imageUrl: '1.jpg', searchPath: 'science', description: 'Some text here' }
+    {id: 2, title: 'Music', imageUrl: '2.jpg', searchPath: 'music',  description: 'Some text here'}
   ],
   group: {
     id: 1,

@@ -1,20 +1,18 @@
 import React from 'react';
 import { hashHistory, Link } from 'react-router';
-import SquareImage from '../shared/square_image'
+import SquareImage from '../shared/square_image';
 
 class RootContent extends React.Component {
-
-  componentDidMount(){
-    this.props.fetchTopics();
-  }
 
   render(){
     let dashNames = ['Group-One', 'Group-Two', 'Group-Three'];
     let content = (
       <section className='centeredpadded white ctr'>
         <ul>
-        {dashNames.map(
-          (dname, i) => <Link to={`/${dname}`} key={i} className='lmargin'>{dname}</Link>
+        {dashNames.map( (dname, i) =>
+          <Link to={`/${dname}`} key={i} className='lmargin'>
+            {dname}
+          </Link>
       )}
         </ul>
       </section>
@@ -28,7 +26,7 @@ class RootContent extends React.Component {
         <div className='centeredpadded white'>
           <div className='topicbuttonholder'>
             {myTopics.map( (topic,i) =>
-              <Link to={`find/${topic.searchPath}`}
+              <Link to={`find/${topic.dashTopic}`}
                 key={i} className='topicbutton'>
                 {topic.title}
               </Link>
@@ -58,9 +56,9 @@ class RootContent extends React.Component {
           {topics.map( (topic,i) =>
             <div key={i} className='margined'>
               <SquareImage item={topic}
-                path={`find/${topic.searchPath}`} />
+                path={`find/${topic.dashTopic}`} />
               <h2>
-                <Link to={`find/${topic.searchPath}`}
+                <Link to={`find/${topic.dashTopic}`}
                   className='noline fontblack'>
                   {topic.title}
                 </Link>

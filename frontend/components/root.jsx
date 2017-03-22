@@ -51,6 +51,7 @@ const Root = ({store}) => {
             <Route path="members" component={ GroupMembersContainer } />
           </Route>
           <Route path="members/:memberId" component={ UserShowContainer } />
+          <Route path="find/:dashTopic" component={ UserShowContainer } />
         </Route>
       </Router>
     </Provider>

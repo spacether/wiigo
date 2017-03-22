@@ -19,6 +19,7 @@ title           | string    | not null, unique
 search_path     | string    | not null, unique
 description     | string    | not null
 image_url       | string    | not null
+banner_url       | string    | not null
 
 ## groups
 column name     | data type | details
