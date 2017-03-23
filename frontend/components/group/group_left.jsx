@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import UserSmall from '../user/user_small';
+import SquareImage from '../shared/square_image';
 
 const GroupLeft = (props) => {
   let {group} = props;
@@ -8,7 +9,8 @@ const GroupLeft = (props) => {
   return (
     <div className='groupleft-holder white'>
       <section className='groupleft'>
-        <img src={group.image_url} width='160' height='160'></img>
+        <SquareImage item={group} size={[160,160]}
+          path={`${group.dashName}`} />
       </section>
       <section className='groupleft'>
         <h3>{group.hometown}</h3>
