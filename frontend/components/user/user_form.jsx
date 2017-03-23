@@ -5,18 +5,15 @@ class UserForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {username: '', password: ''};
-    console.log('login/signup constructor');
   }
+
   componentDidMount(){
     let {name} = this.props.params;
     if (name) {
       this.guestLogin(name);
     }
-    console.log('login/signup mounted');
   }
-  componentWillUnmount(){
-    console.log('login/signup unmount');
-  }
+
   componentWillReceiveProps(nextProps){
     // debugger;
     let {name} = nextProps.params;
@@ -27,9 +24,11 @@ class UserForm extends React.Component {
       this.guestLogin(name);
     }
   }
+
   update(property) {
     return (e) => ( this.setState({ [property]: e.target.value }));
   }
+
   handleSubmit() {
     return (e) => {
       e.preventDefault();
@@ -39,9 +38,11 @@ class UserForm extends React.Component {
       });
     };
   }
+
   redirect() {
     hashHistory.push("/");
   }
+
   guestLogin(name){
     const callback = (arr, time) => {
       if (arr.length > 0) {
@@ -62,6 +63,7 @@ class UserForm extends React.Component {
     let keyTime = 100;
     setTimeout(callback.bind(this), startDelay, arr, keyTime);
   }
+
   render(){
     let { username, password } = this.state;
     let { formType } = this.props;

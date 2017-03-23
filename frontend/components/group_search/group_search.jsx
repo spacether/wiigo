@@ -28,10 +28,6 @@ class GroupSearch extends React.Component {
   }
 
   update(property) {
-    return (e) => ( this.setState({ [property]: e.target.value }));
-  }
-
-  updateTopic(property) {
     return (e) => (
       this.setState(
         { [property]: e.target.value },
@@ -90,7 +86,7 @@ class GroupSearch extends React.Component {
         <input type='text' value={this.state.location}
           onChange={this.update('location')}
           className='locinput' />
-        <select onChange={this.updateTopic('topic')} value={this.state.topic}>
+        <select onChange={this.update('topic')} value={this.state.topic}>
           {topics.map( (topic,i) =>
             <option value={topic.dashTopic} key={i}>
               {topic.title}
