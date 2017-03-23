@@ -54,7 +54,7 @@ column name     | data type | details
 id              | integer   | not null, primary key
 group_id        | integer   | not null, indexed
 title           | string    | not null
-start_time      | timestamp | not null
+start_time      | datetime  | not null
 description     | text      | not null
 location        | string    | not null
 address         | string    | not null

@@ -5,32 +5,41 @@ import SquareImage from '../shared/square_image';
 class GroupSearch extends React.Component {
   constructor(props) {
     super(props);
-    let location = "San Francisco, CA";
-    let query = '';
-    let topic = '';
-    if (props.location) {
-      if (props.location.query.topic) {
-        topic = props.location.query.topic;
-      } else if (this.props.params.dashTopic) {
-        topic = this.props.params.dashTopic;
-      }
-      if (props.location.query.location) {
-        location = props.location.query.location;
-      }
-      if (props.location.query.query) {
-        query = props.location.query.query;
-      }
+    let defaultState = this.getState(props);
+    this.state = defaultState;
+  }
+
+  getState(props){
+    let defaultLoc = "San Francisco, CA";
+    if (props.location === undefined) {
+      return {location: defaultLoc, query: '', topic: ''};
+    } else {
+      let {location, query} = props.location.query;
+      let {dashTopic} = props.params;
+      if (dashTopic === undefined) dashTopic = '';
+      if (location === undefined) location = defaultLoc;
+      if (query === undefined) query = '';
+      return {
+        location,
+        query,
+        topic: dashTopic,
+      };
     }
-    this.state = {
-       location,
-       query,
-       topic
-     };
   }
 
   update(property) {
     return (e) => ( this.setState({ [property]: e.target.value }));
   }
+
+  updateTopic(property) {
+    return (e) => (
+      this.setState(
+        { [property]: e.target.value },
+        () => this.props.searchGroups(this.state)
+      )
+    );
+  }
+
   handleSubmit() {
     return (e) => {
       e.preventDefault();
@@ -45,6 +54,21 @@ class GroupSearch extends React.Component {
 
   componentDidMount(){
     this.props.searchGroups(this.state);
+  }
+
+  componentWillUpdate(nextProps, nextState){
+    if (this.props.location) {
+      let loc = this.props.location;
+      let newLoc = nextProps.location;
+      let path = loc.pathname + loc.search;
+      let newPath = newLoc.pathname + newLoc.search;
+      if (path !== newPath) {
+        let newState = this.getState(nextProps);
+        this.setState(newState);
+        this.props.searchGroups(nextState);
+        // this.setState(nextState);
+      }
+    }
   }
 
   render(){
@@ -66,7 +90,7 @@ class GroupSearch extends React.Component {
         <input type='text' value={this.state.location}
           onChange={this.update('location')}
           className='locinput' />
-        <select onChange={this.update('topic')} value={this.state.topic}>
+        <select onChange={this.updateTopic('topic')} value={this.state.topic}>
           {topics.map( (topic,i) =>
             <option value={topic.dashTopic} key={i}>
               {topic.title}

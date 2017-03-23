@@ -1,20 +1,21 @@
 # == Schema Information
 #
-# Table name: topics
+# Table name: events
 #
 #  id          :integer          not null, primary key
+#  group_id    :integer          not null
 #  title       :string           not null
-#  dash_topic  :string           not null
+#  start_time  :datetime         not null
 #  description :text             not null
-#  image_url   :string           not null
-#  banner_url  :string           not null
+#  location    :string           not null
+#  address     :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
 require 'test_helper'
 
-class TopicTest < ActiveSupport::TestCase
+class EventTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

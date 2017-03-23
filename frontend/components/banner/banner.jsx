@@ -91,18 +91,15 @@ class Banner extends React.Component {
 
 
     } else {
-      // imageUrl = 'v1490136536/banner2_cqw5oo.jpg'; //dancing
-      // imageUrl = 'v1490136286/banner1_rdrv2t.jpg'; //bubbles big bright
-       //bubbles cropped dark
-      let bannerUrl = 'v1490140132/banner1_croped_darkened_gavqfh.jpg';
-      let topic;
-      let {dashTopic} = this.props.params;
-      let {topics} = this.props;
       // console.log(this.props);
-      if (dashTopic && topics) {
-        topic = topics.find(item => (item.dashTopic === dashTopic));
+      let {topics} = this.props;
+      if (this.props.location.pathname.slice(0,6) === '/find/' && topics) {
+        let {dashTopic} = this.props.params;
+        if (dashTopic === undefined) dashTopic = "";
+        let topic = topics.find(item => (item.dashTopic === dashTopic));
         return this.topicBanner(topic);
       } else {
+        let bannerUrl = 'v1490140132/banner1_croped_darkened_gavqfh.jpg';
         return this.splashBanner(bannerUrl);
       }
     }

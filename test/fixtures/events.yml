@@ -1,13 +1,14 @@
 # == Schema Information
 #
-# Table name: topics
+# Table name: events
 #
 #  id          :integer          not null, primary key
+#  group_id    :integer          not null
 #  title       :string           not null
-#  dash_topic  :string           not null
+#  start_time  :datetime         not null
 #  description :text             not null
-#  image_url   :string           not null
-#  banner_url  :string           not null
+#  location    :string           not null
+#  address     :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
@@ -15,13 +16,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  group_id: 1
   title: MyString
+  start_time: 2017-03-23 06:55:26
   description: MyText
-  image_url: MyString
-  search_path: MyString
+  location: MyString
+  address: MyString
 
 two:
+  group_id: 1
   title: MyString
+  start_time: 2017-03-23 06:55:26
   description: MyText
-  image_url: MyString
-  search_path: MyString
+  location: MyString
+  address: MyString

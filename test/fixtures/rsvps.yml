@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: rsvps
+#
+#  id         :integer          not null, primary key
+#  event_id   :integer          not null
+#  user_id    :integer          not null
+#  going      :boolean          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_id: 1
+  user_id: 1
+  going: false
+
+two:
+  event_id: 1
+  user_id: 1
+  going: false

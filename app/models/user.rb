@@ -7,6 +7,7 @@
 #  password_digest :string           not null
 #  session_token   :string           not null
 #  image_url       :string           not null
+#  location        :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
@@ -22,6 +23,7 @@ class User < ApplicationRecord
   has_many :memberships, dependent: :destroy
   has_many :groups, through: :memberships
   has_many :led_groups, foreign_key: :organizer_id, class_name: :Group
+  has_many :rsvps, dependent: :destroy
 
   after_initialize :ensure_session_token
 

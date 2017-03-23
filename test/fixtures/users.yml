@@ -7,6 +7,7 @@
 #  password_digest :string           not null
 #  session_token   :string           not null
 #  image_url       :string           not null
+#  location        :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
