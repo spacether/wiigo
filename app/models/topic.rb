@@ -16,4 +16,7 @@ class Topic < ApplicationRecord
   validates :title, uniqueness: true
   validates :dash_topic, presence: true, allow_blank: true, uniqueness: true
   validates :image_url, presence: true, allow_blank: true
+
+  has_many :grouptopics
+  has_many :groups, through: :grouptopics
 end

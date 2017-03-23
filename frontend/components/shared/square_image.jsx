@@ -3,9 +3,9 @@ import { Link } from 'react-router';
 
 export default ({item, className, path, size}) => {
   // have mode = bare, groupname, groupdetail
-  let image = (<img src={imagePrefix + item.imageUrl} ></img>);
+  let image = (<img src={imagePrefix + item.imageUrl} className='imgclass'></img>);
   if (size) image = (
-    <img src={imagePrefix + item.imageUrl}
+    <img src={imagePrefix + item.imageUrl} className='imgclass'
       width={`${size[0]}px`} height={`${size[1]}px`}></img>
   );
   let label;

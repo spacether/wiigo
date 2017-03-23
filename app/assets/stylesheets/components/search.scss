@@ -1,0 +1,58 @@
+$searchrad: 4px;
+
+.groupsearchbar {
+  font-size: 14px;
+  background-color: black;
+  border: 1px solid #474747;
+  border-radius: $searchrad;
+  color: white;
+  padding: 12px;
+  display: table;
+  position: relative;
+  top: -20px;
+  margin-left: auto;
+  margin-right: auto;
+  .groupsrchtxtbox {
+    font-size: inherit;
+    margin-right: 10px;
+  }
+  .locinput {
+    font-size: inherit;
+    background-color: black;
+    color: white;
+    text-decoration: underline;
+    border: 0;
+  }
+  input {
+    font-size: inherit;
+    border-radius: $searchrad;
+    margin-left: 10px;
+    padding: 8px;
+    background-color: white;
+    color: black;
+    margin: 0;
+  }
+  input.button {
+    font-size: inherit;
+    border-radius: $searchrad;
+    margin-left: 10px;
+    color: white;
+    background-color: #3F454D;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  select {
+    font-size: inherit;
+    border-radius: $searchrad;
+    font-size: 14px;
+    background-color: black;
+    color: white;
+    margin-left: 10px;
+    height: 34px;
+  }
+  a {
+    font-size: inherit;
+    border-radius: $searchrad;
+    height: 34px;
+  }
+}

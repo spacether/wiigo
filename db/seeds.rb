@@ -27,12 +27,12 @@ tlist = [
     default_banner
   ],
 
-  ['Science & Tech', 'science-tech', 'Learn about and participate in the next big developments in scince and tech!',
+  ['Learning', 'learning', 'Learn about and participate in the next big developments in science, education, and technology!',
     'c_fill,g_center,h_190,w_300/v1490154826/science_hands_luvosm.jpg',
     default_banner
   ],
 
-  ['Arts', 'art', 'Paint a picture, see a show, attend a poetry slam, explore the local arts.',
+  ['Arts', 'arts', 'Paint a picture, see a show, attend a poetry slam, explore the local arts.',
     'c_fill,h_190,w_300/v1490154493/art_messyhands_e1lsil.jpg',
     default_banner
   ],
@@ -100,32 +100,76 @@ tlist.each do |topic|
 end
 topics.shift
 
-group_default_image = 'v1490209770/group_default_w5eg53.jpg';
+
+def get_topics(intopic, topics)
+  items = topics.select do |item|
+    item.title.downcase.include?(intopic.downcase)
+  end
+  items.map(&:id)
+end
+
+
 Group.destroy_all
+group_images = ['v1490209770/group_default_w5eg53.jpg',
+  'v1490242827/group_def2_diks8y.jpg']
+
+group_hometown = "San Francisco, CA"
+group_fields = ['name', 'description', 'topic_ids', 'hometown', 'organizer_id', 'member_ids', 'image_url']
+glist = []
+glist << [
+"SF People's Science Lab",
+"In the South Bay, come help us build a new science community. We're
+focused on citizen science. Our lab is a place to work on fun projects,
+learn, discove, tinker, and push the boundaries of scince!
+We are open to biotech professionals,
+scientists, and citizen scientists of all stripes. Come be part of our
+community of hackers, creative thinkers, and mad scientists!",
+get_topics('learning', topics)
+]
+
+glist << [
+"Data Science SF",
+"We are a comminity organized around showcasing and improving thre great
+we are doing with data science. Together we are making graph models of
+human diseases and extracting insights from huge data sets. We build
+tools, extract data in real time, and are developing a better understanding
+of our worls. COme level up you data science skills with us!",
+get_topics('learning', topics)
+]
+
+glist << [
+"Figure Sketching SF",
+"We are a commuity of professional and amateur artists from all walks
+who meet once a month for figure sketching. The people we sketch range
+20s to 90s. If you want to bring your sketching to the next level, or
+just need some more creativity in your life, give us a try.",
+get_topics('arts', topics)
+]
+
+glist << [
+"Popup Music SF",
+"We are a group of people who crave new music. Every week we meet for
+drink and check out a new local band. Lately we have been going to a
+lot of SoFar sounds events, but we go to concerts, festivals, garage
+bands, and raves too. If it's good we're in! Come join us!",
+get_topics('music', topics)
+]
+
+glist << [
+"Classical Music SF",
+"Our community focuses on seeing classical music and opera
+performances in the Bay area. We have one event a month, and sometimes
+go out at wine bars in the city when there aren't any new shows in town.
+If you know of upcoming events, let us know. We're very open to
+member submitted events.",
+get_topics('music', topics)
+]
+
+
+
 groups = []
-groups << Group.create!(
-  name: "Group One",
-  description: "The SF Data Mining meetup simply aims to bring together people with interests spanning data science, big data, and data visualization.  The group has no affiliations--it's just an extension of the community in San Francisco.  If you'd like to speak at or host one of our gatherings, let us know!",
-  hometown: "San Francisco, CA",
-  image_url: group_default_image,
-  organizer_id: users.sample.id,
-  topic_ids: topics.sample(4).map(&:id),
-  member_ids: users.sample(5).map(&:id))
-
-groups << Group.create!(
-  name: "Group Two",
-  description: "The SF Data Mining meetup simply aims to bring together people with interests spanning data science, big data, and data visualization.  The group has no affiliations--it's just an extension of the community in San Francisco.  If you'd like to speak at or host one of our gatherings, let us know!",
-  hometown: "San Francisco, CA",
-  image_url: group_default_image,
-  organizer_id: users[3].id,
-  topic_ids: topics.sample(4).map(&:id),
-  member_ids: users.sample(7).map(&:id))
-
-groups << Group.create!(
-  name: "Group Three",
-  description: "The SF Data Mining meetup simply aims to bring together people with interests spanning data science, big data, and data visualization.  The group has no affiliations--it's just an extension of the community in San Francisco.  If you'd like to speak at or host one of our gatherings, let us know!",
-  hometown: "San Francisco, CA",
-  image_url: group_default_image,
-  organizer_id: users[3].id,
-  topic_ids: topics.sample(4).map(&:id),
-  member_ids: users.sample(9).map(&:id))
+glist.each do |item|
+  topicvals = item.concat([ group_hometown, users.sample.id, users.sample(6).map(&:id), group_images.sample ])
+  hash_group = Hash[group_fields.zip(topicvals)]
+  groups << Group.create!(hash_group)
+end

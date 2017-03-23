@@ -47,12 +47,12 @@ const Root = ({store}) => {
           <Route path="create" component={ GroupFormContainer }
             onEnter={ _redirectIfLoggedOut }
             onLeave={ _clearErrors('createGroup') } ></Route>
+          <Route path="members(/:memberId)" component={ UserShowContainer } />
+          <Route path="find(/:dashTopic)" component={ GroupSearchContainer } />
           <Route path=":dashName" component={ GroupShowContainer }>
             <IndexRoute component={ GroupDetailBotRightContainer } />
             <Route path="members" component={ GroupMembersContainer } />
           </Route>
-          <Route path="members/:memberId" component={ UserShowContainer } />
-          <Route path="find/:dashTopic" component={ GroupSearchContainer } />
         </Route>
       </Router>
     </Provider>

@@ -10,7 +10,7 @@ export const searchGroups = (options) => {
   let {topic, query, location} = options;
   return $.ajax({
     method: "GET",
-    url: `api/groups?topic=${topic}&query=${query}&location=${location}`
+    url: `api/groups?topic=${topic}&location=${location}&query=${query}`
   });
 };
 

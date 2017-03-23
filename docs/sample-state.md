@@ -48,8 +48,8 @@
     }
   ],
   topics: [
-    {id: 1, title: 'Science', imageUrl: '1.jpg', bannerUrl: '2.jpg', searchPath: 'science', description: 'Some text here' }
-    {id: 2, title: 'Music', imageUrl: '3.jpg', bannerUrl: '4.jpg', searchPath: 'music',  description: 'Some text here'}
+    {id: 1, title: 'Science', imageUrl: '1.jpg', bannerUrl: '2.jpg', dashTopic: 'science', description: 'Some text here' }
+    {id: 2, title: 'Music', imageUrl: '3.jpg', bannerUrl: '4.jpg', dashTopic: 'music',  description: 'Some text here'}
   ],
   group: {
     id: 1,

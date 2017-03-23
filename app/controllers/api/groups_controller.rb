@@ -1,8 +1,18 @@
+# require 'uri'
+# URI.encode(value)
+
 class Api::GroupsController < ApplicationController
   def index
-    query = "hometown = :loc AND (name LIKE '%:val%' OR description LIKE '%:val%')"
-    options_hash = { val: params[:query], loc: params[:location] }
-    @groups = Group.where(query, options_hash)
+    query = "LOWER(hometown) = :loc AND (LOWER(name) LIKE :val)"
+    options_hash = {
+      val: "%" + params[:query].downcase + "%",
+      loc: params[:location].downcase
+    }
+    groups = Group
+    if params[:topic] != ""
+      groups = Topic.where(dash_topic: params[:topic]).first.groups
+    end
+    @groups = groups.where(query, options_hash)
     render :index
   end
 
@@ -63,6 +73,10 @@ class Api::GroupsController < ApplicationController
       .permit(:name, :description, :hometown, :image_url,
               topic_ids: [], member_ids: [])
   end
+
+  # def search_params
+  #   params.permit(:location, :query, :topic)
+  # end
 
 end
 

@@ -3,8 +3,18 @@
   bottom: 0;
   padding: 16px;
   width:100%;
+  font-weight: 900;
+  color: white;
+  text-shadow: 1px 1px 0 rgba(0,0,0,1);
 }
 
 .imgholder{
   position:relative;
+  overflow: hidden;
+}
+
+.imgclass {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }

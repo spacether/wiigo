@@ -9,7 +9,7 @@ class GroupShow extends React.Component {
     // return (<p>TEST</p>);
     let content = (
       <section className='groupshow'>
-        <div className='fullwide white padded'>Group not found</div>
+        <div className='fullwide white padded'>Group show: Group not found</div>
       </section>
     );
     let {group} = this.props;

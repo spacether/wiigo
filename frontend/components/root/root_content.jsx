@@ -1,6 +1,8 @@
 import React from 'react';
 import { hashHistory, Link } from 'react-router';
 import SquareImage from '../shared/square_image';
+import GroupSearchContainer from '../group_search/group_search_container';
+import UserGroups from '../shared/user_groups';
 
 class RootContent extends React.Component {
 
@@ -54,19 +56,12 @@ class RootContent extends React.Component {
   }
 
   landingPage(user){
-    let groups = user.led_groups.concat(user.groups);
     return (
       <div className='fullwide'>
 
-        <ul className='centeredpadded white'>
-          <li className='ctr'><h2>Your Meetups</h2></li>
-          <li className='topicbuttonholder'>
-          {groups.map( (group,i) =>
-            <SquareImage item={group} size={[228,180]} key={i}
-              className='margined' path={`${group.dashName}`} />
-          )}
-          </li>
-        </ul>
+        <GroupSearchContainer />
+
+        <UserGroups user={user} />
 
       </div>
     );
