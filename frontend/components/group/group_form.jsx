@@ -54,6 +54,7 @@ class GroupForm extends React.Component {
       errors = errors.map( (error, i) => <li key={i}>{error}</li>);
       errors = (<ul className='error'>{errors}</ul>);
     }
+    if (topics) topics = topics.slice(1);
     topics = topics.map((topic, ind) => (
       <label key={ind} >{topic.title}
         <input type='checkbox'

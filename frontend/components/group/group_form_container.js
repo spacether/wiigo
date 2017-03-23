@@ -6,7 +6,7 @@ const mapStateToProps = ({user, errors, topics}, ownProps) => {
   return {
   user,
   errors: errors['createGroup'],
-  topics
+  topics: topics
   };
 };
 
