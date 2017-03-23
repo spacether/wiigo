@@ -63,8 +63,8 @@ class Banner extends React.Component {
           backgroundSize: 'cover'
         }}>
         <div className='topictxtholder'>
-          <h1>{topic.title}</h1>
-          <h2>{topic.description}</h2>
+          <h1 className='shadow_white'>{topic.title}</h1>
+          <h2 className='shadow_white'>{topic.description}</h2>
         </div>
       </section>
     );
@@ -98,6 +98,7 @@ class Banner extends React.Component {
       let topic;
       let {dashTopic} = this.props.params;
       let {topics} = this.props;
+      // console.log(this.props);
       if (dashTopic && topics) {
         topic = topics.find(item => (item.dashTopic === dashTopic));
         return this.topicBanner(topic);

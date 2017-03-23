@@ -9,10 +9,6 @@ class GroupSearch extends React.Component {
     let query = '';
     let topic = '';
     if (props.location) {
-      console.log(props.location.query.topic);
-      console.log(this.props.params.dashTopic);
-      console.log(props.location.query.location);
-      console.log(props.location.query.query);
       if (props.location.query.topic) {
         topic = props.location.query.topic;
       } else if (this.props.params.dashTopic) {
