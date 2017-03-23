@@ -1,6 +1,6 @@
 class Api::EventsController < ApplicationController
   def index
-    gname = realname(params[:dashName])
+    gname = realname(params[:group_dashName])
     @events = Group.find_by_name(gname).events
     render :index
   end
@@ -19,7 +19,13 @@ class Api::EventsController < ApplicationController
     if current_user.nil?
       render json: ['You must be logged in to create events'], status: 401
     end
+    gname = realname(params[:group_dashName])
+    @group = Group.find_by_name(gname)
+    if @group.nil?
+      render json: ['Invalid group given'], status: 401
+    end
     @event = Event.new(event_params)
+    @event.group_id = @group.id
     my_group = @event.group.organizer.id == current_user.id
     if !my_group
       render json: ['You must lead a group to make events in it'], status: 401
@@ -72,6 +78,6 @@ class Api::EventsController < ApplicationController
 
   def event_params
     params.require(:event)
-      .permit(:event_id, :start_time, :description, :location, :address)
+      .permit(:title, :start_time, :location, :address, :description)
   end
 end
