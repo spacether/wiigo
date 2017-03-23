@@ -19,5 +19,7 @@ class Event < ApplicationRecord
 
   belongs_to :group
   has_many :rsvps, dependent: :destroy
-  has_many :attendees, through: :rsvps, source: :user, -> { where(going: true) }
+  has_many :attendees, through: :rsvps, source: :user
 end
+
+# has_many :attendees, through: :rsvps, source: :user, -> { where(going: true) }
