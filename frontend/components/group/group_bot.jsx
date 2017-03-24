@@ -36,7 +36,7 @@ const GroupBot = (props) => {
   let {organizer} = group;
   let newEventUrl = `${group.dashName}/new`;
   let newEventLink = null;
-  if (user.id === group.organizer.id) {
+  if (user && user.id === group.organizer.id) {
     newEventLink = (<Link to={newEventUrl}>Create Event</Link>);
   }
   return (
