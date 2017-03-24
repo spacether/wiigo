@@ -10,19 +10,19 @@ class GroupShow extends React.Component {
 
   printMember(user, i) {
     return (
-      <section className='margined' key={i}>
+      <div className='margined' key={i}>
         <SquareImage item={user} path={`/members/${user.id}`}
           size={[36,36]} className='uprow inlineimg' name={true} />
-      </section>
+      </div>
     );
   }
 
   rsvpSection(user, rsvpsHash) {
     let {event} = this.props;
     let defaultVal = (
-      <section className='padded'>
+      <div className='padded'>
         <h3>RSVPs</h3>
-      </section>
+      </div>
     );
     if (event === undefined) return defaultVal;
 
@@ -36,7 +36,7 @@ class GroupShow extends React.Component {
       let {createRsvp, updateRsvp, fetchEvent} = this.props;
       if (rsvp === undefined) {
         return (
-          <section className='padded'>
+          <div className='padded'>
             <h3 className='botmarg'>Are you going?</h3>
             <Link className='button signup rmargin'
               onClick={() => createRsvp(true).then(() => fetchEvent() )}>
@@ -46,17 +46,17 @@ class GroupShow extends React.Component {
               onClick={() => createRsvp(false).then(() => fetchEvent() )}>
               No
             </Link>
-          </section>
+          </div>
         );
       } else {
         return (
-          <section className='padded'>
+          <div className='padded'>
             <h3 className='botmarg'>You rsvped:</h3>
             { (rsvp) ? <Link className='button botmarg'>Yes</Link> : <Link className='button botmarg'>No</Link>  }
             <Link className='button signup'
               onClick={() => updateRsvp(!rsvp).then(() => fetchEvent() )}>
               Change RSVP</Link>
-          </section>
+          </div>
         );
       }
     }
@@ -66,9 +66,9 @@ class GroupShow extends React.Component {
     let {event, user} = this.props;
     if (!event) {
       return (
-        <section className='groupshow'>
+        <div className='groupshow'>
           <div className='fullwide white padded'>Event not found</div>
-        </section>
+        </div>
       );
     } else {
       let {group} = event;
@@ -78,32 +78,36 @@ class GroupShow extends React.Component {
       let verb = (inPast) ? "went" : "going";
       let textTime = new Date(event.startTime).toDateString();
       return (
-        <section className='groupshow'>
+        <div className='groupshow'>
 
           <GroupLeft group={group} />
 
           <div className='fullwide flexrow'>
 
-            <div className='groupmiddle-holder white padded botline'>
-              <h2>{event.title}</h2>
-              <h3>Start time: {textTime}</h3>
-              <h3>{event.location}</h3>
-              <h4><a href={mapLink}>{event.address}</a></h4>
-              <p>
+            <div className='groupmiddle-holder white padded botline inside_divbmargin'>
+              <div>
+                <h2>{event.title}</h2>
+              </div>
+              <div>
+                <h3>Start time: {textTime}</h3>
+                <h3>{event.location}</h3>
+                <h4><a href={mapLink}>{event.address}</a></h4>
+              </div>
+              <div>
                 {event.attendees.map( (member,j) =>
                   <SquareImage item={member} path={`/members/${member.id}`}
                     size={[36,36]} className='inlineimg' key={j} />
                 )}
-              </p>
+              </div>
 
-              <p>
+              <div>
                 {event.description}
-              </p>
-              <p>
+              </div>
+              <div>
                 Hosted by <Link to={`members/${organizer.id}`}>
                   {organizer.username}
                 </Link>
-              </p>
+              </div>
             </div>
 
             <div className='groupright-holder white'>
@@ -118,7 +122,7 @@ class GroupShow extends React.Component {
             </div>
 
           </div>
-        </section>
+        </div>
       );
     }
   }

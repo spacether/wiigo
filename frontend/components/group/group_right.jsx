@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import UserSmall from '../user/user_small';
+import SquareImage from '../shared/square_image';
 
 Date.daysBetween = function( date1, date2 ) {
   //Get 1 day in milliseconds
@@ -26,13 +26,13 @@ class GroupRight extends React.Component {
     let then = new Date(rsvp.time);
     let days = Date.daysBetween(then, now);
     return (
-      <section className='padded' key={i}>
+      <div className='padded' key={i}>
         <h4>New rsvp</h4>
-        <p>
-          <UserSmall user={user} className='rfloat' />
-          User {user.username} RSVPed {rsvp.response} for <Link to={`${group.dashName}/events/${rsvp.eventId}`}>{rsvp.eventTitle}</Link> {days} days ago
-        </p>
-      </section>
+        <SquareImage item={user}
+          size={[36,36]} className='rfloat'
+          path={`/members/${user.id}`}/>
+        User {user.username} RSVPed {rsvp.response} for <Link to={`${group.dashName}/events/${rsvp.eventId}`}>{rsvp.eventTitle}</Link> {days} days ago
+      </div>
     );
   }
 
@@ -42,13 +42,13 @@ class GroupRight extends React.Component {
     let then = new Date(item.time);
     let days = Date.daysBetween(then, now);
     return (
-      <section className='padded' key={i}>
+      <div className='padded' key={i}>
         <h4>New member</h4>
-        <p>
-          <UserSmall user={user} className='rfloat' />
-          User {user.username} joined {days} days ago
-        </p>
-      </section>
+        <SquareImage item={user}
+          size={[36,36]} className='rfloat'
+          path={`/members/${user.id}`}/>
+        User {user.username} joined {days} days ago
+      </div>
     );
   }
 
@@ -62,9 +62,9 @@ class GroupRight extends React.Component {
     let {newItems} = group;
     return (
       <div className='groupright-holder white'>
-        <section className='padded'>
+        <div className='padded'>
           <h3>What's New</h3>
-        </section>
+        </div>
 
         {(newItems) ? newItems.map((item, i) => this.printItem(group, item, i)) : null}
 

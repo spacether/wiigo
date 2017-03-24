@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import UserSmall from '../user/user_small';
+import SquareImage from '../shared/square_image';
 
 const GroupDetail = (props) => {
   let {group, user, joinGroup, leaveGroup, fetchGroup, refreshUser} = props;
@@ -11,25 +11,29 @@ const GroupDetail = (props) => {
       let membership = group.members.find(member => (member.id === user.id));
       if (membership) {
         return (
-          <Link className='button signup bsmall'
-            onClick={()=> {
-              leaveGroup(membership)
-              .then(()=>fetchGroup())
-              .then(()=>refreshUser(user));
-            }}>
-            Leave this Group
-          </Link>
+          <div>
+            <Link className='button signup bsmall'
+              onClick={()=> {
+                leaveGroup(membership)
+                .then(()=>fetchGroup())
+                .then(()=>refreshUser(user));
+              }}>
+              Leave this Group
+            </Link>
+          </div>
         );
       } else {
         return (
-          <Link className='button signup bsmall'
-            onClick={()=>{
-              joinGroup(group, user)
-              .then(()=>fetchGroup())
-              .then(()=>refreshUser(user));
-            }}>
-            Join this Group
-          </Link>
+          <div>
+            <Link className='button signup bsmall'
+              onClick={()=>{
+                joinGroup(group, user)
+                .then(()=>fetchGroup())
+                .then(()=>refreshUser(user));
+              }}>
+              Join this Group
+            </Link>
+          </div>
         );
       }
     } else {
@@ -38,21 +42,23 @@ const GroupDetail = (props) => {
   };
   return (
     <div className='fullwide group-botmarg white'>
-      <section className='groupright padded'>
+      <div className='groupright padded'>
         <p>
           {group.description}
         </p>
-      </section>
-      <section className='groupright padded'>
+      </div>
+      <div className='groupright padded'>
         <h2>We have {group.memberCount} members</h2>
-        <p>
-          <UserSmall user={group.organizer} key={-1} />
-          {group.members.map( (member,i) =>
-            <UserSmall user={member} key={i} />
+        <SquareImage item={group.organizer} key={-1}
+          size={[36,36]} className='inlineimg'
+          path={`/members/${group.organizer.id}`}/>
+        {group.members.map( (member,i) =>
+          <SquareImage item={member} key={i}
+            size={[36,36]} className='inlineimg'
+            path={`/members/${member.id}`}/>
           )}
-        </p>
         {button()}
-      </section>
+      </div>
     </div>
   );
 };

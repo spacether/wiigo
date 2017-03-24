@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import UserSmall from '../user/user_small';
+import SquareImage from '../shared/square_image';
 
 const printEvent = (event, group, i) => {
   let {organizer} = group;
@@ -8,26 +8,30 @@ const printEvent = (event, group, i) => {
   let mapLink = "https://maps.google.com/maps?f=q&hl=en&q="+encodeURI(event.address);
   let eventLink = `${group.dashName}/events/${event.id}`;
   return (
-    <section key={i} className='padded white'>
-      <h2><Link to={eventLink}>{event.title}</Link></h2>
-      <h3>{event.location}</h3>
-      <h4><a href={mapLink}>{event.address}</a></h4>
+    <div key={i} className='padded white inside_divbmargin'>
+      <div><h2><Link to={eventLink}>{event.title}</Link></h2></div>
+      <div>
+        <h3>{event.location}</h3>
+        <h4><a href={mapLink}>{event.address}</a></h4>
+      </div>
 
-      <p>
+      <div>
         {event.attendees.map( (member,j) =>
-          <UserSmall user={member} key={j} />
-        )}
-      </p>
+          <SquareImage item={member} key={j}
+            size={[36,36]} className='inlineimg'
+            path={`/members/${member.id}`}/>
+          )}
+      </div>
 
-      <p>
+      <div>
         {event.description}
-      </p>
-      <p>
+      </div>
+      <div>
         Hosted by <Link to={`members/${organizer.id}`}>
           {organizer.username}
         </Link>
-      </p>
-    </section>
+      </div>
+    </div>
   );
 };
 
@@ -37,28 +41,26 @@ const GroupBot = (props) => {
   let newEventUrl = `${group.dashName}/new`;
   let newEventLink = null;
   if (user && user.id === group.organizer.id) {
-    newEventLink = (<Link to={newEventUrl}>Create Event</Link>);
+    newEventLink = (<div className='tmargin'><Link className='tmargin' to={newEventUrl}>Create Event</Link></div>);
   }
   return (
     <div className='groupmiddle-holder'>
       <div className='botmarg'>
-        <section className='padded white'>
-          <h3>
-            Welcome!<br></br>
-            {newEventLink}
-          </h3>
-          <nav>
-            <span>Upcoming Events: </span>
-          </nav>
-        </section>
+        <div className='padded white'>
+          <h2>Welcome!</h2>
+          {newEventLink}
+        </div>
+        <div className='padded white'>
+          <h4>Upcoming Events: </h4>
+        </div>
         {group.futureEvents.map( (event, i) => printEvent(event, group, i))}
       </div>
 
 
       <div className='botmarg'>
-        <section className='padded white'>
+        <div className='padded white'>
           <h3>Past Events: </h3>
-        </section>
+        </div>
         {group.pastEvents.map( (event, i) => printEvent(event, group, i))}
       </div>
     </div>

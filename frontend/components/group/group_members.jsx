@@ -1,5 +1,5 @@
 import React from 'react';
-import UserSmall from '../user/user_small';
+import SquareImage from '../shared/square_image';
 import { Link } from 'react-router';
 
 export default (props) => {
@@ -11,7 +11,7 @@ export default (props) => {
       return x < y ? -1 : x > y ? 1 : 0;
   });
   return (
-    <div className='fullwide group-botmarg white'>
+    <div className='fullwide bot_lineautomarg white'>
       <div className='groupright padded'>
         <h2>Members</h2>
       </div>
@@ -19,8 +19,12 @@ export default (props) => {
         let date = new Date(member.joined_at).toDateString();
         return (
           <div className='groupright flexrow padded' key={i}>
-            <UserSmall user={member} className='lfloat' />
-            <p className='flexcol'>
+
+            <SquareImage item={member} key={i}
+              size={[36,36]} className='lfloat'
+              path={`/members/${member.id}`}/>
+
+            <p className='flexcol lmargin'>
               <Link to={`members/${member.id}`}>{member.username}</Link>
               <span>Joined {date}</span>
             </p>

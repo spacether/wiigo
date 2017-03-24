@@ -8,7 +8,8 @@ class GroupForm extends React.Component {
       name: '',
       description: '',
       hometown: 'San Francisco, Ca',
-      topic_ids: []
+      topic_ids: [],
+      image_url: 'v1490242827/group_def2_diks8y.jpg'
     };
   }
   componentWillReceiveProps(nextProps){

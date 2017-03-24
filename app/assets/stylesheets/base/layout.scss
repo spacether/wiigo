@@ -95,9 +95,17 @@ h4 {
   margin-bottom: 10px;
 }
 
+.inside_divbmargin > div {
+  margin-bottom: 10px;
+}
+
 .margined {
   margin: 10px;
   margin-bottom: 35px;
+}
+
+.tmargin {
+  margin-top: 10px;
 }
 
 .lmargin {
@@ -129,6 +137,11 @@ $groupmarg: 12px;
 
 .error {
   color: red;
+}
+
+.bot_lineautomarg {
+  border-bottom: 1px solid $gray;
+  margin-bottom: auto;
 }
 
 .bg-group-page {

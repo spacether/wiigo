@@ -29,10 +29,8 @@ const GroupLeft = (props) => {
       </section>
       <section className='groupleft'>
         <h3>Organizer</h3>
-        <p className="flexrow">
-          <SquareImage item={organizer} path={`/members/${organizer.id}`}
-            size={[36,36]} className='uprow inlineimg' name={true} />
-        </p>
+        <SquareImage item={organizer} path={`/members/${organizer.id}`}
+          size={[36,36]} className='uprow inlineimg flexrow' name={true} />
       </section>
       <section className='groupleft'>
         <h3>We're About:</h3>

@@ -36,7 +36,7 @@ export default ({item, className, path, size, name=false}) => {
         <Link to={path} className={imgStyle}>
           <img src={imgPath}></img>
         </Link>
-        <Link to={path} className={imgStyle}>{label}</Link>
+        <Link to={path} className='lmargin'>{label}</Link>
       </div>
     );
   }
