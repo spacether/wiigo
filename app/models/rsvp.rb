@@ -11,7 +11,8 @@
 #
 
 class Rsvp < ApplicationRecord
-  validates :event, :user, :going, presence: true
+  validates :event, :user, presence: true
+  validates_inclusion_of :going, :in => [true, false]
   validates :event_id, uniqueness: { scope: :user_id }
 
   belongs_to :user

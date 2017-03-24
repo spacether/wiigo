@@ -1,10 +1,11 @@
 class Api::RsvpsController < ApplicationController
   def create
-    @rsvp = Rsvp.new(rsvp_params)
     if current_user.nil?
       render json: ['You must be logged in to create rsvps'], status: 401
     else
+      @rsvp = Rsvp.new(rsvp_params)
       @rsvp.user_id = current_user.id
+      @rsvp.event_id = Event.find_by_id(params[:event_id]).id
       if @rsvp.save
         head :no_content
       else
@@ -14,7 +15,8 @@ class Api::RsvpsController < ApplicationController
   end
 
   def update
-    @rsvp = Rsvp.find_by_id(params[:id])
+    @event = Event.find_by_id(params[:event_id])
+    @rsvp = Rsvp.find_by_event_id_and_user_id(@event.id, current_user.id)
     if current_user.nil?
       render json: ['You must be logged in to edit rsvps'], status: 401
     elsif @rsvp.nil?
@@ -33,7 +35,7 @@ class Api::RsvpsController < ApplicationController
   private
 
   def rsvp_params
-    params.require(:rsvp).permit(:event_id, :going)
+    params.require(:rsvp).permit(:going)
   end
 
 end

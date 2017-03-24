@@ -1,5 +1,16 @@
 json.extract! group, :id, :name, :description, :hometown, :created_at
+json.extract! group, :newItems
 json.imageUrl group.image_url
+
+json.pastEventcount group.pastEvents.length
+json.pastEvents group.pastEvents do |event|
+  json.partial! 'api/events/eventsimple', event: event
+end
+
+json.futureEventcount group.futureEvents.length
+json.futureEvents group.futureEvents do |event|
+  json.partial! 'api/events/eventsimple', event: event
+end
 
 json.memberCount group.members.length + 1
 json.dashName group.dashName

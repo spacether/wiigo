@@ -8,8 +8,9 @@ Rails.application.routes.draw do
               param: :dashName do
       resources :events, only: [:index, :create]
     end
-    resources :events, only: [:show, :create, :update, :destroy]
-    resources :rsvps, only: [:create, :update]
+    resources :events, only: [:show, :create, :update, :destroy] do
+      resources :rsvps, only: [:create, :update]
+    end
     resources :memberships, only: [:create, :destroy]
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]

@@ -1,19 +1,20 @@
 import React from 'react';
-import GroupLeft from './group_left';
+import GroupLeft from '../group/group_left';
 
 class GroupShow extends React.Component {
   componentDidMount(){
-    this.props.fetchGroup();
+    this.props.fetchEvent();
   }
   render() {
-    // return (<p>TEST</p>);
+    let {event} = this.props;
+    console.log(event);
     let content = (
       <section className='groupshow'>
-        <div className='fullwide white padded'>Group not found</div>
+        <div className='fullwide white padded'>Event not found</div>
       </section>
     );
-    let {group} = this.props;
-    if (group) {
+    if (event) {
+      let {group} = event;
       content = (
         <section className='groupshow'>
           <GroupLeft group={group} />

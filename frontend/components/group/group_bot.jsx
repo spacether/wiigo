@@ -1,8 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router';
+import UserSmall from '../user/user_small';
+
+const printEvent = (event, group, i) => {
+  let {organizer} = group;
+  if (!event || !organizer) return null;
+  let mapLink = "https://maps.google.com/maps?f=q&hl=en&q="+encodeURI(event.address);
+  let eventLink = `${group.dashName}/events/${event.id}`;
+  return (
+    <section className='groupmiddle' key={i}>
+      <h2><Link to={eventLink}>{event.title}</Link></h2>
+      <h3>{event.location}</h3>
+      <h4><a href={mapLink}>{event.address}</a></h4>
+
+      <p>
+        {event.attendees.map( (member,j) =>
+          <UserSmall user={member} key={j} />
+        )}
+      </p>
+
+      <p>
+        {event.description}
+      </p>
+      <p>
+        Hosted by <Link to={`members/${organizer.id}`}>
+          {organizer.username}
+        </Link>
+      </p>
+    </section>
+  );
+};
 
 const GroupBot = (props) => {
   let {group} = props;
+  let {organizer} = group;
   return (
     <div className='flexcol'>
       <div className='group-botmarg white'>
@@ -11,63 +42,18 @@ const GroupBot = (props) => {
             Welcome!
           </h3>
           <nav>
-            <Link>Upcoming({6})</Link><Link>Past({11})</Link>
+            <span>Upcoming Events: </span>
           </nav>
         </section>
-        <section className='groupmiddle'>
-          <h2>Local Area Event Title</h2>
-          <h3>Event location name</h3>
-          <p>
-            M M M M M
-          </p>
-          <p>Our event is the finest eveent. We will come together and
-            discuss current events, share food and make music. Wont you
-            join us?
-          </p>
-          <p>Hosted by <a href="">Organizer</a></p>
-        </section>
-        <section className='groupmiddle'>
-          <h2>Local Area Event Title</h2>
-          <h3>Event location name</h3>
-          <p>
-            M M M M M
-          </p>
-          <p>Our event is the finest eveent. We will come together and
-            discuss current events, share food and make music. Wont you
-            join us?
-          </p>
-          <p>Hosted by <a href="">Organizer</a></p>
-        </section>
+        {group.futureEvents.map( (event, i) => printEvent(event, group, i))}
       </div>
+
 
       <div className='group-botmarg white'>
         <section className='groupmiddle'>
-          <h3>Past Events</h3>
+          <h3>Past Events: </h3>
         </section>
-        <section className='groupmiddle'>
-          <h2>Local Area Event Title</h2>
-          <h3>Event location name</h3>
-          <p>
-            M M M M M
-          </p>
-          <p>Our event is the finest eveent. We will come together and
-            discuss current events, share food and make music. Wont you
-            join us?
-          </p>
-          <p>Hosted by <a href="">Organizer</a></p>
-        </section>
-        <section className='groupmiddle'>
-          <h2>Local Area Event Title</h2>
-          <h3>Event location name</h3>
-          <p>
-            M M M M M
-          </p>
-          <p>Our event is the finest eveent. We will come together and
-            discuss current events, share food and make music. Wont you
-            join us?
-          </p>
-          <p>Hosted by <a href="">Organizer</a></p>
-        </section>
+        {group.pastEvents.map( (event, i) => printEvent(event, group, i))}
       </div>
     </div>
   );

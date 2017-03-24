@@ -7,7 +7,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.text :description, null: false
       t.string :location, null: false
       t.string :address, null: false
-      t.index :group_id, unique: true
+      t.index :group_id
       t.timestamps
     end
   end

@@ -24,6 +24,9 @@ class Group < ApplicationRecord
   has_many :memberships, dependent: :destroy
   has_many :members, through: :memberships, source: :user
 
+  has_many :events
+  has_many :rsvps, through: :events
+
   after_initialize :ensure_image
   before_save :elim_organizer
 
@@ -41,6 +44,40 @@ class Group < ApplicationRecord
 
   def dashName
     self.name.gsub(" ", "-")
+  end
+
+  def newItems
+    allrsvps = self.rsvps.map do |rsvp|
+      {
+        user: {id: rsvp.user.id, username: rsvp.user.username, imageUrl: rsvp.user.image_url},
+        action: "RSVPed",
+        response: (rsvp.going ? "YES" : "NO"),
+        eventId: rsvp.event.id,
+        eventTitle: rsvp.event.title,
+        time: rsvp.updated_at
+      }
+    end
+
+    allmemberships = self.memberships.map do |membership|
+      {
+        user: {id: membership.user.id, username: membership.user.username, imageUrl: membership.user.image_url},
+        action: "joined",
+        time: membership.created_at
+      }
+    end
+
+    allitems = (allrsvps + allmemberships)
+    allitems.sort_by { |item| item[:time] }
+    # allitems[0..9]
+    allitems
+  end
+
+  def pastEvents
+    self.events.where("start_time < ?", DateTime.now)
+  end
+
+  def futureEvents
+    self.events.where("start_time > ?", DateTime.now)
   end
 
 end

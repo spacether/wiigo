@@ -14,12 +14,18 @@
 #
 
 class Event < ApplicationRecord
-  validates :group, :tite, :start_time, :description, :location,
+  validates :group, :title, :start_time, :description, :location,
             :address, presence: true
 
   belongs_to :group
   has_many :rsvps, dependent: :destroy
-  has_many :attendees, through: :rsvps, source: :user
+  has_many :respondents, through: :rsvps, source: :user
+
+  def attendees
+    self.rsvps.where(going: true).map(&:user)
+  end
+
 end
 
+# THIS CRASHED MY HEROKU, ERVER ERROR
 # has_many :attendees, through: :rsvps, source: :user, -> { where(going: true) }

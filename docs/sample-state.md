@@ -91,13 +91,13 @@
       { imageUrl: '13.svg' },
       { imageUrl: '14.svg' },
     ],
-    events: [
+    pastEvents: [
       {
         id: 1,
         title: "Surf 1",
         description: "Let's surf at ocean beach",
         location: '10 Main St., SF, CA',
-        start_time: '2017-03-14 10:47',
+        startTime: '2017-03-14 10:47',
         rsvps: [
           { name: "Kelly", imageUrl: '12.svg' },
           { name: "Sam", imageUrl: '11.svg' },          
@@ -108,12 +108,35 @@
         title: "Surf 2",
         description: "Let's surf at ocean beach",
         location: '10 Main St., SF, CA',
-        start_time: '2017-03-20 10:30',
+        startTime: '2017-03-20 10:30',
         rsvps: [
           { name: "Alice", imageUrl: '12.svg' },
           { name: "Sam", imageUrl: '11.svg' },          
         ]
       },
+      futureEvents: [
+        {
+          id: 1,
+          title: "Surf 1",
+          description: "Let's surf at ocean beach",
+          location: '10 Main St., SF, CA',
+          startTime: '2017-03-14 10:47',
+          rsvps: [
+            { name: "Kelly", imageUrl: '12.svg' },
+            { name: "Sam", imageUrl: '11.svg' },          
+          ]
+        },
+        {
+          id: 2,
+          title: "Surf 2",
+          description: "Let's surf at ocean beach",
+          location: '10 Main St., SF, CA',
+          startTime: '2017-03-20 10:30',
+          rsvps: [
+            { name: "Alice", imageUrl: '12.svg' },
+            { name: "Sam", imageUrl: '11.svg' },          
+          ]
+        },
     ],
     newitems: [
       {

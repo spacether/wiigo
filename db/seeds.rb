@@ -173,3 +173,29 @@ glist.each do |item|
   hash_group = Hash[group_fields.zip(topicvals)]
   groups << Group.create!(hash_group)
 end
+
+#  id          :integer          not null, primary key
+#  group_id    :integer          not null
+#  title       :string           not null
+#  start_time  :datetime         not null
+#  description :text             not null
+#  location    :string           not null
+#  address     :string           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+
+
+sleep 10
+Event.destroy_all
+grp = groups.first
+e1 = Event.create!(group_id: grp.id, title: 'blah', start_time: DateTime.now - 2.days, description: 'a', location: 'a', address: 'b')
+e2 = Event.create!(group_id: grp.id, title: 'blah two', start_time: DateTime.now + 4.days, description: 'a', location: 'a', address: 'b')
+
+Rsvp.destroy_all
+Rsvp.create!(event_id: e1.id, user_id: grp.members[0].id, going: true)
+Rsvp.create!(event_id: e1.id, user_id: grp.members[1].id, going: false)
+Rsvp.create!(event_id: e1.id, user_id: grp.members[2].id, going: true)
+
+Rsvp.create!(event_id: e2.id, user_id: grp.members[0].id, going: true)
+Rsvp.create!(event_id: e2.id, user_id: grp.members[1].id, going: true)
+Rsvp.create!(event_id: e2.id, user_id: grp.members[2].id, going: true)

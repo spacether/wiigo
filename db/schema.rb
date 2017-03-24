@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170323135713) do
     t.string   "address",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["group_id"], name: "index_events_on_group_id", unique: true, using: :btree
+    t.index ["group_id"], name: "index_events_on_group_id", using: :btree
   end
 
   create_table "groups", force: :cascade do |t|

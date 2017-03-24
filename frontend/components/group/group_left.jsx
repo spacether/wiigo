@@ -5,6 +5,7 @@ import SquareImage from '../shared/square_image';
 
 const GroupLeft = (props) => {
   let {group} = props;
+  if (!group) return null;
   let date = new Date(group.created_at).toDateString();
   return (
     <div className='groupleft-holder white'>
@@ -20,10 +21,10 @@ const GroupLeft = (props) => {
           <span>Members</span><span>{group.memberCount}</span>
         </div>
         <div className='spacebet'>
-          <span>Upcoming Meetups</span><span>11</span>
+          <span>Upcoming Meetups</span><span>{group.futureEventcount}</span>
         </div>
         <div className='spacebet'>
-          <span>Past Meetups</span><span>11</span>
+          <span>Past Meetups</span><span>{group.pastEventcount}</span>
         </div>
       </section>
       <section className='groupleft'>
@@ -36,7 +37,7 @@ const GroupLeft = (props) => {
         <h3>We're About:</h3>
         <p className='grouplinklist'>
           {group.topics.map( (topic, i) => (
-            <Link to={`/find/${topic.search_path}`} key={i}>{topic.title}</Link>
+            <Link to={`/find/${topic.dashTopic}`} key={i}>{topic.title}</Link>
           ))}
         </p>
       </section>

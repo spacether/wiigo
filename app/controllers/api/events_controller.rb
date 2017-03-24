@@ -1,7 +1,9 @@
 class Api::EventsController < ApplicationController
   def index
     gname = realname(params[:group_dashName])
-    @events = Group.find_by_name(gname).events
+    @group = Group.find_by_name(gname)
+    @pastEvents = @group.pastEvents
+    @futureEvents = @group.futureEvents
     render :index
   end
 
@@ -12,7 +14,6 @@ class Api::EventsController < ApplicationController
     else
       render json: ["Event not found"], status: 404
     end
-    render :show
   end
 
   def create
