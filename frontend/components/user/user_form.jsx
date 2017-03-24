@@ -31,7 +31,10 @@ class UserForm extends React.Component {
   handleSubmit() {
     return (e) => {
       e.preventDefault();
-      let user = this.state;
+      let user = Object.assign({}, this.state);
+      if (this.props.formType === 'signUp') {
+        user.image_url = "v1490361262/m10_ax7t8o.jpg";
+      }
       this.props.processForm(user).then(() => {
         this.redirect();
       });
