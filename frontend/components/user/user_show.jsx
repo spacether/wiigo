@@ -1,6 +1,6 @@
 import React from 'react';
 import { hashHistory, Link } from 'react-router';
-import UserSmall from './user_small';
+import SquareImage from '../shared/square_image';
 
 class UserShow extends React.Component {
   componentDidMount(){
@@ -79,7 +79,7 @@ class UserShow extends React.Component {
         <div className='usershow centeredpadded'>
           <div className='white'>
             <div className='padded'>
-              <UserSmall user={shownUser}/>
+              <SquareImage item={shownUser} path={`/members/${shownUser.id}`}/>
               <h2>{shownUser.username}</h2>
             </div>
             <div className='padded'>

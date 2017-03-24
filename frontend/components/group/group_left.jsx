@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
-import UserSmall from '../user/user_small';
 import SquareImage from '../shared/square_image';
 
 const GroupLeft = (props) => {
   let {group} = props;
   if (!group) return null;
+  let {organizer} = group;
   let date = new Date(group.created_at).toDateString();
   return (
     <div className='groupleft-holder white'>
@@ -30,7 +30,8 @@ const GroupLeft = (props) => {
       <section className='groupleft'>
         <h3>Organizer</h3>
         <p className="flexrow">
-          <UserSmall user={group.organizer} printName={true} />
+          <SquareImage item={organizer} path={`/members/${organizer.id}`}
+            size={[36,36]} className='uprow inlineimg' name={true} />
         </p>
       </section>
       <section className='groupleft'>

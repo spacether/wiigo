@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import SquareImage  from '../shared/square_image';
 
 export default (props) => {
   let {user} = props;
@@ -7,8 +8,6 @@ export default (props) => {
   let name;
   if (printName) name = user.username;
   return (
-    <Link to={`/members/${user.id}`} className={props.className}>
-    <img src={user.image_url} width='36' height='36' alt={user.username}>
-    </img>{name}</Link>
+    <SquareImage className='inlineimg' item={user} size={[36,36]} path={`/members/${user.id}`} />
   );
 };

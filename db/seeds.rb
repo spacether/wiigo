@@ -1,21 +1,60 @@
 
 User.destroy_all
+
+boy = [
+  "v1490361262/m10_ax7t8o.jpg",
+  "v1490361261/m9_woo1s8.jpg",
+  "v1490361261/m8_y5lfbs.jpg",
+  "v1490361261/m7_pjpc7c.jpg",
+  "v1490361261/m6_jymqjg.jpg",
+  "v1490361261/m5_qpfqu6.jpg",
+  "v1490361261/m4_f86zgn.jpg",
+  "v1490361261/m3_lt5zqs.jpg",
+  "v1490361261/m2_hthpw0.jpg",
+  "v1490361261/m1_bjmeti.jpg"
+]
+
+girl = [
+  "v1490361261/f10_uqe33e.jpg",
+  "v1490361261/f9_uifur4.jpg",
+  "v1490361260/f8_q7n0rk.jpg",
+  "v1490361261/f7_kme82j.jpg",
+  "v1490361261/f6_ucft0i.jpg",
+  "v1490361260/f5_jsiscf.jpg",
+  "v1490361260/f4_aihjdt.jpg",
+  "v1490361260/f3_ilikmf.jpg",
+  "v1490361260/f2_xzqvjz.jpg",
+  "v1490361260/f1_mefyqb.jpg"
+]
+
 ulist = [
-  'Justin',
-  'Samantha',
-  'Katherine',
-  'Michael',
-  'Alexis',
-  'Gilbert',
-  'Fariba',
-  'Andrew',
-  'Claire',
-  'Jessie',
-  'Guesty'
+  [ 'Justin', boy[0] ],
+  [ 'Daniel', boy[1] ],
+  [ 'Albert', boy[2] ],
+  [ 'Andrew', boy[3] ],
+  [ 'Jessie', boy[4] ],
+  [ 'Matthew', boy[5] ],
+  [ 'Gilbert', boy[6] ],
+  [ 'Joseph', boy[7] ],
+  [ 'Jeffrey', boy[8] ],
+  [ 'Robert', boy[9] ],
+
+  [ 'Samantha', girl[0] ],
+  [ 'Katherine', girl[1] ],
+  [ 'Autumn', girl[2] ],
+  [ 'Jessica', girl[3] ],
+  [ 'Alexis', girl[4] ],
+  [ 'Claire', girl[5] ],
+  [ 'Allison', girl[6] ],
+  [ 'Sophia', girl[7] ],
+  [ 'Madison', girl[8] ],
+  [ 'Amanda', girl[9] ],
+
+  [ 'Guesty', boy[0] ]
 ]
 users = []
-ulist.each do |name|
-  users << User.create!(username: name, password: name)
+ulist.each do |arr|
+  users << User.create!(username: arr[0], password: arr[0], image_url: arr[1], location: 'San Francisco, CA')
 end
 
 default_banner = 'v1490140132/banner1_croped_darkened_gavqfh.jpg'

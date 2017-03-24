@@ -1,6 +1,6 @@
 import React from 'react';
 import GroupLeft from '../group/group_left';
-import UserSmall from '../user/user_small';
+import SquareImage from '../shared/square_image';
 import { Link } from 'react-router';
 
 class GroupShow extends React.Component {
@@ -11,7 +11,8 @@ class GroupShow extends React.Component {
   printMember(user, i) {
     return (
       <section className='margined' key={i}>
-        <UserSmall user={user} className='uprow' printName={true} />
+        <SquareImage item={user} path={`/members/${user.id}`}
+          size={[36,36]} className='uprow inlineimg' name={true} />
       </section>
     );
   }
@@ -90,7 +91,8 @@ class GroupShow extends React.Component {
               <h4><a href={mapLink}>{event.address}</a></h4>
               <p>
                 {event.attendees.map( (member,j) =>
-                  <UserSmall user={member} key={j} />
+                  <SquareImage item={member} path={`/members/${member.id}`}
+                    size={[36,36]} className='inlineimg' key={j} />
                 )}
               </p>
 
