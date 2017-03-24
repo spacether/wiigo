@@ -12,13 +12,13 @@ export default (props) => {
   });
   return (
     <div className='fullwide group-botmarg white'>
-      <div className='groupright'>
+      <div className='groupright padded'>
         <h2>Members</h2>
       </div>
       {members.map((member, i)=>{
         let date = new Date(member.joined_at).toDateString();
         return (
-          <div className='groupright flexrow' key={i}>
+          <div className='groupright flexrow padded' key={i}>
             <UserSmall user={member} className='lfloat' />
             <p className='flexcol'>
               <Link to={`members/${member.id}`}>{member.username}</Link>
