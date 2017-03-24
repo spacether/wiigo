@@ -26,7 +26,7 @@ class GroupRight extends React.Component {
     let then = new Date(rsvp.time);
     let days = Date.daysBetween(then, now);
     return (
-      <section className='groupright' key={i}>
+      <section className='padded' key={i}>
         <h4>New rsvp</h4>
         <p>
           <UserSmall user={user} className='rfloat' />
@@ -42,7 +42,7 @@ class GroupRight extends React.Component {
     let then = new Date(item.time);
     let days = Date.daysBetween(then, now);
     return (
-      <section className='groupright' key={i}>
+      <section className='padded' key={i}>
         <h4>New member</h4>
         <p>
           <UserSmall user={user} className='rfloat' />
@@ -62,7 +62,7 @@ class GroupRight extends React.Component {
     let {newItems} = group;
     return (
       <div className='groupright-holder white'>
-        <section className='groupright'>
+        <section className='padded'>
           <h3>What's New</h3>
         </section>
 

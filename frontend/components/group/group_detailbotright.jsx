@@ -7,7 +7,7 @@ export default (props) => (
     <div className='fullwide'>
       <GroupDetailContainer />
       <div className='fullwide flexrow'>
-        <GroupBot group={props.group} />
+        <GroupBot group={props.group} user={props.user} />
         <GroupRight group={props.group} />
       </div>
     </div>

@@ -91,7 +91,6 @@ class Banner extends React.Component {
 
 
     } else {
-      // console.log(this.props);
       let {topics} = this.props;
       if (this.props.location.pathname.slice(0,6) === '/find/' && topics) {
         let {dashTopic} = this.props.params;

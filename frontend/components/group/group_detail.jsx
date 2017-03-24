@@ -38,12 +38,12 @@ const GroupDetail = (props) => {
   };
   return (
     <div className='fullwide group-botmarg white'>
-      <section className='groupright'>
+      <section className='groupright padded'>
         <p>
           {group.description}
         </p>
       </section>
-      <section className='groupright'>
+      <section className='groupright padded'>
         <h2>We have {group.memberCount} members</h2>
         <p>
           <UserSmall user={group.organizer} key={-1} />

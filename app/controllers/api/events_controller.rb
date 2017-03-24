@@ -20,17 +20,12 @@ class Api::EventsController < ApplicationController
     if current_user.nil?
       render json: ['You must be logged in to create events'], status: 401
     end
-    gname = realname(params[:group_dashName])
-    @group = Group.find_by_name(gname)
-    if @group.nil?
-      render json: ['Invalid group given'], status: 401
-    end
     @event = Event.new(event_params)
-    @event.group_id = @group.id
     my_group = @event.group.organizer.id == current_user.id
     if !my_group
       render json: ['You must lead a group to make events in it'], status: 401
     elsif @event.save
+      Rsvp.create!(user_id: current_user.id, event_id: @event.id, going: true)
       render :show
     else
       render json: @event.errors.full_messages, status: 400
@@ -79,6 +74,6 @@ class Api::EventsController < ApplicationController
 
   def event_params
     params.require(:event)
-      .permit(:title, :start_time, :location, :address, :description)
+      .permit(:title, :group_id, :start_time, :location, :address, :description)
   end
 end

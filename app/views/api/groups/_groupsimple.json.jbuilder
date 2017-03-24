@@ -1,4 +1,4 @@
-json.extract! group, :id, :name, :created_at
+json.extract! group, :id, :name, :created_at, :memberIds
 json.imageUrl group.image_url
 json.dashName group.dashName
 json.memberCount group.members.length + 1

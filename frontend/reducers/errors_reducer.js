@@ -8,6 +8,7 @@ const defaultState =  {
   logOut: null,
   topics: null,
   createGroup: null,
+  createEvent: null,
   fetchGroup: null,
   groupsFound: null
   // editGroup: null,

@@ -15,7 +15,6 @@ class UserForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    // debugger;
     let {name} = nextProps.params;
     let path = this.props.location.pathname;
     let newPath = nextProps.location.pathname;

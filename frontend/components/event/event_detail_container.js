@@ -12,8 +12,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   let eventId = ownProps.params.eventId;
   return {
     fetchEvent: () => dispatch(fetchEvent(eventId)),
-    createRsvp: (event, bool) => API.createRsvp(event, bool),
-    updateRsvp: (event, bool) => API.updateRsvp(event, bool)
+    createRsvp: (bool) => API.createRsvp(eventId, bool),
+    updateRsvp: (bool) => API.updateRsvp(eventId, bool)
   };
 };
 

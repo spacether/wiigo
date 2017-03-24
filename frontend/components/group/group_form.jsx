@@ -39,7 +39,6 @@ class GroupForm extends React.Component {
       e.preventDefault();
       let group = this.state;
       let dashName = this.props.dashName(group.name);
-      console.log(group);
       this.props.createGroup(group)
         .then(() => {
           hashHistory.push(`/${dashName}`);
@@ -49,7 +48,6 @@ class GroupForm extends React.Component {
   render(){
     let { name, description, hometown } = this.state;
     let { errors, topics } = this.props;
-    // debugger;
     if (errors) {
       errors = errors.map( (error, i) => <li key={i}>{error}</li>);
       errors = (<ul className='error'>{errors}</ul>);

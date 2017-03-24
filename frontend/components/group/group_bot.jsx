@@ -8,7 +8,7 @@ const printEvent = (event, group, i) => {
   let mapLink = "https://maps.google.com/maps?f=q&hl=en&q="+encodeURI(event.address);
   let eventLink = `${group.dashName}/events/${event.id}`;
   return (
-    <section className='groupmiddle' key={i}>
+    <section key={i} className='padded white'>
       <h2><Link to={eventLink}>{event.title}</Link></h2>
       <h3>{event.location}</h3>
       <h4><a href={mapLink}>{event.address}</a></h4>
@@ -32,14 +32,20 @@ const printEvent = (event, group, i) => {
 };
 
 const GroupBot = (props) => {
-  let {group} = props;
+  let {group, user} = props;
   let {organizer} = group;
+  let newEventUrl = `${group.dashName}/new`;
+  let newEventLink = null;
+  if (user.id === group.organizer.id) {
+    newEventLink = (<Link to={newEventUrl}>Create Event</Link>);
+  }
   return (
-    <div className='flexcol'>
-      <div className='group-botmarg white'>
-        <section className='groupmiddle'>
+    <div className='groupmiddle-holder'>
+      <div className='botmarg'>
+        <section className='padded white'>
           <h3>
-            Welcome!
+            Welcome!<br></br>
+            {newEventLink}
           </h3>
           <nav>
             <span>Upcoming Events: </span>
@@ -49,8 +55,8 @@ const GroupBot = (props) => {
       </div>
 
 
-      <div className='group-botmarg white'>
-        <section className='groupmiddle'>
+      <div className='botmarg'>
+        <section className='padded white'>
           <h3>Past Events: </h3>
         </section>
         {group.pastEvents.map( (event, i) => printEvent(event, group, i))}

@@ -46,6 +46,10 @@ class Group < ApplicationRecord
     self.name.gsub(" ", "-")
   end
 
+  def memberIds
+    self.member_ids + [self.organizer.id]
+  end
+
   def newItems
     allrsvps = self.rsvps.map do |rsvp|
       {

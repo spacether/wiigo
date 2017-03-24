@@ -20,19 +20,6 @@ class RootContent extends React.Component {
           </div>
         </div>
 
-        <div className='carouselholder'>
-          <div className='flexcol'>
-            <h2 className='block'>Upcoming Events Near You</h2>
-            <div className='flexrow'>
-            {topics.slice(0,4).map( (topic,i) =>
-              <SquareImage key={i}
-                item={topic}
-                path={`find/${topic.dashTopic}`} />
-            )}
-          </div>
-          </div>
-        </div>
-
         <ul className='centeredpadded white'>
           <li className='ctr'><h1>Explore</h1></li>
           <li className='topicbuttonholder'>

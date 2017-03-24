@@ -1,0 +1,10 @@
+.uprow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.botline {
+  border-bottom: 1px solid $gray;
+}

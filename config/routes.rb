@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :groups,
               only: [:create, :show, :index, :update, :destroy],
               param: :dashName do
-      resources :events, only: [:index, :create]
+      resources :events, only: [:index]
     end
     resources :events, only: [:show, :create, :update, :destroy] do
       resources :rsvps, only: [:create, :update]

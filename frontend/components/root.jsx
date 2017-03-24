@@ -14,6 +14,7 @@ import GroupMembersContainer from './group/group_members_container';
 import GroupSearchContainer from './group_search/group_search_container';
 
 import EventDetailContainer from './event/event_detail_container';
+import EventFormContainer from './event/event_form_container';
 
 import RootContentContainer from './root/root_content_container';
 
@@ -55,6 +56,7 @@ const Root = ({store}) => {
           <Route path=":dashName" component={ GroupShowContainer }>
             <IndexRoute component={ GroupDetailBotRightContainer } />
             <Route path="members" component={ GroupMembersContainer } />
+            <Route path="new" component={ EventFormContainer } />
           </Route>
         </Route>
       </Router>
