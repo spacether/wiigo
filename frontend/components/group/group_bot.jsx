@@ -2,16 +2,25 @@ import React from 'react';
 import { Link } from 'react-router';
 import SquareImage from '../shared/square_image';
 
+function formatTimeHHMMA(d) {
+  const z = (n) => { return (n<10?'0':'')+n; };
+  var h = d.getHours();
+  return (h%12 || 12) + ':' + z(d.getMinutes()) + ' ' + (h<12? 'AM' :'PM');
+}
+
 const printEvent = (event, group, i) => {
   let {organizer} = group;
   if (!event || !organizer) return null;
   let mapLink = "https://maps.google.com/maps?f=q&hl=en&q="+encodeURI(event.address);
   let eventLink = `${group.dashName}/events/${event.id}`;
+  let startDate = new Date(event.startTime);
+  let textTime = startDate.toDateString()+', '+formatTimeHHMMA(startDate);
   return (
     <div key={i} className='padded white inside_divbmargin'>
       <div><h2><Link to={eventLink}>{event.title}</Link></h2></div>
       <div>
-        <h3>{event.location}</h3>
+        <h3>{textTime}</h3>
+        <h4>{event.location}</h4>
         <h4><a href={mapLink}>{event.address}</a></h4>
       </div>
 

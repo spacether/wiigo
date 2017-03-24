@@ -15,6 +15,13 @@ class Rsvp < ApplicationRecord
   validates_inclusion_of :going, :in => [true, false]
   validates :event_id, uniqueness: { scope: :user_id }
 
-  belongs_to :user
   belongs_to :event
+  belongs_to :user
+
+  before_validation :set_going_default
+
+  def set_going_default
+    self.going ||= true
+  end
+
 end

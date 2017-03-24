@@ -3,6 +3,12 @@ import GroupLeft from '../group/group_left';
 import SquareImage from '../shared/square_image';
 import { Link } from 'react-router';
 
+function formatTimeHHMMA(d) {
+  const z = (n) => { return (n<10?'0':'')+n; };
+  var h = d.getHours();
+  return (h%12 || 12) + ':' + z(d.getMinutes()) + ' ' + (h<12? 'AM' :'PM');
+}
+
 class GroupShow extends React.Component {
   componentDidMount(){
     this.props.fetchEvent();
@@ -76,7 +82,8 @@ class GroupShow extends React.Component {
       let mapLink = "https://maps.google.com/maps?f=q&hl=en&q="+encodeURI(event.address);
       let inPast = (new Date() > new Date(event.startTime));
       let verb = (inPast) ? "went" : "going";
-      let textTime = new Date(event.startTime).toDateString();
+      let startDate = new Date(event.startTime);
+      let textTime = startDate.toDateString()+', '+formatTimeHHMMA(startDate);
       return (
         <div className='groupshow'>
 
