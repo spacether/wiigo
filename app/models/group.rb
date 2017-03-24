@@ -72,8 +72,7 @@ class Group < ApplicationRecord
 
     allitems = (allrsvps + allmemberships)
     allitems.sort_by { |item| item[:time] }
-    # allitems[0..9]
-    allitems
+    allitems[0..9]
   end
 
   def pastEvents
