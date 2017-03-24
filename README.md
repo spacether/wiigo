@@ -1,6 +1,6 @@
 # Wiigo
 
-[Wiigo][heroku] Check out the live Wiigo site
+[Wiigo live][heroku]
 
 [heroku]: https://wiigo.herokuapp.com/
 
