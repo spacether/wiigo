@@ -12,15 +12,15 @@ The main features of wiigo are focused on a user making and joining groups in ho
 As a user, the core functionality features are:
 
 1.When Not Logged In:
-..- Users can browse groups, events, and members
+  - Users can browse groups, events, and members
 
 2.When Logged in:
-..1. Groups:
-....- A user can **create** and **join** groups
-....- A user can search and browse groups
+  1. Groups:
+    - A user can **create** and **join** groups
+    - A user can search and browse groups
 
-..2. Events:
-....- An owner of a group can **create** new events, and **delete** his or her events
-....- A user can rsvp and attend future events in groups that he or she is in
+  2. Events:
+    - An owner of a group can **create** new events, and **delete** his or her events
+    - A user can rsvp and attend future events in groups that he or she is in
 
 ### Implementation
