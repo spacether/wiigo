@@ -61,7 +61,7 @@ class GroupRight extends React.Component {
     let {group} = this.props;
     let {newItems} = group;
     return (
-      <div className='groupright-holder white'>
+      <div className='groupright-holder lmargin white'>
         <div className='padded'>
           <h3>What's New</h3>
         </div>

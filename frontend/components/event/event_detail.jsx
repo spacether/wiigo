@@ -100,12 +100,6 @@ class GroupShow extends React.Component {
                 <h3>{event.location}</h3>
                 <h4><a href={mapLink}>{event.address}</a></h4>
               </div>
-              <div>
-                {event.attendees.map( (member,j) =>
-                  <SquareImage item={member} path={`/members/${member.id}`}
-                    size={[36,36]} className='inlineimg' key={j} />
-                )}
-              </div>
 
               <div>
                 {event.description}
