@@ -510,7 +510,7 @@ This group is for ballroom dancers looking to expand their network of dance frie
 get_topics('dance', topics)
 ]
 
-
+Membership.destroy_all
 groups = []
 glist.each do |item|
   topicvals = item.concat([ group_hometown, users.sample.id, group_images.sample ])
@@ -543,6 +543,7 @@ end
 
 
 Event.destroy_all
+Rsvp.destroy_all
 
 groups.each do |grp|
   num1 = Random.new.rand(-6..-4)
