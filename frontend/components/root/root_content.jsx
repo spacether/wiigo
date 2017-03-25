@@ -20,11 +20,11 @@ class RootContent extends React.Component {
           </div>
         </div>
 
-        <ul className='centeredpadded white'>
+        <ul className='widest centeredpadded white'>
           <li className='ctr'><h1>Explore</h1></li>
           <li className='topicbuttonholder'>
           {topics.map( (topic,i) =>
-            <div key={i} className='margined'>
+            <div key={i} className='bmargined'>
               <SquareImage item={topic}
                 path={`find/${topic.dashTopic}`} />
               <h2>
