@@ -6,7 +6,7 @@
 
 Wiigo is a web application inspired by Meetup. Wiigo is a platform that connects people and gives them a place to join and create clubs that they love.
 
-Chime is a personal project by Justin Black.
+Wiigo is a personal project by Justin Black.
 
 ![Wiigo home page: https://wiigo.herokuapp.com/][home page]
 
