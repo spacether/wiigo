@@ -180,13 +180,13 @@ get_topics('learning', topics)
 
 glist << [
 "Future Of Hardware",
-"This Meetup is a place for anyone passionate or interested in learning
+"This group is a place for anyone passionate or interested in learning
 more about the future of hardware and making things. We’re a community
 of engineers, designers, entrepreneurs, and makers who come together
 to learn from one-another and sharpen our collective hardware skills.
 Whether you’re an early-stage startup, a seasoned manufacturing expert,
 or just someone that wants to learn, this is the place for you.
-The Future of Hardware Meetup is powered by Autodesk Fusion 360, the
+The Future of Hardware group is powered by Autodesk Fusion 360, the
 first 3D CAD/CAM tool of its kind; connecting your entire product
 development process in a single cloud-based platform that works on
 both Mac and PC.",
@@ -245,7 +245,7 @@ recurring every other Wednesday.
 Also, we're on Instagram now! Our handle is:
 drink.draw.sf
 
-Feel free to DM the account to post drawings from meetup or whatever
+Feel free to DM the account to post drawings from group or whatever
 you're feeling that day.",
 get_topics('arts', topics)
 ]
@@ -260,7 +260,7 @@ get_topics('music', topics)
 ]
 
 glist << [
-"San Francisco Metal Meetup Group",
+"San Francisco Metal group Group",
 "Meet others in your local area who enjoy Metal Music. Make new friends!",
 get_topics('music', topics)
 ]
@@ -331,21 +331,21 @@ get_topics('outdoors', topics)
 
 glist << [
 "SF Scuba Divers",
-"This group is about connecting local divers. We plan monthly happy hours and other activities around the area to get together, share stories, and maybe you'll find some dive buddies! Local diving trips to Monterey as well as some more exotic locations will be posted as meetups and I'm always happy to take suggestions for other activities you want to see.
+"This group is about connecting local divers. We plan monthly happy hours and other activities around the area to get together, share stories, and maybe you'll find some dive buddies! Local diving trips to Monterey as well as some more exotic locations will be posted as groups and I'm always happy to take suggestions for other activities you want to see.
 
-We do not charge for meetups (unless there are costs like tickets, etc) but if you use the group and attend events, please consider donating a few dollars using the 'Chip In' button on the left side of the page. This goes towards the roughly $150 per year that meetup charges to maintain the page. This is not required but greatly appreciated!",
+We do not charge for groups (unless there are costs like tickets, etc) but if you use the group and attend events, please consider donating a few dollars using the 'Chip In' button on the left side of the page. This goes towards the roughly $150 per year that group charges to maintain the page. This is not required but greatly appreciated!",
 get_topics('outdoors', topics)
 ]
 
 glist << [
 "Get Your Climb On",
-"Get Your Climb On (or GYCO) is a meetup that brings together rock climbing & outdoor enthusiasts of all experience levels through meetups throughout California at destination-outdoor climbing venues, indoor rock climbing gyms, and social gatherings such as happy hours, BBQs & more. The main goal is to create an inclusive, diverse, fun, safe, friendly, collaborative, community from the ground up--A community that encourages one another to learn outdoor leadership skills, to enjoy the sense of community, teamwork, and a community that plans safe & fun climbing meet ups throughout California & beyond!",
+"Get Your Climb On (or GYCO) is a group that brings together rock climbing & outdoor enthusiasts of all experience levels through groups throughout California at destination-outdoor climbing venues, indoor rock climbing gyms, and social gatherings such as happy hours, BBQs & more. The main goal is to create an inclusive, diverse, fun, safe, friendly, collaborative, community from the ground up--A community that encourages one another to learn outdoor leadership skills, to enjoy the sense of community, teamwork, and a community that plans safe & fun climbing meet ups throughout California & beyond!",
 get_topics('outdoors', topics)
 ]
 
 glist << [
 "SF Data Science",
-"Data Scientists in San Francisco and the Bay Area are doing incredible data science: making graph models of symptoms and human disease, extracting insight from huge amounts of data in real time, and building tools to make this whole process easier. The SF Data Science Meetup is a community organized forum to showcase this ongoing work, to spread knowledge and help the data science community level up.",
+"Data Scientists in San Francisco and the Bay Area are doing incredible data science: making graph models of symptoms and human disease, extracting insight from huge amounts of data in real time, and building tools to make this whole process easier. The SF Data Science group is a community organized forum to showcase this ongoing work, to spread knowledge and help the data science community level up.",
 get_topics('programming', topics)
 ]
 
@@ -379,7 +379,7 @@ get_topics('language', topics)
 
 glist << [
 "SF German Stammtisch",
-"Amiable group who enjoy speaking German and good company! This group is open to anyone who would like to further their German language exposure. Varying levels of proficiency exist among the members so do not be intimidated. We also have native German Speakers from Austria, Germany, Switzerland, and other European countries. Hope to see you all soon at the next meetup. We are a very friendly group and welcome everyone :)",
+"Amiable group who enjoy speaking German and good company! This group is open to anyone who would like to further their German language exposure. Varying levels of proficiency exist among the members so do not be intimidated. We also have native German Speakers from Austria, Germany, Switzerland, and other European countries. Hope to see you all soon at the next group. We are a very friendly group and welcome everyone :)",
 get_topics('language', topics)
 ]
 
@@ -418,14 +418,14 @@ get_topics('business', topics)
 ]
 
 glist << [
-"SF Board Games Meetup",
-"This meetup has been going on since about November 2011, as a place to organize weekly game nights. We play mostly Euro-style strategy games, such as those found on boardgamegeek.com. So, experienced strategy gamers are preferred but if you don't mind learning some relatively complicated rules, we are happy to teach. We are always looking to recruit others to the die-hard boardgamer cult. Welcome!",
+"SF Board Games group",
+"This group has been going on since about November 2011, as a place to organize weekly game nights. We play mostly Euro-style strategy games, such as those found on boardgamegeek.com. So, experienced strategy gamers are preferred but if you don't mind learning some relatively complicated rules, we are happy to teach. We are always looking to recruit others to the die-hard boardgamer cult. Welcome!",
 get_topics('games', topics)
 ]
 
 glist << [
 "Bay Area Nerds Geeks and Gamers",
-"This is the meetup page for all things nerdy & fun: Board/Social/Video Game Night (at Bars/Cafes, online, or at the fantastic video game venues in the city), Cosplay Events (from Comic Cons to the Edwardian Ball), Dinners & the latest SciFi/Fantasy Movies, Comic Book/Game Swaps, BYOLAB (bring your own legos & build), Super Nerd Night, Trivia, Drunk Spelling Bee, SF Scavenger Hunts, SF Startup List. All with the idea that making friends should be easy and totally not scary. We've had thousands of meetups and people have made friends, found jobs, homes and even love.",
+"This is the group page for all things nerdy & fun: Board/Social/Video Game Night (at Bars/Cafes, online, or at the fantastic video game venues in the city), Cosplay Events (from Comic Cons to the Edwardian Ball), Dinners & the latest SciFi/Fantasy Movies, Comic Book/Game Swaps, BYOLAB (bring your own legos & build), Super Nerd Night, Trivia, Drunk Spelling Bee, SF Scavenger Hunts, SF Startup List. All with the idea that making friends should be easy and totally not scary. We've had thousands of groups and people have made friends, found jobs, homes and even love.",
 get_topics('games', topics)
 ]
 
@@ -459,7 +459,7 @@ get_topics('culture', topics)
 
 glist << [
 "Bay Area Film Society",
-"This is an ACTIVE Meetup Group... if you are sensitive to being invited to our events, please note that we schedule about 4-8 events a month.
+"This is an ACTIVE group Group... if you are sensitive to being invited to our events, please note that we schedule about 4-8 events a month.
 We try to keep emails down to the announcements of the actual movies, and then only to those that RSVP 'yes' to a specific event.
 Other than that, I try to not send out more than one mass non-event email every few months.
 
@@ -485,7 +485,7 @@ glist << [
 "Radical Visions Cinema Club",
 "Meet others who deliberately seek out challenging foreign, avant-garde, and experimental films screened in San Francisco or Berkeley. After each film, we will get together for conversation at a cafe.
 
-If you, like me, also enjoy thought-provoking literature, check out my Classic Literature and Cafes Club: http://www.meetup.com/Classic-Literature-and-Cafes
+If you, like me, also enjoy thought-provoking literature, check out my Classic Literature and Cafes Club: http://www.group.com/Classic-Literature-and-Cafes
 ",
 get_topics('film', topics)
 ]
@@ -546,21 +546,36 @@ Event.destroy_all
 Rsvp.destroy_all
 
 groups.each do |grp|
-  num1 = Random.new.rand(-6..-4)
-  num2 = Random.new.rand(-3..-1)
-  num3 = Random.new.rand(-14..-3)
-  num4 = Random.new.rand(5..9)
-  num5 = Random.new.rand(11..18)
-  membercount = grp.members.length
-  timedeltas = [num1.months, num2.month, num3.days, num4.days, num5.days]
-  titles = ['First Meeting', 'Event Planning Meeting', 'Out on the Town', 'Weekly Meeting', 'Weekly meeting']
-  descriptions = ['First Meeting', 'Event Planning Meeting', 'Out on the Town', 'Weekly Meeting', 'Weekly meeting']
-  locations = ["Organizer's house", "Bazaar Cafe", "16th Street in The Mission", "Dolores Park", "Golden Gate Park"]
-  addresses = ["552 Ivy St, San Francisco, CA 94102",
+  num1 = Random.new.rand(-60..-30)
+  num2 = Random.new.rand(-14..-7)
+  num3 = Random.new.rand(4..9)
+  num4 = Random.new.rand(11..18)
+  membercount = grp.members.length + 1
+  timedeltas = [num1.days, num2.month, num3.days, num4.days]
+  titles = [
+    'First Meeting',
+    'Event Planning Meeting',
+    'Out on the Town',
+    'Weekly meeting'
+  ]
+  descriptions = [
+    "Let's develop a mision statement for our club and think of some future events.",
+    "We now have a great mission statement but we need to plan out more events. Come give us suggestions!",
+    "Let's have fun going out on the town.",
+    'This is our weekly event where we get together and do our thing.'
+  ]
+  locations = [
+    "Organizer's house",
+    "Bazaar Cafe",
+    "16th Street in The Mission",
+    "Golden Gate Park"
+  ]
+  addresses = [
+    "552 Ivy St, San Francisco, CA 94102",
     "5927 California St, San Francisco, CA 94121",
     "2000 Mission St, San Francisco, CA 94110",
-    "Mission Dolores Park, San Francisco, CA 94114",
-    "100 John F Kennedy Dr, San Francisco, CA 94118"]
+    "100 John F Kennedy Dr, San Francisco, CA 94118"
+  ]
   timedeltas.each_with_index do |delta, i|
     num_people = (membercount * Random.new.rand(0.2..0.9)).floor
     attendees = grp.allmembers.sample(num_people)
