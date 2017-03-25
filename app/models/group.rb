@@ -28,18 +28,13 @@ class Group < ApplicationRecord
   has_many :rsvps, through: :events
 
   after_initialize :ensure_image
-  before_save :elim_organizer
 
   def ensure_image
     self.image_url ||= '1.svg'
   end
 
-  # needed for activerecord seeding
-  def elim_organizer
-    if self.member_ids
-      self.member_ids =
-        self.member_ids.reject { |item| item == self.organizer_id }
-    end
+  def allmembers
+    self.members + [self.organizer]
   end
 
   def dashName
@@ -71,7 +66,7 @@ class Group < ApplicationRecord
     end
 
     allitems = (allrsvps + allmemberships)
-    allitems.sort_by { |item| item[:time] }
+    allitems.sort_by! { |item| (Time.zone.now  - item[:time]) }
     allitems[0..9]
   end
 

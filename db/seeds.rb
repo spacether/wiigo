@@ -54,7 +54,14 @@ ulist = [
 ]
 users = []
 ulist.each do |arr|
-  users << User.create!(username: arr[0], password: arr[0], image_url: arr[1], location: 'San Francisco, CA')
+  user_hash = {
+    username: arr[0],
+    password: arr[0],
+    image_url: arr[1],
+    location: 'San Francisco, CA',
+    created_at: DateTime.now - Random.new.rand(366..730)
+  }
+  users << User.create!(user_hash)
 end
 
 default_banner = 'v1490140132/banner1_croped_darkened_gavqfh.jpg'
@@ -148,7 +155,7 @@ group_images = ['v1490209770/group_default_w5eg53.jpg',
   'v1490242827/group_def2_diks8y.jpg']
 
 group_hometown = "San Francisco, CA"
-group_fields = ['name', 'description', 'topic_ids', 'hometown', 'organizer_id', 'member_ids', 'image_url']
+group_fields = ['name', 'description', 'topic_ids', 'hometown', 'organizer_id', 'image_url']
 glist = []
 glist << [
 "SF People's Science Lab",
@@ -506,9 +513,22 @@ get_topics('dance', topics)
 
 groups = []
 glist.each do |item|
-  topicvals = item.concat([ group_hometown, users.sample.id, users.sample(Random.new.rand(8..20)).map(&:id), group_images.sample ])
+  topicvals = item.concat([ group_hometown, users.sample.id, group_images.sample ])
   hash_group = Hash[group_fields.zip(topicvals)]
-  groups << Group.create!(hash_group)
+  grp = Group.create!(hash_group)
+  created_at = DateTime.now - Random.new.rand(210..365)
+  grp[:created_at] = created_at
+  groups << grp
+  members = users.sample(Random.new.rand(8..20))
+  members.reject! { |member| member == grp.organizer }
+  members.each do |member|
+    membership_hash = {
+      user_id: member.id,
+      group_id: grp.id,
+      created_at: created_at + Random.new.rand(1..14)
+    }
+    Membership.create!(membership_hash)
+  end
 end
 
 #  id          :integer          not null, primary key
@@ -542,14 +562,35 @@ groups.each do |grp|
     "100 John F Kennedy Dr, San Francisco, CA 94118"]
   timedeltas.each_with_index do |delta, i|
     num_people = (membercount * Random.new.rand(0.2..0.9)).floor
-    respondent_ids = grp.member_ids.sample(num_people)
-    event_hash = {group_id: grp.id,
+    attendees = grp.allmembers.sample(num_people)
+    start_time = DateTime.now + delta
+    created_at = start_time - 21.days
+    event_hash = {
+      group_id: grp.id,
       title: titles[i],
-      start_time: DateTime.now + delta,
+      start_time: start_time,
       description: descriptions[i],
       location: locations[i],
       address: addresses[i],
-      respondent_ids: respondent_ids}
-    Event.create!(event_hash)
+      created_at: created_at,
+      updated_at: created_at
+    }
+    event = Event.create!(event_hash)
+    attendees.each do |member|
+      # past events, rsvp between event creation and when it happens
+      # future events rsvp between event creation and now
+      rsvp_delta = [
+        (DateTime.now - created_at).to_i,
+        (start_time - created_at).to_i
+      ].min
+      rsvp_time = created_at + Random.new.rand(rsvp_delta).days
+      rsvp_hash = {
+        user_id: member.id,
+        event_id: event.id,
+        created_at: rsvp_time,
+        updated_at: rsvp_time
+      }
+      Rsvp.create!(rsvp_hash)
+    end
   end
 end
