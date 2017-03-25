@@ -18,10 +18,4 @@ class Rsvp < ApplicationRecord
   belongs_to :event
   belongs_to :user
 
-  before_validation :set_going_default
-
-  def set_going_default
-    self.going ||= true
-  end
-
 end
