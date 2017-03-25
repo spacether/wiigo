@@ -588,7 +588,8 @@ groups.each do |grp|
         user_id: member.id,
         event_id: event.id,
         created_at: rsvp_time,
-        updated_at: rsvp_time
+        updated_at: rsvp_time,
+        going: true
       }
       Rsvp.create!(rsvp_hash)
     end
