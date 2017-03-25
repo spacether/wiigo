@@ -44,11 +44,12 @@ a react-redux front end. Images are hosted on Cloudinary to allow for custom res
 
 ### Key Challenges
 
--Fronted state was stored in as few keys as possible to minimize program complexity
--Number of backend apis were minimized to reduce complexity
--Separate Rsvps and Memberships APIs were used to prevent errors in group memberships and rsvps
--Search values were pushed to the url to allow a user to revisit a past search
--Backend controllers only allow a logged in user with correct privileges to modify the db
+- Frontend state was stored in as few keys as possible to minimize program complexity
+- Number of backend apis were minimized to reduce complexity
+- Separate Rsvps and Memberships APIs were used to prevent errors in group memberships and rsvps
+- Search values were pushed to the url to allow a user to revisit a past search
+- Backend controllers only allow a logged in user with correct privileges to modify the db
+- "New items" shown on the group show page combine info from both memberships and rsvps
 
 [home page]: ./docs/images/home_page.png "Wiigo home page"
 [searching]: ./docs/images/group_search.png "Found gaming groups"

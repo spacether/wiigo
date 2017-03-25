@@ -36,9 +36,9 @@ Webpack nicely bundles all of the frontend components and Flux pieces. The bundl
 
 All of the React components, Flux action creators, API utilities, dispatcher, and stores are located in the [frontend](../frontend) directory.
 
-## Babel Transcpiling
+## Babel Transpiling
 
-Wiigo was written in the newer and more powerful ES6 javascript. Babel is used to downconvert all ES6 javascript to ES5 syntax, ensuring that legacy browsers will run the site without any problems.
+Wiigo was written in the newer and more powerful ES6 javascript. Babel is used to down-convert all jsx and ES6 javascript to ES5 syntax, ensuring that legacy browsers will run the site without any problems.
 
 ## jQuery
 
