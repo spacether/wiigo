@@ -17,9 +17,14 @@ class Banner extends React.Component {
         </div>
         <div className='groupnavholder ctr'>
           <nav>
-            <Link to={`/${dashName}`} className="button bsmall">Home</Link>
+            <Link to={`/${dashName}`} className="button bsmall">
+              Home
+            </Link>
             <Link to={`/${dashName}/members`} className="button bsmall">
               Members
+            </Link>
+            <Link to={`/${dashName}/events`} className="button bsmall">
+              Events
             </Link>
           </nav>
           <nav></nav>

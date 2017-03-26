@@ -12,6 +12,7 @@ import GroupDetailBotRightContainer from
 import GroupFormContainer from './group/group_form_container';
 import GroupMembersContainer from './group/group_members_container';
 import GroupSearchContainer from './group_search/group_search_container';
+import GroupEventsContainer from './group/group_events_container';
 
 import EventDetailContainer from './event/event_detail_container';
 import EventFormContainer from './event/event_form_container';
@@ -52,7 +53,8 @@ const Root = ({store}) => {
             onLeave={ _clearErrors('createGroup') } ></Route>
           <Route path="members(/:memberId)" component={ UserShowContainer } />
           <Route path="find(/:dashTopic)" component={ GroupSearchContainer } />
-          <Route path=":dashName/events(/:eventId)" component={ EventDetailContainer } />
+          <Route path=":dashName/events/:eventId" component={ EventDetailContainer } />
+          <Route path=":dashName/events" component={ GroupEventsContainer } />
           <Route path=":dashName" component={ GroupShowContainer }>
             <IndexRoute component={ GroupDetailBotRightContainer } />
             <Route path="members" component={ GroupMembersContainer } />
