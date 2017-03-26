@@ -20,11 +20,11 @@ class Banner extends React.Component {
             <Link to={`/${dashName}`} className="button bsmall">
               Home
             </Link>
-            <Link to={`/${dashName}/members`} className="button bsmall">
+            <Link to={`/${dashName}/members`} className="button bsmall lmargin">
               Members
             </Link>
-            <Link to={`/${dashName}/events`} className="button bsmall">
-              Events
+            <Link to={`/${dashName}/events`} className="button bsmall lmargin">
+              Calendar
             </Link>
           </nav>
           <nav></nav>

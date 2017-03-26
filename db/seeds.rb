@@ -551,10 +551,10 @@ groups.each do |grp|
   num3 = Random.new.rand(4..9)
   num4 = Random.new.rand(11..18)
   membercount = grp.members.length + 1
-  timedeltas = [num1.days, num2.month, num3.days, num4.days]
+  timedeltas = [num1.days, num2.days, num3.days, num4.days]
   titles = [
     'First Meeting',
-    'Event Planning Meeting',
+    'Second meeting, Event Planning Meeting',
     'Out on the Town',
     'Weekly meeting'
   ]
