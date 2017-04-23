@@ -45,9 +45,6 @@ const Root = ({store}) => {
           <Route path="login(/:name)" component={ UserFormContainer }
             onEnter={ _redirectIfLoggedIn }
             onLeave={ _clearErrors('logIn') } ></Route>
-          <Route path="signup" component={ UserFormContainer }
-            onEnter={ _redirectIfLoggedIn }
-            onLeave={ _clearErrors('signUp') } ></Route>
           <Route path="create" component={ GroupFormContainer }
             onEnter={ _redirectIfLoggedOut }
             onLeave={ _clearErrors('createGroup') } ></Route>

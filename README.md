@@ -59,3 +59,5 @@ a react-redux front end. Images are hosted on Cloudinary to allow for custom res
 [technologies]: ./docs/technologies.md "Core frontend and backend technologies"
 [proposal]: ./docs/proposal.md
 [schema]: ./docs/schema.md
+
+![Justin Analytics](https://ga-beacon.appspot.com/UA-97855011-1/wiigo_github?pixel)

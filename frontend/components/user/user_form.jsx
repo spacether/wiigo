@@ -4,13 +4,18 @@ import { hashHistory, Link } from 'react-router';
 class UserForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = {username: '', password: ''};
+    this.state = {
+      username: '',
+      password: ''
+    };
   }
 
   componentDidMount(){
-    let {name} = this.props.params;
-    if (name) {
-      this.guestLogin(name);
+    if (this.props.params) {
+      let {name} = this.props.params;
+      if (name) {
+        this.guestLogin(name);
+      }
     }
   }
 
@@ -90,28 +95,26 @@ class UserForm extends React.Component {
       errors = (<ul className='error'>{errors}</ul>);
     }
     return (
-      <div className='userholder fullwide ctr'>
-        <form className='userform'>
-          <h2>{buttonTxt}</h2>
-          {errors}
-          <label htmlFor='username'>Username
-            <input type='text' name='username'
-              value={username}
-              onChange={this.update('username')} ></input>
-            </label>
-            <label>Password
-            <input type='password' name='password'
-              value={password}
-              onChange={this.update('password')} ></input>
-            </label>
-          <button name='submit'
-            onClick={this.handleSubmit()}>
-            {buttonTxt}
-          </button>
-          {guestLink}
-          <Link to={otherPlace[0]}>{otherPlace[1]}</Link>
-        </form>
-      </div>
+      <form className='userform'>
+        <h2>{buttonTxt}</h2>
+        {errors}
+        <label htmlFor='username'>Username
+          <input type='text' name='username'
+            value={username}
+            onChange={this.update('username')} ></input>
+          </label>
+          <label>Password
+          <input type='password' name='password'
+            value={password}
+            onChange={this.update('password')} ></input>
+          </label>
+        <button name='submit'
+          onClick={this.handleSubmit()}>
+          {buttonTxt}
+        </button>
+        {guestLink}
+        <Link to={otherPlace[0]}>{otherPlace[1]}</Link>
+      </form>
     );
   }
 }
