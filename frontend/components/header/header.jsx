@@ -11,7 +11,9 @@ const customStyles = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    border                : 'none',
+    background            : 'none'
   }
 };
 
@@ -46,7 +48,10 @@ class Header extends React.Component {
         <nav className='right'>
           <span>Welcome {user.username}</span>
           <Link to={`members/${user.id}`} className='button'>Profile</Link>
-          <Link onClick={logout} className='button logout'>Log Out</Link>
+          <Link onClick={() => {
+              logout();
+              hashHistory.push("/");
+            }} className='button logout'>Log Out</Link>
         </nav>
       );
     } else {
@@ -54,14 +59,16 @@ class Header extends React.Component {
         <nav className='right'>
           <Link to="/login" className='button login'>Log In</Link>
           <Link to="/login/Guesty" className='button signup'>Guest</Link>
-          <Link onClick={this.openModal} className='button signup'>Sign Up</Link>
+          <Link onClick={this.openModal} id='openModal'
+            className='button signup'>Sign Up</Link>
           <Modal
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}
             style={customStyles}
             contentLabel="Example Modal"
           >
-            <UserFormContainer></UserFormContainer>
+            <UserFormContainer closeModal={this.closeModal.bind(this)}>
+            </UserFormContainer>
           </Modal>
         </nav>
       );
@@ -69,7 +76,9 @@ class Header extends React.Component {
     return (
       <header>
         {left}
-        <span onClick={() => hashHistory.push("/")} className='logo'>Wiigo</span>
+        <span onClick={() => hashHistory.push("/")} className='logo'>
+          Wiigo
+        </span>
         {right}
       </header>
     );

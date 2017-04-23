@@ -54,7 +54,8 @@ class Banner extends React.Component {
         <div className='ctrbannertxt'>
           <h1>Where will Wiigo today?</h1>
           <h2>Do more of what you love</h2>
-          <Link to="/signup" className='button signup'>Sign Up</Link>
+          <Link onClick={() => document.getElementById("openModal").click()}
+            className='button signup'>Sign Up</Link>
         </div>
       </section>
     );
@@ -91,7 +92,7 @@ class Banner extends React.Component {
       return this.redBanner();
 
 
-    } else if (this.props.params.memberId) {
+    } else if (this.props.params.memberId || this.props.location.pathname.slice(0,6) === '/login') {
       return null;
 
 

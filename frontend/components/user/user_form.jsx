@@ -6,7 +6,8 @@ class UserForm extends React.Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      logIn: props.logIn
     };
   }
 
@@ -20,10 +21,11 @@ class UserForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    let {name} = nextProps.params;
+    let {params} = nextProps;
+    let name = (params) ? params.name : undefined;
     let path = this.props.location.pathname;
     let newPath = nextProps.location.pathname;
-    let toLogin = (nextProps.formType === 'logIn');
+    let toLogin = (nextProps.logIn === true);
     if (Boolean(name) && (path !== newPath) && toLogin ) {
       this.guestLogin(name);
     }
@@ -34,20 +36,20 @@ class UserForm extends React.Component {
   }
 
   handleSubmit() {
+    const goToLanding = () => {
+      if (this.props.closeModal) this.props.closeModal();
+      hashHistory.push("/");
+    };
     return (e) => {
       e.preventDefault();
       let user = Object.assign({}, this.state);
-      if (this.props.formType === 'signUp') {
+      if (user.logIn) {
+        this.props.login(user).then(goToLanding);
+      } else {
         user.image_url = "v1490361262/m10_ax7t8o.jpg";
+        this.props.signup(user).then(goToLanding);
       }
-      this.props.processForm(user).then(() => {
-        this.redirect();
-      });
     };
-  }
-
-  redirect() {
-    hashHistory.push("/");
   }
 
   guestLogin(name){
@@ -73,49 +75,66 @@ class UserForm extends React.Component {
 
   render(){
     let { username, password } = this.state;
-    let { formType } = this.props;
-    let buttonTxt, otherPlace, guestLink;
-    if (formType === 'signUp') {
-      buttonTxt = 'Sign Up';
-      otherPlace = ["/login", "Log In"];
-    } else {
-      buttonTxt = "Log In";
-      otherPlace = ["/signup", "Sign Up"];
+    let { logIn } = this.state;
+    let buttonTxt, guestLink, otherLink;
+    if (logIn) {
+      buttonTxt = 'Log In';
       guestLink = (
         <Link onClick={() => this.guestLogin("Guesty")}
           className='button guestlogin'>
           Guest Login
         </Link>
       );
+      otherLink = (
+        <Link onClick={() => this.setState({logIn: false})}>
+        Sign Up
+        </Link>
+      );
+    } else {
+      buttonTxt = 'Sign Up';
+      otherLink = (
+        <Link onClick={() => this.setState({logIn: true})}>
+        Log In
+        </Link>
+      );
     }
-
-    let { errors } = this.props;
+    let inline = this.props.logIn;
+    let heading = (inline) ? (<h1>{buttonTxt}</h1>) : (<h2>{buttonTxt}</h2>);
+    let errors = (logIn) ? this.props.loginErrors : this.props.signupErrors;
     if (errors) {
       errors = errors.map( (error, i) => <li key={i}>{error}</li>);
       errors = (<ul className='error'>{errors}</ul>);
     }
-    return (
-      <form className='userform'>
-        <h2>{buttonTxt}</h2>
+    let formstyle = (inline) ? 'userform-inline' : 'userform-modal';
+    let form  = (
+      <form className={formstyle}>
+        {heading}
         {errors}
-        <label htmlFor='username'>Username
-          <input type='text' name='username'
+        <label htmlFor='username'>Username</label>
+          <input type='text' name='username' id='username'
             value={username}
             onChange={this.update('username')} ></input>
-          </label>
-          <label>Password
-          <input type='password' name='password'
+          <label htmlFor='password'>Password</label>
+          <input type='password' name='password' id='password'
             value={password}
             onChange={this.update('password')} ></input>
-          </label>
         <button name='submit'
           onClick={this.handleSubmit()}>
           {buttonTxt}
         </button>
         {guestLink}
-        <Link to={otherPlace[0]}>{otherPlace[1]}</Link>
+        {otherLink}
       </form>
     );
+    if (inline) {
+      return(
+        <section className='groupcreatebg'>
+          {form}
+        </section>
+      );
+    } else {
+      return form;
+    }
   }
 }
 

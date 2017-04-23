@@ -4,18 +4,20 @@ import { signup, login } from '../../actions/user_actions';
 
 const mapStateToProps = ({user, errors}, ownProps) => {
   let loc = ownProps.location;
-  let type = (loc && loc.pathname === '/signup') ? 'signUp' : 'logIn';
+  let logIn = (loc && loc.pathname.slice(0,6) === '/login') ? true : false;
   return {
   loggedIn: Boolean(user),
-  errors: errors[type],
-  formType: type
+  loginErrors: errors['logIn'],
+  signupErrors: errors['signUp'],
+  logIn
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  let loc = ownProps.location;
-  let func = (loc && loc.pathname === '/signup') ? signup : login;
-  return { processForm: (user) => dispatch(func(user)) };
+  return {
+    signup: (user) => dispatch(signup(user)),
+    login: (user) => dispatch(login(user)),
+  };
 };
 
 export default connect(

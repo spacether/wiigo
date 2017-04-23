@@ -21,10 +21,6 @@ form ul {
   margin: $formpad 0;
 }
 
-.userform h2{
-  color: $color1;
-}
-
 // want it 340 down from the top and centered
 
 .userholder {
@@ -32,7 +28,7 @@ form ul {
   top: 340px;
 }
 
-.userform {
+.userform-modal {
   display:flex;
   flex-direction: column;
   align-items: flex-start;
@@ -41,6 +37,28 @@ form ul {
   }
   button, a {
     margin-top: 10px;
+  }
+  h2 {
+    color: $color1;
+  }
+}
+
+.userform-inline {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  margin-bottom: 32px;
+  width: 300px;
+  display:flex;
+  flex-direction: column;
+  align-items: stretch;
+  button, a {
+    margin-top: 10px;
+    text-align: center;
+  }
+  h1 {
+    font-size: 42px;
+    color: $color1;
   }
 }
 
@@ -64,7 +82,7 @@ form div label {
 }
 
 .creategroup {
-  @extend .userform;
+  @extend .userform-modal;
   border: 1px solid $light-gray;
   border-top: 0;
   width: 808px;
