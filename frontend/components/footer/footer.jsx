@@ -17,8 +17,8 @@ const Header = (props) => {
         {userNav}
         <nav>
           <a href='https://github.com/spacether/wiigo'>Github</a>
-          <a href='http://justinablack.com/'>Homepage</a>
-          <a href='http://www.linkedin.com/pub/justin-black/52/433/813/'>
+          <a href='https://spacether.github.io/'>Portfolio</a>
+          <a href='https://www.linkedin.com/in/justin-a-black/'>
             LinkedIn
           </a>
         </nav>
