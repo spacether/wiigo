@@ -18,14 +18,17 @@ export default ({item, className, path, size, name=false}) => {
     imgStyle = 'imgholder';
   }
   let imgPath = imagePrefix + item.imageUrl;
+  let img = (<img src={imgPath}></img>);
   if (size) {
     imgPath = imagePrefix + `c_fill,h_${size[1]},w_${size[0]}/` + item.imageUrl;
+    img = (<img src={imgPath} width={size[0]} height={size[1]} ></img>);
   }
   if (!name) {
+    // group mode
     return (
       <div className={className}>
         <Link to={path} className={imgStyle}>
-          <img src={imgPath}></img>
+          {img}
           {label}
         </Link>
       </div>
@@ -34,7 +37,7 @@ export default ({item, className, path, size, name=false}) => {
     return (
       <div className={className}>
         <Link to={path} className={imgStyle}>
-          <img src={imgPath}></img>
+          {img}
         </Link>
         <Link to={path} className='lmargin'>{label}</Link>
       </div>
