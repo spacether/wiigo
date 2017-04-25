@@ -75,32 +75,32 @@ tlist = [
 
   ['Learning', 'learning', 'Learn about and participate in the next big developments in science, education, and technology!',
     'c_fill,g_center,h_190,w_300/v1490154826/science_hands_luvosm.jpg',
-    default_banner
+    'v1493097314/learning_qyujib.jpg'
   ],
 
   ['Arts', 'arts', 'Paint a picture, see a show, attend a poetry slam, explore the local arts.',
     'c_fill,h_190,w_300/v1490154493/art_messyhands_e1lsil.jpg',
-    default_banner
+    'v1493098439/art_nhzq90.jpg'
   ],
 
   ['Music', 'music', 'See a show, hear a band, make your next band or find your next favorite song.',
     'c_fill,g_south,h_190,w_300/v1490155137/music_guitarlady_yutxtj.jpg',
-    default_banner
+    'v1493099095/music_u4krik.jpg'
   ],
 
-  ['Sports', 'sports-adventure', 'Check out the local sports, and activities near you!',
+  ['Sports', 'sports-adventure', 'Check out local sports and activities near you!',
     'c_fill,g_north,h_190,w_300/v1490149915/football_skzsqh.jpg',
-    default_banner
+    'v1493099625/sports_mdd2wd.jpg'
   ],
 
   ['Outdoors', 'outdoors', 'Check out the local hiking, and avdentures near you!',
     'c_fill,g_north,h_190,w_300/v1490151395/hike_red_kcs6kk.jpg',
-    default_banner
+    'v1493100333/outdoors_sqlqhy.jpg'
   ],
 
   ['Programming', 'tech', 'Lean a new progrgramming language, architecture, or application!',
     'c_fill,g_south,h_190,w_300/v1490151703/programming_y9iicm.jpg',
-    default_banner
+    'v1493100598/programming_unco7u.jpg'
   ],
 
   ['Language', 'language', 'Experience the world through written or spoken word. Learn a language, start a book club.',
