@@ -105,32 +105,32 @@ tlist = [
 
   ['Language', 'language', 'Experience the world through written or spoken word. Learn a language, start a book club.',
     'c_fill,g_north,h_190,w_300/v1490153395/talk_picnic_vzzj6q.jpg',
-    default_banner
+    'v1493268604/language_brn1tx.jpg'
   ],
 
   ['Business & Career', 'business', 'Hear exciting lectures on business developments. Network with professionals in your industry.',
     'c_fill,g_north,h_190,w_300/v1490153773/business_xtbcwr.jpg',
-    default_banner
+    'v1493271090/business_lhvgq5.jpg'
   ],
 
   ['Games', 'games', "Lets play games. Be it board, card, computer, console, word, we're up for it. Let's play.",
     'c_fill,g_west,h_190,w_300/v1490157507/game_risk_p5k6xa.jpg',
-    default_banner
+    'v1493271799/games_r159hv.jpg'
   ],
 
   ['Culture', 'culture', 'Check out local fairs and festivals and learn more about our neighbors near and far',
     'c_fill,g_north,h_190,w_300/v1490158522/culture_diwali_zbqubj.jpg',
-    default_banner
+    'v1493272300/culture_v0xi2n.jpg'
   ],
 
   ['Film', 'film', "Let's explore the world of cinema. Come see a classic, a new indie film, or the latest Oscar winner.",
     'c_fill,g_south,h_190,w_300/v1490160778/film_clapper_tiob9v.jpg',
-    default_banner
+    'v1493272843/film_bvzhaq.jpg'
   ],
 
   ['Dance', 'dance', 'Get out there and move it! Be it voguing, ballroom, zumba, or hip-hop, we have adance for you',
     'c_fill,g_north,h_190,w_300/v1490160223/dancing_salsa_j8t9lo.jpg',
-    default_banner
+    'v1493273301/dance_n838jw.jpg'
   ],
 ]
 
