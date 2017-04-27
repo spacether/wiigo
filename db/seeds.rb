@@ -155,7 +155,7 @@ group_images = ['v1490209770/group_default_w5eg53.jpg',
   'v1490242827/group_def2_diks8y.jpg']
 
 group_hometown = "San Francisco, CA"
-group_fields = ['name', 'description', 'topic_ids', 'hometown', 'organizer_id', 'image_url']
+group_fields = ['name', 'description', 'topic_ids', 'image_url', 'hometown', 'organizer_id']
 glist = []
 glist << [
 "SF People's Science Lab",
@@ -165,7 +165,8 @@ learn, discove, tinker, and push the boundaries of scince!
 We are open to biotech professionals,
 scientists, and citizen scientists of all stripes. Come be part of our
 community of hackers, creative thinkers, and mad scientists!",
-get_topics('learning', topics)
+get_topics('learning', topics),
+'v1493310944/citizen_science_pctdux.jpg'
 ]
 
 glist << [
@@ -175,7 +176,8 @@ we are doing with data science. Together we are making graph models of
 human diseases and extracting insights from huge data sets. We build
 tools, extract data in real time, and are developing a better understanding
 of our worls. COme level up you data science skills with us!",
-get_topics('learning', topics)
+get_topics('learning', topics),
+'v1493311829/sf_data_science_cimpr2.jpg'
 ]
 
 glist << [
@@ -190,7 +192,8 @@ The Future of Hardware group is powered by Autodesk Fusion 360, the
 first 3D CAD/CAM tool of its kind; connecting your entire product
 development process in a single cloud-based platform that works on
 both Mac and PC.",
-get_topics('learning', topics)
+get_topics('learning', topics),
+'v1493312138/future_of_hw_kkbxmt.jpg'
 ]
 
 glist << [
@@ -199,7 +202,8 @@ glist << [
 who meet once a month for figure sketching. The people we sketch range
 20s to 90s. If you want to bring your sketching to the next level, or
 just need some more creativity in your life, give us a try.",
-get_topics('arts', topics)
+get_topics('arts', topics),
+group_images.sample
 ]
 
 glist << [
@@ -209,7 +213,8 @@ to attend a film festival with? This is the group for you!
 
 This group is for film, literature, music, arts and culture enthusiasts
 in the SF Bay Area.",
-get_topics('arts', topics)
+get_topics('arts', topics),
+group_images.sample
 ]
 
 glist << [
@@ -233,7 +238,8 @@ combine art with technology.
 
 Inspiring individuals, entrepreneurs, innovators, startups and
 companies by injecting creativity into their lives and organizations.",
-get_topics('arts', topics)
+get_topics('arts', topics),
+group_images.sample
 ]
 
 glist << [
@@ -247,7 +253,8 @@ drink.draw.sf
 
 Feel free to DM the account to post drawings from group or whatever
 you're feeling that day.",
-get_topics('arts', topics)
+get_topics('arts', topics),
+group_images.sample
 ]
 
 glist << [
@@ -256,13 +263,15 @@ glist << [
 drink and check out a new local band. Lately we have been going to a
 lot of SoFar sounds events, but we go to concerts, festivals, garage
 bands, and raves too. If it's good we're in! Come join us!",
-get_topics('music', topics)
+get_topics('music', topics),
+group_images.sample
 ]
 
 glist << [
 "San Francisco Metal group Group",
 "Meet others in your local area who enjoy Metal Music. Make new friends!",
-get_topics('music', topics)
+get_topics('music', topics),
+group_images.sample
 ]
 
 glist << [
@@ -272,7 +281,8 @@ performances in the Bay area. We have one event a month, and sometimes
 go out at wine bars in the city when there aren't any new shows in town.
 If you know of upcoming events, let us know. We're very open to
 member submitted events.",
-get_topics('music', topics)
+get_topics('music', topics),
+group_images.sample
 ]
 
 glist << [
@@ -285,7 +295,8 @@ think you can hang) with a fun and outgoing personality looking to meet
 new people, then come join us!
 
 All running paces are welcome!",
-get_topics('sports', topics)
+get_topics('sports', topics),
+group_images.sample
 ]
 
 glist << [
@@ -293,7 +304,8 @@ glist << [
 "Hi there, Friendly co-ed lunchtime game for all levels on the turf
 field at Raymond Kimball. Mondays and Wednesdays for now. May add
 Fridays later.",
-get_topics('sports', topics)
+get_topics('sports', topics),
+group_images.sample
 ]
 
 glist << [
@@ -308,7 +320,8 @@ empowering one another to become not only badass boarders, but also
 confident, radiant women unleashing our inner awesomeness into the
 world. All women, regardless of age, background, or anything else,
 are welcome.",
-get_topics('sports', topics)
+get_topics('sports', topics),
+group_images.sample
 ]
 
 glist << [
@@ -318,7 +331,8 @@ you ready to hit the slopes for some skiing or snowboarding?!?! Well
 then, check out our calendar of upcoming events and RSVP! We will be
 providing many social opportunities as well as events, day trips,
 cabins, etc... We are a fun and friendly group. Join us! :)",
-get_topics('outdoors', topics)
+get_topics('outdoors', topics),
+group_images.sample
 ]
 
 glist << [
@@ -326,7 +340,8 @@ glist << [
 "The Best Things in Life Are Free! So, Come hang out with us in nature:-)
 
 Are you an outdoor enthusiasts looking to Hike? Are you in San Francisco Bay Area? Or even in San Jose/Santa Cruz? Come be social. New in Town? Looking to Meet New People or Friendships? 20's or 30's Something? Here is a group designed for people with similar interests who enjoys Hiking, Climbing, Backpacking, Mountaineering, Skiing and Outdoor Adventures. However, we do include occasional social events such as Wine tasting, Beer tasting, Sporting, Concerts, Happy Hours, Salsa and whatever else that attracts interest. Or even anything that Sounds Fun in the open Fresh Air, far from Urban Civilization to be in good Company around Campfires.",
-get_topics('outdoors', topics)
+get_topics('outdoors', topics),
+group_images.sample
 ]
 
 glist << [
@@ -334,19 +349,22 @@ glist << [
 "This group is about connecting local divers. We plan monthly happy hours and other activities around the area to get together, share stories, and maybe you'll find some dive buddies! Local diving trips to Monterey as well as some more exotic locations will be posted as groups and I'm always happy to take suggestions for other activities you want to see.
 
 We do not charge for groups (unless there are costs like tickets, etc) but if you use the group and attend events, please consider donating a few dollars using the 'Chip In' button on the left side of the page. This goes towards the roughly $150 per year that group charges to maintain the page. This is not required but greatly appreciated!",
-get_topics('outdoors', topics)
+get_topics('outdoors', topics),
+group_images.sample
 ]
 
 glist << [
 "Get Your Climb On",
 "Get Your Climb On (or GYCO) is a group that brings together rock climbing & outdoor enthusiasts of all experience levels through groups throughout California at destination-outdoor climbing venues, indoor rock climbing gyms, and social gatherings such as happy hours, BBQs & more. The main goal is to create an inclusive, diverse, fun, safe, friendly, collaborative, community from the ground up--A community that encourages one another to learn outdoor leadership skills, to enjoy the sense of community, teamwork, and a community that plans safe & fun climbing meet ups throughout California & beyond!",
-get_topics('outdoors', topics)
+get_topics('outdoors', topics),
+group_images.sample
 ]
 
 glist << [
 "SF Data Science",
 "Data Scientists in San Francisco and the Bay Area are doing incredible data science: making graph models of symptoms and human disease, extracting insight from huge amounts of data in real time, and building tools to make this whole process easier. The SF Data Science group is a community organized forum to showcase this ongoing work, to spread knowledge and help the data science community level up.",
-get_topics('programming', topics)
+get_topics('programming', topics),
+group_images.sample
 ]
 
 glist << [
@@ -358,13 +376,15 @@ Our meetings are technical but also people-oriented.
 We encourage both front presentation, group discussion, as well as get-your-hands-dirty-with-cool-app-development.
 
 We typically meet on the last Tuesday of each month and our meetings are FREE and OPEN to the public.",
-get_topics('programming', topics)
+get_topics('programming', topics),
+group_images.sample
 ]
 
 glist << [
 "SF Docker Group",
 "Meet other developers and ops engineers using Docker. Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hub, a cloud service for sharing applications and automating workflows, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.",
-get_topics('programming', topics)
+get_topics('programming', topics),
+group_images.sample
 ]
 
 glist << [
@@ -374,13 +394,15 @@ glist << [
 SF Babel aims to provide a fun and relaxed atmosphere in a bar environment where speakers of many different languages come together to practice speaking a different language in a real-world context with real people, all for FREE.
 
 The goal is to have a night-out, with an international crowd on a consistent basis.",
-get_topics('language', topics)
+get_topics('language', topics),
+group_images.sample
 ]
 
 glist << [
 "SF German Stammtisch",
 "Amiable group who enjoy speaking German and good company! This group is open to anyone who would like to further their German language exposure. Varying levels of proficiency exist among the members so do not be intimidated. We also have native German Speakers from Austria, Germany, Switzerland, and other European countries. Hope to see you all soon at the next group. We are a very friendly group and welcome everyone :)",
-get_topics('language', topics)
+get_topics('language', topics),
+group_images.sample
 ]
 
 glist << [
@@ -400,13 +422,15 @@ After attending many growth marketing events, I realized no one was sharing thei
 We're interested in the marketing tactics that give you an Instagram following of 90K in one year, that build a Facebook Group of ten thousand active members, that get a podcast to 100,000 downloads in the first months, and much more.
 
 Our mission is simple: Help marketing and founder grow startups faster.",
-get_topics('business', topics)
+get_topics('business', topics),
+group_images.sample
 ]
 
 glist << [
 "China Entrepreneurship Club",
 "China-US Bilateral Entrepreneurship Club is a networking and social club for entrepreneurs, pre-entrepreneurs, investors and technologists who are interested in the Chinese market or business opportunities from the opening-up of China and increased cultural, technological and business interaction between China the the United States. This group welcomes everyone that has an interest in these topics.",
-get_topics('business', topics)
+get_topics('business', topics),
+group_images.sample
 ]
 
 glist << [
@@ -414,19 +438,22 @@ glist << [
 "Health Technology Forum (HTF) is a platform for people worldwide who have a common interest in making healthcare better, more accessible and affordable. Our international network of technology and healthcare entrepreneurs, developers, regulators, and providers are advancing the pace of healthcare innovation by engaging in exciting and productive dialogue between experts in healthcare.
 
 Worldwide interconnections are critical as we think global and act local. The advent of PHRs, social network, open platforms, smart phone, personalized medicine, compliance, interoperability, and policies are creating new opportunities for everyone to engage in a dialog to improve care everywhere. ",
-get_topics('business', topics)
+get_topics('business', topics),
+group_images.sample
 ]
 
 glist << [
 "SF Board Games group",
 "This group has been going on since about November 2011, as a place to organize weekly game nights. We play mostly Euro-style strategy games, such as those found on boardgamegeek.com. So, experienced strategy gamers are preferred but if you don't mind learning some relatively complicated rules, we are happy to teach. We are always looking to recruit others to the die-hard boardgamer cult. Welcome!",
-get_topics('games', topics)
+get_topics('games', topics),
+group_images.sample
 ]
 
 glist << [
 "Bay Area Nerds Geeks and Gamers",
 "This is the group page for all things nerdy & fun: Board/Social/Video Game Night (at Bars/Cafes, online, or at the fantastic video game venues in the city), Cosplay Events (from Comic Cons to the Edwardian Ball), Dinners & the latest SciFi/Fantasy Movies, Comic Book/Game Swaps, BYOLAB (bring your own legos & build), Super Nerd Night, Trivia, Drunk Spelling Bee, SF Scavenger Hunts, SF Startup List. All with the idea that making friends should be easy and totally not scary. We've had thousands of groups and people have made friends, found jobs, homes and even love.",
-get_topics('games', topics)
+get_topics('games', topics),
+group_images.sample
 ]
 
 glist << [
@@ -434,19 +461,22 @@ glist << [
 "Come for the chess; stay for the fun people and conversations, good food, beer and wine. Ideal players are adults who know at least the basic rules, but don't have to take the game too seriously. You should have a very relaxed attitude about winning/losing. Just for fun, fun, fun, and the chance to learn and/or stay in practice.
 
 If you have a chess set (board and pieces) and/or a chess clock, it'd be helpful if you bring it. But if you don't, that's fine too. (After all, only half the players need to bring a set!)",
-get_topics('games', topics)
+get_topics('games', topics),
+group_images.sample
 ]
 
 glist << [
 "Non Stop Bhangra",
 "We are a collective of dancers, DJs, artists and more. We want to share to joy of Bhangra with the Bay Area community. If you're looking a fun workout, a chance to try out a new flavor of dance, and to meet some exceptional people, you're at the right place! We currently offer classes in San Francisco and Berkeley, run a monthly event at Public Works and perform throughout the bay.",
-get_topics('culture', topics)
+get_topics('culture', topics),
+group_images.sample
 ]
 
 glist << [
 "SF Italian Lovers Group",
 "Who: Anyone interested in Italian food, Wine and Travel. What: During our meet ups we will enjoy cooking, wine-tasting, Olive oil tasting, practicing our Italian language skills, and have opportunities to travel to Italy! Why: Because we are San Franciscans who love all things Italian!",
-get_topics('culture', topics)
+get_topics('culture', topics),
+group_images.sample
 ]
 
 glist << [
@@ -454,7 +484,8 @@ glist << [
 "Greetings--Our group is focused on Indigenous cultural & political events. We hit the pow wows and film festivals as much as possible. The group has a specific focus on Guatemalan/Mexican/Indigenous American art, spirituality, dance & textiles.
 
 We go to the Guelaguetza (Oaxacan Indigenous Dance/Cultural Fair) in Santa Cruz and fun events like concerts & fairs. We love to go to dances, Day of the Dead, Cinco de Mayo in Oakland, and other street fairs and demonstrations for human rights, environmental causes, to stop Keystone XL Pipeline and for social justice.",
-get_topics('culture', topics)
+get_topics('culture', topics),
+group_images.sample
 ]
 
 glist << [
@@ -464,7 +495,8 @@ We try to keep emails down to the announcements of the actual movies, and then o
 Other than that, I try to not send out more than one mass non-event email every few months.
 
 Our basic mission: To see significant and/or interesting films playing in the greater San Francisco Bay Area and then to go somewhere close by afterwards to eat, drink, share company and discuss the films we just watched.",
-get_topics('film', topics)
+get_topics('film', topics),
+group_images.sample
 ]
 
 glist << [
@@ -478,7 +510,8 @@ This is your group :) (... and if your friends don't think you're insane please 
 We are a bunch of friendly people with an offbeat taste in films, with emphasis on Horror, SciFi and Fantasy.
 
 I hope to see you at our next event!",
-get_topics('film', topics)
+get_topics('film', topics),
+group_images.sample
 ]
 
 glist << [
@@ -487,19 +520,22 @@ glist << [
 
 If you, like me, also enjoy thought-provoking literature, check out my Classic Literature and Cafes Club: http://www.group.com/Classic-Literature-and-Cafes
 ",
-get_topics('film', topics)
+get_topics('film', topics),
+group_images.sample
 ]
 
 glist << [
 "SF Salsa Dancing",
 "What iHeartMambo Social is all about: Friendship, bringing the dancers what they want and creating an event that will conglomerate all the great dancers from the Bay. We are a NOT-FOR-PROFIT group, . Focused of giving you a great dancing experience and elevating Mambo in the Bay Area. In our socials you will listen and dance to quality Mambo, Salsa &amp; ChaCha music on Vinyl. We strive to create a friendly, fun and supportive environment for dancers of all levels. All the funds collected is used for improving the social. (More lighting, fans, speakers, turntables, supporting our local and traveling dance artists, djs, etc) It is all about the fun. Share our event and have fun! Since we are all dancers we can definitely relate to you and understand what you want from a social. We put this event together so we all can have a great dancing experience at a reasonable price. Please don't forget to say hello and save us a dance! See you on the dance floor! iHeartMambo team.",
-get_topics('dance', topics)
+get_topics('dance', topics),
+group_images.sample
 ]
 
 glist << [
 "SF Bollywood Party",
 "Jai Ho! (Hindi for Be Victorious) dance party facilitates making new friends & learning new Bollywood dance moves with your new friends. After rocking Portland, Seattle, LA & San Diego, we are excited to bring Jai Ho! to Bay Area.",
-get_topics('dance', topics)
+get_topics('dance', topics),
+group_images.sample
 ]
 
 glist << [
@@ -507,13 +543,14 @@ glist << [
 "Welcome! We are now on Facebook too:
 https://www.facebook.com/BABallroomDancers
 This group is for ballroom dancers looking to expand their network of dance friends, find friends to dance with, attend ballroom dances as a group, and to take our dancing 'beyond the studios' and to other great dance places: clubs, parties, festivals. Find a dance partner, even perform in schools or for other nonprofits to give back to the community. We can also organize our own public dances and use proceeds to help put dance programs in schools or for other good works.",
-get_topics('dance', topics)
+get_topics('dance', topics),
+group_images.sample
 ]
 
 Membership.destroy_all
 groups = []
 glist.each do |item|
-  topicvals = item.concat([ group_hometown, users.sample.id, group_images.sample ])
+  topicvals = item.concat([ group_hometown, users.sample.id ])
   hash_group = Hash[group_fields.zip(topicvals)]
   grp = Group.create!(hash_group)
   created_at = DateTime.now - Random.new.rand(210..365)
