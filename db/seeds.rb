@@ -203,7 +203,7 @@ who meet once a month for figure sketching. The people we sketch range
 20s to 90s. If you want to bring your sketching to the next level, or
 just need some more creativity in your life, give us a try.",
 get_topics('arts', topics),
-group_images.sample
+"v1493686890/figure_sketching_lc0f8i.jpg"
 ]
 
 glist << [
@@ -214,7 +214,7 @@ to attend a film festival with? This is the group for you!
 This group is for film, literature, music, arts and culture enthusiasts
 in the SF Bay Area.",
 get_topics('arts', topics),
-group_images.sample
+"v1493687169/arts_culture_mqqxpf.jpg"
 ]
 
 glist << [
@@ -239,7 +239,7 @@ combine art with technology.
 Inspiring individuals, entrepreneurs, innovators, startups and
 companies by injecting creativity into their lives and organizations.",
 get_topics('arts', topics),
-group_images.sample
+"v1493687674/art_tech_wyg3dl.jpg"
 ]
 
 glist << [
@@ -254,7 +254,7 @@ drink.draw.sf
 Feel free to DM the account to post drawings from group or whatever
 you're feeling that day.",
 get_topics('arts', topics),
-group_images.sample
+"v1493687970/drink_draw_cy9pqj.png"
 ]
 
 glist << [
