@@ -264,14 +264,14 @@ drink and check out a new local band. Lately we have been going to a
 lot of SoFar sounds events, but we go to concerts, festivals, garage
 bands, and raves too. If it's good we're in! Come join us!",
 get_topics('music', topics),
-group_images.sample
+"v1493836658/popup_music_vfpsb3.jpg"
 ]
 
 glist << [
 "San Francisco Metal group Group",
 "Meet others in your local area who enjoy Metal Music. Make new friends!",
 get_topics('music', topics),
-group_images.sample
+"v1493836983/sf_metal_bjamp8.jpg"
 ]
 
 glist << [
@@ -282,7 +282,7 @@ go out at wine bars in the city when there aren't any new shows in town.
 If you know of upcoming events, let us know. We're very open to
 member submitted events.",
 get_topics('music', topics),
-group_images.sample
+"v1493837302/sf_classical_u7sei7.jpg"
 ]
 
 glist << [
