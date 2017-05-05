@@ -296,7 +296,7 @@ new people, then come join us!
 
 All running paces are welcome!",
 get_topics('sports', topics),
-group_images.sample
+"v1493958750/sf_fun_run_m2przg.jpg"
 ]
 
 glist << [
@@ -305,7 +305,7 @@ glist << [
 field at Raymond Kimball. Mondays and Wednesdays for now. May add
 Fridays later.",
 get_topics('sports', topics),
-group_images.sample
+"v1493958788/sf_soccer_lv4cgs.jpg"
 ]
 
 glist << [
@@ -321,7 +321,7 @@ confident, radiant women unleashing our inner awesomeness into the
 world. All women, regardless of age, background, or anything else,
 are welcome.",
 get_topics('sports', topics),
-group_images.sample
+"v1493958825/boarders_fhwo80.png"
 ]
 
 glist << [
