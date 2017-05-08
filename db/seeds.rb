@@ -332,7 +332,7 @@ then, check out our calendar of upcoming events and RSVP! We will be
 providing many social opportunities as well as events, day trips,
 cabins, etc... We are a fun and friendly group. Join us! :)",
 get_topics('outdoors', topics),
-group_images.sample
+"v1494284007/sf_ski_board_rgtjrl.jpg"
 ]
 
 glist << [
@@ -341,7 +341,7 @@ glist << [
 
 Are you an outdoor enthusiasts looking to Hike? Are you in San Francisco Bay Area? Or even in San Jose/Santa Cruz? Come be social. New in Town? Looking to Meet New People or Friendships? 20's or 30's Something? Here is a group designed for people with similar interests who enjoys Hiking, Climbing, Backpacking, Mountaineering, Skiing and Outdoor Adventures. However, we do include occasional social events such as Wine tasting, Beer tasting, Sporting, Concerts, Happy Hours, Salsa and whatever else that attracts interest. Or even anything that Sounds Fun in the open Fresh Air, far from Urban Civilization to be in good Company around Campfires.",
 get_topics('outdoors', topics),
-group_images.sample
+"v1494284847/sf_hiking_mxaia6.jpg"
 ]
 
 glist << [
@@ -350,14 +350,14 @@ glist << [
 
 We do not charge for groups (unless there are costs like tickets, etc) but if you use the group and attend events, please consider donating a few dollars using the 'Chip In' button on the left side of the page. This goes towards the roughly $150 per year that group charges to maintain the page. This is not required but greatly appreciated!",
 get_topics('outdoors', topics),
-group_images.sample
+"v1494285194/sf_scuba_zd49kw.jpg"
 ]
 
 glist << [
 "Get Your Climb On",
 "Get Your Climb On (or GYCO) is a group that brings together rock climbing & outdoor enthusiasts of all experience levels through groups throughout California at destination-outdoor climbing venues, indoor rock climbing gyms, and social gatherings such as happy hours, BBQs & more. The main goal is to create an inclusive, diverse, fun, safe, friendly, collaborative, community from the ground up--A community that encourages one another to learn outdoor leadership skills, to enjoy the sense of community, teamwork, and a community that plans safe & fun climbing meet ups throughout California & beyond!",
 get_topics('outdoors', topics),
-group_images.sample
+"v1494285691/sf_climbing_d9jqis.jpg"
 ]
 
 glist << [
